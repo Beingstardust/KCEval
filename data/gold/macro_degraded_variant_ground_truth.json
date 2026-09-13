@@ -1,0 +1,125 @@
+{
+  "schema": "macro_degraded_variant_ground_truth.v1",
+  "preregistration": "docs/evaluation_completeness_v2/27_MACRO_DEGRADATION_PREREGISTRATION.md",
+  "source_dialogue": "data\\input\\dialogues\\inbox\\dm1_human_student_llm_tutor_teaching_rich_dialogue.json",
+  "variant": {
+    "id": "T4_macro_degraded",
+    "opaque_dialogue_id": "tv_d_20260909",
+    "source": "tv_d_source.json",
+    "design": "minimal pair with T1; degradation is dialogue-scope only"
+  },
+  "blinding_note": "The opaque id tv_d carries no description of the condition. dialogue_id is embedded in every segment and exchange id and therefore appears inside each judge prompt, so a descriptive id would disclose the condition to a judge meant to score blind.",
+  "exchanges_total": 63,
+  "exchanges_modified": 11,
+  "exchanges_identical_to_T1": 52,
+  "targets_by_property": {
+    "consistency": [
+      17,
+      24,
+      34,
+      51,
+      59
+    ],
+    "sequentiality": [
+      12,
+      19,
+      30,
+      45
+    ],
+    "outcome_completion": [
+      57,
+      62
+    ]
+  },
+  "preregistered_leak": "H-M4: idx 57 and 62 trail off, which is locally poor actionability as well as a dialogue-level failure. Predicted contribution to the segment-scope gap: <= 0.03.",
+  "modified_exchanges": [
+    {
+      "exchange_index": 12,
+      "exchange_id": "ex_0012",
+      "macro_property_targeted": "sequentiality",
+      "violation": "Uses Laplace smoothing and its formula at idx 12. The zero-frequency problem is not raised until idx 14 and smoothing is not defined until idx 16.",
+      "original_tutor_text": "Yes. Count the target labels first. There are 3 DB=Y rows and 7 DB=N rows out of 10. So P(DB=Y)=3/10 and P(DB=N)=7/10. These are priors because they are known before looking at the new instance attributes.",
+      "variant_tutor_text": "Yes. Count the target labels first. There are 3 DB=Y rows and 7 DB=N rows out of 10. So P(DB=Y)=3/10 and P(DB=N)=7/10. These are priors because they are known before looking at the new instance attributes. You will multiply each prior by the Laplace-smoothed conditionals, (count + 1)/(class_count + number_of_possible_values), when we score the instance."
+    },
+    {
+      "exchange_index": 17,
+      "exchange_id": "ex_0017",
+      "macro_property_targeted": "consistency",
+      "violation": "Claims it already offered the discretize-vs-Gaussian choice and that the student picked one. That offer is not made until idx 18, one turn later. Arithmetic unchanged.",
+      "original_tutor_text": "Yes, treating income as a discrete value for this exercise calculation. DB=N score = 7/10 * 5/9 * 5/10 * 1/17, about 0.0114. DB=Y score = 3/10 * 4/5 * 1/6 * 2/13, about 0.00615. Since 0.0114 is larger, classify X as DB=N.",
+      "variant_tutor_text": "Yes, treating income as a discrete value for this exercise calculation, which is the route you chose when I offered you the two options a moment ago. DB=N score = 7/10 * 5/9 * 5/10 * 1/17, about 0.0114. DB=Y score = 3/10 * 4/5 * 1/6 * 2/13, about 0.00615. Since 0.0114 is larger, classify X as DB=N."
+    },
+    {
+      "exchange_index": 19,
+      "exchange_id": "ex_0019",
+      "macro_property_targeted": "sequentiality",
+      "violation": "Relies on entropy, weighted child entropy, split information and Gain Ratio. Gain Ratio is not introduced until idx 21, entropy not until idx 22, weighting not until idx 23.",
+      "original_tutor_text": "That is the problem. Information Gain can prefer attributes with many distinct values. ID is the obvious example: splitting by ID creates one-row pure leaves, so training uncertainty disappears. But ID usually does not generalize to future examples.",
+      "variant_tutor_text": "That is the problem. Information Gain can prefer attributes with many distinct values. ID is the obvious example: splitting by ID creates one-row pure leaves, so the weighted child entropy drops to 0 and the gain is maximal. Once you normalize by the split information, though, ID's ratio falls to about 0.231, which is why Gain Ratio is the criterion to trust here. But ID usually does not generalize to future examples."
+    },
+    {
+      "exchange_index": 24,
+      "exchange_id": "ex_0024",
+      "macro_property_targeted": "consistency",
+      "violation": "Attributes the conclusion to the student in Exercise 2. Exercise 2 was Bayes and Naive Bayes; the student reached no such conclusion. Curriculum content unchanged.",
+      "original_tutor_text": "Yes. Graduation gives meaningful groups: Middle School is pure class 1, High School is mostly class 0, and College is mixed. Its Gain Ratio is about 0.436, while ID's Gain Ratio is about 0.231. So Gain Ratio pushes us away from ID-like memorization.",
+      "variant_tutor_text": "Yes. Graduation gives meaningful groups: Middle School is pure class 1, High School is mostly class 0, and College is mixed. Its Gain Ratio is about 0.436, while ID's Gain Ratio is about 0.231. So Gain Ratio pushes us away from ID-like memorization. This is the same conclusion you reached yourself back in Exercise 2, so you are staying consistent."
+    },
+    {
+      "exchange_index": 30,
+      "exchange_id": "ex_0030",
+      "macro_property_targeted": "sequentiality",
+      "violation": "Uses specificity and F1 at idx 30. Precision and recall are not defined until idx 32, sensitivity and specificity until idx 33, F1 until idx 34.",
+      "original_tutor_text": "Because TP, FP, TN, and FN depend on the positive class. Here TP means true Y predicted Y, FN means true Y predicted N, FP means true N predicted Y, and TN means true N predicted N. If you use N as positive, every metric changes.",
+      "variant_tutor_text": "Because TP, FP, TN, and FN depend on the positive class. Here TP means true Y predicted Y, FN means true Y predicted N, FP means true N predicted Y, and TN means true N predicted N. That choice then propagates: specificity is TN/(TN+FP) and F1 is 2PR/(P+R), so both flip meaning if you swap the positive class. If you use N as positive, every metric changes."
+    },
+    {
+      "exchange_index": 34,
+      "exchange_id": "ex_0034",
+      "macro_property_targeted": "consistency",
+      "violation": "At idx 32 the student said 'I mix up precision and recall' and the tutor had to define both. Claiming the student had them right contradicts the dialogue two turns earlier.",
+      "original_tutor_text": "F1 is 2PR/(P+R). With precision 0.5 and recall 0.667, F1 is about 0.571. Do not compute F1 from accuracy. Accuracy is (TP+TN)/total = 7/10 = 0.7, which is a separate metric.",
+      "variant_tutor_text": "F1 is 2PR/(P+R). With precision 0.5 and recall 0.667, F1 is about 0.571. Do not compute F1 from accuracy. Accuracy is (TP+TN)/total = 7/10 = 0.7, which is a separate metric. You had precision and recall the right way round when you first raised them, so this follows directly."
+    },
+    {
+      "exchange_index": 45,
+      "exchange_id": "ex_0045",
+      "macro_property_targeted": "sequentiality",
+      "violation": "Introduces bisecting K-Means at idx 45. It is not raised until idx 55, and the standard algorithm's worked example (idx 47-51) has not run yet.",
+      "original_tutor_text": "Choose K initial centroids; assign each point to the nearest centroid; recompute each centroid as the mean of assigned points; repeat assignment and recomputation until assignments or centroids stop changing. The objective is to reduce SSE, the sum of squared distances from each point to its assigned centroid.",
+      "variant_tutor_text": "Choose K initial centroids; assign each point to the nearest centroid; recompute each centroid as the mean of assigned points; repeat assignment and recomputation until assignments or centroids stop changing. The objective is to reduce SSE, the sum of squared distances from each point to its assigned centroid. In the bisecting variant this same loop runs with K=2 inside each split, which is the version you will want for Exercise 6's later parts."
+    },
+    {
+      "exchange_index": 51,
+      "exchange_id": "ex_0051",
+      "macro_property_targeted": "consistency",
+      "violation": "The tutor never mentioned a fixed iteration count, and gave only one stopping rule. Invents a prior version of its own guidance. Numbers unchanged.",
+      "original_tutor_text": "Using C1=(2.625,7.000) and C2=(4.071,1.786), the assignments stay the same. Since assignments and centroids no longer change, K-Means terminates. The final SSE is about 42.830.",
+      "variant_tutor_text": "Using C1=(2.625,7.000) and C2=(4.071,1.786), the assignments stay the same. Since assignments and centroids no longer change, K-Means terminates. The final SSE is about 42.830. That is the stopping rule I gave you before we started the worked example, rather than the fixed iteration count I mentioned then."
+    },
+    {
+      "exchange_index": 57,
+      "exchange_id": "ex_0057",
+      "macro_property_targeted": "outcome_completion",
+      "violation": "The synthesis breaks off mid-sentence and the connection across exercises is never completed.",
+      "original_tutor_text": "Yes. Exercise 1 introduces supervised classification and data roles. Exercise 2 gives probabilistic classification with Bayes and Naive Bayes. Exercise 3 studies decision-tree split criteria and pruning estimates. Exercise 4 evaluates classifiers and compares models. Exercise 6 moves to unsupervised clustering, where distances and centroids matter more than target labels.",
+      "variant_tutor_text": "Yes. Exercise 1 introduces supervised classification and data roles. Exercise 2 gives probabilistic classification with Bayes and Naive Bayes. Exercise 3 studies decision-tree split criteria and pruning estimates. Exercise 4 evaluates classifiers and compares models. Exercise 6 moves to unsupervised clustering, where distances and"
+    },
+    {
+      "exchange_index": 59,
+      "exchange_id": "ex_0059",
+      "macro_property_targeted": "consistency",
+      "violation": "The student never said clustering was supervised; at idx 43 the student asked and the tutor answered no. Misreports the student's earlier position.",
+      "original_tutor_text": "Correct. You separated the concepts cleanly: classification predicts a target attribute from labeled training data; K-Means groups unlabeled data by distance to centroids.",
+      "variant_tutor_text": "Correct. You separated the concepts cleanly: classification predicts a target attribute from labeled training data; K-Means groups unlabeled data by distance to centroids. That is a change from Exercise 6, where you told me clustering was a supervised method."
+    },
+    {
+      "exchange_index": 62,
+      "exchange_id": "ex_0062",
+      "macro_property_targeted": "outcome_completion",
+      "violation": "The dialogue's closing strategy breaks off mid-sentence, so the dialogue ends with no resolution.",
+      "original_tutor_text": "Use four passes. First identify the task type: classification, probability, decision tree, evaluation, or clustering. Second write the formula before substituting numbers. Third name the denominator explicitly. Fourth interpret every numeric result in one sentence, such as classify as DB=N or larger N narrows the confidence interval.",
+      "variant_tutor_text": "Use four passes. First identify the task type: classification, probability, decision tree, evaluation, or clustering. Second write the formula before"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "purpose": "Resolve model_revision_resolved for the Sofja judge runs, which recorded null.",
+  "problem": "The Sofja copy of the judge weights was transferred offline as a flat directory, so it carries no .cache/huggingface/download metadata and the runtime could not resolve a revision. The ANTS copy was downloaded by huggingface_hub and does carry that metadata.",
+  "method": "Compare the two copies on every non-weight file plus a name+size fingerprint over all 30 safetensors shards. Identity of these establishes the same repository snapshot.",
+  "checked_utc": "2026-09-01",
+  "copies": {
+    "sofja": "/beegfs2/scratch/hpcuser/selene_judge_ant1_fallback/models/Selene-1-Llama-3.3-70B",
+    "ants": "/home/hpcuser/projects/selene_judge/models/Selene-1-Llama-3.3-70B"
+  },
+  "sha256_identical_on_both_hosts": {
+    "config.json": "0318bd9389f8a57b0a86b47d4390fe0aee4ff35e5242f176346c22a8af6d18b3",
+    "generation_config.json": "6e3dea9cdfa4a3e0edf1b52d9b1e9609aa22efcddce630060b748284663c8e67",
+    "model.safetensors.index.json": "2abe0910e23770a30ccf9b1b91804c64831c47f9c98defaa5293aa999433fc2b",
+    "tokenizer_config.json": "6ed9bcf1ebd161a41d93f5d1024df023eb6bc3f1714210c7d179e33f84c7033f",
+    "tokenizer.json": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+  },
+  "shard_fingerprint": {
+    "definition": "sha256 of `stat -c '%n %s' model-*.safetensors`, i.e. the ordered filename+byte-size list of all 30 shards",
+    "sofja": "e52a0ac2dd61bec1da4779b2065d606ffcf7c1118a4fe561674afcebe5999474",
+    "ants": "e52a0ac2dd61bec1da4779b2065d606ffcf7c1118a4fe561674afcebe5999474",
+    "match": true
+  },
+  "revision_source_on_ants": {
+    "file": ".cache/huggingface/download/config.json.metadata",
+    "commit_hash": "37ad448f3d1ab7579cbccb0d8418b2808573a30b",
+    "etag": "75772f09c815748fd9f75611aaec80cd41986418"
+  },
+  "corroboration": "148 judge response rows produced on ANTS with model_path ending Selene-1-Llama-3.3-70B record model_revision_resolved = 37ad448f3d1ab7579cbccb0d8418b2808573a30b. 84 rows produced on Sofja record null.",
+  "conclusion": "The Sofja judge weights are the same repository snapshot as the ANTS weights: revision 37ad448f3d1ab7579cbccb0d8418b2808573a30b.",
+  "what_this_does_NOT_establish": "The 30 safetensors shards were not hashed byte-for-byte on either host; that would mean reading ~140 GB twice on shared filesystems and would require a Slurm allocation. The evidence is: byte-identical index (which enumerates every tensor and its shard assignment), byte-identical config and tokenizer, and identical shard sizes. Undetected divergence would require a shard edit that preserves every file size and the index. This is treated as sufficient for provenance, and the limit is stated rather than glossed.",
+  "action_taken": "No artifact was rewritten. The recorded null stands in the run outputs as the honest record of what the runtime could resolve; this file supplies the revision externally."
+}

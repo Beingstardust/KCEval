@@ -1,0 +1,15 @@
+{
+  "errors": [],
+  "evaluation_mode_counts": {
+    "branch_context_with_anchor": 21,
+    "broad_kc_set_low_confidence_anchor": 1
+  },
+  "judge_prompt_count": 22,
+  "kc_grounding_condition": "B_baseline",
+  "packet_dir": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\evaluation_packets\\topic_rollup_arc",
+  "profiles_path": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\library\\frozen_matching_profiles.jsonl",
+  "prompt_pipeline": "segment_judge_prompts_v1b",
+  "rubric_version": "segment_judge_rubric_v2_scale001_dependency_aware",
+  "source_packet_count": 22,
+  "status": "PASS"
+}

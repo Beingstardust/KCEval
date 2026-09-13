@@ -1,0 +1,688 @@
+{
+  "design": {
+    "dialogues": 300,
+    "responses": 2476,
+    "arms": {
+      "A": "KCEval frozen rubric, no KC grounding",
+      "B": "plain Selene, official BEA definitions (mandatory control)",
+      "C": "published majority baseline (doc 46 \u00a72)"
+    },
+    "seed": 1234,
+    "n_bootstrap": 10000,
+    "multiplicity": "Bonferroni across 4 tracks, alpha=0.0125",
+    "split": "dev only; test gold is not public, so no leaderboard claim"
+  },
+  "coverage": {
+    "arm_a_units": 2452,
+    "arm_b_units": 2476,
+    "gold_units": 2476
+  },
+  "tracks": {
+    "Mistake_Identification": {
+      "n_scored": {
+        "A": 2395,
+        "B": 2476
+      },
+      "n_common_both_arms": 2395,
+      "arm_a_abstentions_vs_b": 81,
+      "gold_distribution": {
+        "Yes": 1908,
+        "To some extent": 167,
+        "No": 320
+      },
+      "majority_baseline_f1": 0.2827,
+      "A": {
+        "exact_macro_f1": 0.4566087144247252,
+        "lenient_macro_f1": 0.6069539262542798,
+        "per_class": {
+          "Yes": {
+            "support": 1908,
+            "predicted": 2248,
+            "precision": 0.8336298932384342,
+            "recall": 0.9821802935010482,
+            "f1": 0.9018286814244465
+          },
+          "To some extent": {
+            "support": 167,
+            "predicted": 84,
+            "precision": 0.2857142857142857,
+            "recall": 0.1437125748502994,
+            "f1": 0.19123505976095614
+          },
+          "No": {
+            "support": 320,
+            "predicted": 63,
+            "precision": 0.8412698412698413,
+            "recall": 0.165625,
+            "f1": 0.27676240208877284
+          }
+        },
+        "weighted_kappa": 0.271573298665271,
+        "gwet_ac2": 0.8300161607643775,
+        "predicted_distribution": {
+          "Yes": 2248,
+          "No": 63,
+          "To some extent": 84
+        },
+        "confusion": {
+          "Yes": {
+            "Yes": 1874,
+            "To some extent": 29,
+            "No": 5
+          },
+          "To some extent": {
+            "Yes": 138,
+            "No": 5,
+            "To some extent": 24
+          },
+          "No": {
+            "Yes": 236,
+            "No": 53,
+            "To some extent": 31
+          }
+        }
+      },
+      "B": {
+        "exact_macro_f1": 0.549636291254583,
+        "lenient_macro_f1": 0.802998041760729,
+        "per_class": {
+          "Yes": {
+            "support": 1932,
+            "predicted": 1472,
+            "precision": 0.9293478260869565,
+            "recall": 0.7080745341614907,
+            "f1": 0.8037602820211516
+          },
+          "To some extent": {
+            "support": 174,
+            "predicted": 560,
+            "precision": 0.11428571428571428,
+            "recall": 0.367816091954023,
+            "f1": 0.17438692098092645
+          },
+          "No": {
+            "support": 370,
+            "predicted": 444,
+            "precision": 0.6148648648648649,
+            "recall": 0.7378378378378379,
+            "f1": 0.6707616707616708
+          }
+        },
+        "weighted_kappa": 0.4765469575823282,
+        "gwet_ac2": 0.7224476760618481,
+        "predicted_distribution": {
+          "No": 444,
+          "Yes": 1472,
+          "To some extent": 560
+        },
+        "confusion": {
+          "Yes": {
+            "No": 106,
+            "Yes": 1368,
+            "To some extent": 458
+          },
+          "To some extent": {
+            "To some extent": 64,
+            "No": 65,
+            "Yes": 45
+          },
+          "No": {
+            "No": 273,
+            "To some extent": 38,
+            "Yes": 59
+          }
+        }
+      },
+      "A_vs_B": {
+        "computed_on": "intersection of units both arms labelled",
+        "n": 2395,
+        "arm_a_macro_f1_on_common": 0.4566087144247252,
+        "arm_b_macro_f1_on_common": 0.5379017330668513,
+        "difference_exact_macro_f1": -0.08129301864212607,
+        "ci_98_75": [
+          -0.1333009953349949,
+          -0.030107046081413624
+        ],
+        "bootstrap_p_two_sided": 0.0002,
+        "excludes_zero": true,
+        "interval_note": "98.75% paired cluster-bootstrap interval over dialogues, Bonferroni-adjusted for 4 tracks"
+      },
+      "A_vs_C": {
+        "difference": 0.17390871442472522,
+        "arm_a_ci_98_75": [
+          0.4136150474191438,
+          0.5008102671739035
+        ],
+        "exceeds_majority": true,
+        "note": "C is a published point figure with no interval of its own, so this compares arm A's interval against a constant rather than testing a difference"
+      }
+    },
+    "Mistake_Location": {
+      "n_scored": {
+        "A": 2393,
+        "B": 2476
+      },
+      "n_common_both_arms": 2393,
+      "arm_a_abstentions_vs_b": 83,
+      "gold_distribution": {
+        "Yes": 1522,
+        "To some extent": 215,
+        "No": 656
+      },
+      "majority_baseline_f1": 0.245,
+      "A": {
+        "exact_macro_f1": 0.3944629241850824,
+        "lenient_macro_f1": 0.6199318741087559,
+        "per_class": {
+          "Yes": {
+            "support": 1522,
+            "predicted": 1058,
+            "precision": 0.7580340264650284,
+            "recall": 0.5269382391590013,
+            "f1": 0.6217054263565891
+          },
+          "To some extent": {
+            "support": 215,
+            "predicted": 1092,
+            "precision": 0.10714285714285714,
+            "recall": 0.5441860465116279,
+            "f1": 0.17903596021423107
+          },
+          "No": {
+            "support": 656,
+            "predicted": 243,
+            "precision": 0.7078189300411523,
+            "recall": 0.2621951219512195,
+            "f1": 0.3826473859844271
+          }
+        },
+        "weighted_kappa": 0.2344806460840318,
+        "gwet_ac2": 0.4671199803275013,
+        "predicted_distribution": {
+          "To some extent": 1092,
+          "Yes": 1058,
+          "No": 243
+        },
+        "confusion": {
+          "Yes": {
+            "To some extent": 670,
+            "Yes": 802,
+            "No": 50
+          },
+          "To some extent": {
+            "To some extent": 117,
+            "Yes": 77,
+            "No": 21
+          },
+          "No": {
+            "To some extent": 305,
+            "No": 172,
+            "Yes": 179
+          }
+        }
+      },
+      "B": {
+        "exact_macro_f1": 0.3914097457669918,
+        "lenient_macro_f1": 0.6748540272229633,
+        "per_class": {
+          "Yes": {
+            "support": 1543,
+            "predicted": 534,
+            "precision": 0.8389513108614233,
+            "recall": 0.29034348671419313,
+            "f1": 0.431391429947039
+          },
+          "To some extent": {
+            "support": 220,
+            "predicted": 950,
+            "precision": 0.10421052631578948,
+            "recall": 0.45,
+            "f1": 0.16923076923076924
+          },
+          "No": {
+            "support": 713,
+            "predicted": 992,
+            "precision": 0.49294354838709675,
+            "recall": 0.6858345021037868,
+            "f1": 0.5736070381231672
+          }
+        },
+        "weighted_kappa": 0.25032991013876216,
+        "gwet_ac2": 0.3202906372958695,
+        "predicted_distribution": {
+          "No": 992,
+          "Yes": 534,
+          "To some extent": 950
+        },
+        "confusion": {
+          "Yes": {
+            "No": 411,
+            "Yes": 448,
+            "To some extent": 684
+          },
+          "To some extent": {
+            "No": 92,
+            "To some extent": 99,
+            "Yes": 29
+          },
+          "No": {
+            "No": 489,
+            "To some extent": 167,
+            "Yes": 57
+          }
+        }
+      },
+      "A_vs_B": {
+        "computed_on": "intersection of units both arms labelled",
+        "n": 2393,
+        "arm_a_macro_f1_on_common": 0.3944629241850824,
+        "arm_b_macro_f1_on_common": 0.3840802550299551,
+        "difference_exact_macro_f1": 0.010382669155127311,
+        "ci_98_75": [
+          -0.026741470222603925,
+          0.04735585173908219
+        ],
+        "bootstrap_p_two_sided": 0.4952,
+        "excludes_zero": false,
+        "interval_note": "98.75% paired cluster-bootstrap interval over dialogues, Bonferroni-adjusted for 4 tracks"
+      },
+      "A_vs_C": {
+        "difference": 0.1494629241850824,
+        "arm_a_ci_98_75": [
+          0.3618313932100827,
+          0.42698842057594155
+        ],
+        "exceeds_majority": true,
+        "note": "C is a published point figure with no interval of its own, so this compares arm A's interval against a constant rather than testing a difference"
+      }
+    },
+    "Actionability": {
+      "n_scored": {
+        "A": 2452,
+        "B": 2476
+      },
+      "n_common_both_arms": 2452,
+      "arm_a_abstentions_vs_b": 24,
+      "gold_distribution": {
+        "Yes": 1297,
+        "To some extent": 367,
+        "No": 788
+      },
+      "majority_baseline_f1": 0.2198,
+      "A": {
+        "exact_macro_f1": 0.33212395372851833,
+        "lenient_macro_f1": 0.4580162849528272,
+        "per_class": {
+          "Yes": {
+            "support": 1297,
+            "predicted": 1693,
+            "precision": 0.5634967513290018,
+            "recall": 0.7355435620663069,
+            "f1": 0.6381270903010033
+          },
+          "To some extent": {
+            "support": 367,
+            "predicted": 712,
+            "precision": 0.1952247191011236,
+            "recall": 0.3787465940054496,
+            "f1": 0.257645968489342
+          },
+          "No": {
+            "support": 788,
+            "predicted": 47,
+            "precision": 0.8936170212765957,
+            "recall": 0.0532994923857868,
+            "f1": 0.10059880239520959
+          }
+        },
+        "weighted_kappa": 0.08521354575218612,
+        "gwet_ac2": 0.40929443541436245,
+        "predicted_distribution": {
+          "Yes": 1693,
+          "To some extent": 712,
+          "No": 47
+        },
+        "confusion": {
+          "Yes": {
+            "Yes": 954,
+            "To some extent": 341,
+            "No": 2
+          },
+          "To some extent": {
+            "Yes": 225,
+            "To some extent": 139,
+            "No": 3
+          },
+          "No": {
+            "Yes": 514,
+            "To some extent": 232,
+            "No": 42
+          }
+        }
+      },
+      "B": {
+        "exact_macro_f1": 0.4280969428744584,
+        "lenient_macro_f1": 0.6443159258638788,
+        "per_class": {
+          "Yes": {
+            "support": 1310,
+            "predicted": 839,
+            "precision": 0.6495828367103695,
+            "recall": 0.41603053435114506,
+            "f1": 0.5072126570497907
+          },
+          "To some extent": {
+            "support": 369,
+            "predicted": 1048,
+            "precision": 0.19561068702290077,
+            "recall": 0.5555555555555556,
+            "f1": 0.2893436838390967
+          },
+          "No": {
+            "support": 797,
+            "predicted": 589,
+            "precision": 0.5738539898132428,
+            "recall": 0.424090338770389,
+            "f1": 0.4877344877344877
+          }
+        },
+        "weighted_kappa": 0.2200240258678749,
+        "gwet_ac2": 0.3685129899033259,
+        "predicted_distribution": {
+          "Yes": 839,
+          "No": 589,
+          "To some extent": 1048
+        },
+        "confusion": {
+          "Yes": {
+            "Yes": 545,
+            "To some extent": 612,
+            "No": 153
+          },
+          "To some extent": {
+            "No": 98,
+            "To some extent": 205,
+            "Yes": 66
+          },
+          "No": {
+            "No": 338,
+            "To some extent": 231,
+            "Yes": 228
+          }
+        }
+      },
+      "A_vs_B": {
+        "computed_on": "intersection of units both arms labelled",
+        "n": 2452,
+        "arm_a_macro_f1_on_common": 0.33212395372851833,
+        "arm_b_macro_f1_on_common": 0.4280509413888663,
+        "difference_exact_macro_f1": -0.09592698766034796,
+        "ci_98_75": [
+          -0.12691384502776026,
+          -0.06395511139765114
+        ],
+        "bootstrap_p_two_sided": 0.0,
+        "excludes_zero": true,
+        "interval_note": "98.75% paired cluster-bootstrap interval over dialogues, Bonferroni-adjusted for 4 tracks"
+      },
+      "A_vs_C": {
+        "difference": 0.11232395372851833,
+        "arm_a_ci_98_75": [
+          0.30721333473591456,
+          0.3581468615336261
+        ],
+        "exceeds_majority": true,
+        "note": "C is a published point figure with no interval of its own, so this compares arm A's interval against a constant rather than testing a difference"
+      }
+    },
+    "Providing_Guidance": {
+      "n_scored": {
+        "A": 2452,
+        "B": 2476
+      },
+      "n_common_both_arms": 2452,
+      "arm_a_abstentions_vs_b": 24,
+      "gold_distribution": {
+        "Yes": 1393,
+        "To some extent": 501,
+        "No": 558
+      },
+      "majority_baseline_f1": 0.2313,
+      "A": {
+        "exact_macro_f1": 0.3642228610124809,
+        "lenient_macro_f1": 0.49751297149635026,
+        "per_class": {
+          "Yes": {
+            "support": 1393,
+            "predicted": 1705,
+            "precision": 0.6334310850439883,
+            "recall": 0.7753050969131371,
+            "f1": 0.6972240154938669
+          },
+          "To some extent": {
+            "support": 501,
+            "predicted": 700,
+            "precision": 0.23714285714285716,
+            "recall": 0.3313373253493014,
+            "f1": 0.276436303080766
+          },
+          "No": {
+            "support": 558,
+            "predicted": 47,
+            "precision": 0.7659574468085106,
+            "recall": 0.06451612903225806,
+            "f1": 0.11900826446280992
+          }
+        },
+        "weighted_kappa": 0.15671141739849712,
+        "gwet_ac2": 0.5381826137214019,
+        "predicted_distribution": {
+          "Yes": 1705,
+          "To some extent": 700,
+          "No": 47
+        },
+        "confusion": {
+          "Yes": {
+            "Yes": 1080,
+            "To some extent": 312,
+            "No": 1
+          },
+          "To some extent": {
+            "Yes": 325,
+            "To some extent": 166,
+            "No": 10
+          },
+          "No": {
+            "To some extent": 222,
+            "Yes": 300,
+            "No": 36
+          }
+        }
+      },
+      "B": {
+        "exact_macro_f1": 0.503460954479261,
+        "lenient_macro_f1": 0.7140374085162327,
+        "per_class": {
+          "Yes": {
+            "support": 1407,
+            "predicted": 1358,
+            "precision": 0.6936671575846833,
+            "recall": 0.6695095948827292,
+            "f1": 0.681374321880651
+          },
+          "To some extent": {
+            "support": 503,
+            "predicted": 779,
+            "precision": 0.24390243902439024,
+            "recall": 0.37773359840954274,
+            "f1": 0.296411856474259
+          },
+          "No": {
+            "support": 566,
+            "predicted": 339,
+            "precision": 0.7109144542772862,
+            "recall": 0.42579505300353354,
+            "f1": 0.532596685082873
+          }
+        },
+        "weighted_kappa": 0.3386188587722461,
+        "gwet_ac2": 0.5669835914339383,
+        "predicted_distribution": {
+          "Yes": 1358,
+          "To some extent": 779,
+          "No": 339
+        },
+        "confusion": {
+          "Yes": {
+            "Yes": 942,
+            "To some extent": 420,
+            "No": 45
+          },
+          "To some extent": {
+            "To some extent": 190,
+            "Yes": 260,
+            "No": 53
+          },
+          "No": {
+            "To some extent": 169,
+            "No": 241,
+            "Yes": 156
+          }
+        }
+      },
+      "A_vs_B": {
+        "computed_on": "intersection of units both arms labelled",
+        "n": 2452,
+        "arm_a_macro_f1_on_common": 0.3642228610124809,
+        "arm_b_macro_f1_on_common": 0.5042577773440163,
+        "difference_exact_macro_f1": -0.14003491633153542,
+        "ci_98_75": [
+          -0.1724457398173928,
+          -0.10759474257547041
+        ],
+        "bootstrap_p_two_sided": 0.0,
+        "excludes_zero": true,
+        "interval_note": "98.75% paired cluster-bootstrap interval over dialogues, Bonferroni-adjusted for 4 tracks"
+      },
+      "A_vs_C": {
+        "difference": 0.1329228610124809,
+        "arm_a_ci_98_75": [
+          0.3378186282425415,
+          0.39237532267205055
+        ],
+        "exceeds_majority": true,
+        "note": "C is a published point figure with no interval of its own, so this compares arm A's interval against a constant rather than testing a difference"
+      }
+    }
+  },
+  "known_groups_E1KG": {
+    "hypothesis": "expert human tutors should score above novice human tutors",
+    "by_track": {
+      "Mistake_Identification": {
+        "A": {
+          "Expert": {
+            "n": 294,
+            "predicted_yes_rate": 0.8435374149659864,
+            "gold_yes_rate": 0.7517006802721088
+          },
+          "Novice": {
+            "n": 76,
+            "predicted_yes_rate": 0.7894736842105263,
+            "gold_yes_rate": 0.4473684210526316
+          }
+        },
+        "B": {
+          "Expert": {
+            "n": 300,
+            "predicted_yes_rate": 0.44,
+            "gold_yes_rate": 0.75
+          },
+          "Novice": {
+            "n": 76,
+            "predicted_yes_rate": 0.39473684210526316,
+            "gold_yes_rate": 0.4473684210526316
+          }
+        }
+      },
+      "Mistake_Location": {
+        "A": {
+          "Expert": {
+            "n": 294,
+            "predicted_yes_rate": 0.1870748299319728,
+            "gold_yes_rate": 0.6598639455782312
+          },
+          "Novice": {
+            "n": 76,
+            "predicted_yes_rate": 0.039473684210526314,
+            "gold_yes_rate": 0.18421052631578946
+          }
+        },
+        "B": {
+          "Expert": {
+            "n": 300,
+            "predicted_yes_rate": 0.043333333333333335,
+            "gold_yes_rate": 0.6566666666666666
+          },
+          "Novice": {
+            "n": 76,
+            "predicted_yes_rate": 0.013157894736842105,
+            "gold_yes_rate": 0.18421052631578946
+          }
+        }
+      },
+      "Actionability": {
+        "A": {
+          "Expert": {
+            "n": 296,
+            "predicted_yes_rate": 0.47635135135135137,
+            "gold_yes_rate": 0.8006756756756757
+          },
+          "Novice": {
+            "n": 76,
+            "predicted_yes_rate": 0.09210526315789473,
+            "gold_yes_rate": 0.039473684210526314
+          }
+        },
+        "B": {
+          "Expert": {
+            "n": 300,
+            "predicted_yes_rate": 0.24,
+            "gold_yes_rate": 0.8033333333333333
+          },
+          "Novice": {
+            "n": 76,
+            "predicted_yes_rate": 0.02631578947368421,
+            "gold_yes_rate": 0.039473684210526314
+          }
+        }
+      },
+      "Providing_Guidance": {
+        "A": {
+          "Expert": {
+            "n": 296,
+            "predicted_yes_rate": 0.4560810810810811,
+            "gold_yes_rate": 0.6790540540540541
+          },
+          "Novice": {
+            "n": 76,
+            "predicted_yes_rate": 0.09210526315789473,
+            "gold_yes_rate": 0.13157894736842105
+          }
+        },
+        "B": {
+          "Expert": {
+            "n": 300,
+            "predicted_yes_rate": 0.22666666666666666,
+            "gold_yes_rate": 0.6833333333333333
+          },
+          "Novice": {
+            "n": 76,
+            "predicted_yes_rate": 0.05263157894736842,
+            "gold_yes_rate": 0.13157894736842105
+          }
+        }
+      }
+    },
+    "note": "Novice n is 76 and Expert n is 300, so this is descriptive; it is reported because doc 47 \u00a74 asks for it at zero extra compute, not as a powered test."
+  }
+}

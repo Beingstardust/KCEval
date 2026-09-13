@@ -1,0 +1,476 @@
+{
+  "schema": "expert_register_variant_ground_truth.v1",
+  "preregistration": "docs/evaluation_completeness_v2/28_EXPERT_REGISTER_PREREGISTRATION.md",
+  "source_dialogue": "data\\input\\dialogues\\inbox\\dm1_human_student_llm_tutor_teaching_rich_dialogue.json",
+  "variant": {
+    "id": "T5_expert_register",
+    "opaque_dialogue_id": "tv_e_20260909",
+    "source": "tv_e_source.json",
+    "design": "full rewrite; degradation is delivery register only"
+  },
+  "transformation_rule": [
+    "formal register: technical vocabulary the dialogue never introduces",
+    "gratuitous forward reference to material the student has not met",
+    "no signposting: enumerations collapsed into dense blocks"
+  ],
+  "preserved": {
+    "diagnosis": "the tutor still notices and names the student's error",
+    "scaffolding": "hints, elicitation prompts and worked steps still present",
+    "factual_correctness": "every claim preserved from T1",
+    "dialogue_structure": "self-consistency, dependency order and resolution untouched"
+  },
+  "analogy_turns": [
+    8,
+    15,
+    20,
+    41,
+    52
+  ],
+  "analogy_note": "The student requests an analogy at these indices. T5 supplies one at each, drawn from a domain a beginner will not follow. Removing it would be a scaffolding failure; supplying an inaccessible one is a calibration failure.",
+  "blinding_note": "The opaque id tv_e carries no description of the condition. dialogue_id is embedded in every segment and exchange id and therefore appears inside each judge prompt.",
+  "exchanges_total": 63,
+  "exchanges_modified": 63,
+  "modified_exchanges": [
+    {
+      "exchange_index": 0,
+      "exchange_id": "ex_0000",
+      "analogy_requested": false,
+      "original_tutor_text": "Good. I will respond like an LLM tutor: I will diagnose your confusion, sometimes ask you to do the next step, sometimes give a worked example, sometimes use an analogy, and sometimes refer back to earlier things with words like this, that, those, or it. The data mining content itself will stay grounded in the uploaded exercise sheets.",
+      "variant_tutor_text": "Understood. I will operate as a corrective-feedback channel over your hypothesis space, issuing diagnostic interventions where your stated posterior diverges from the curricular prior, interleaving worked derivations with elicitation prompts, and maintaining anaphoric coreference across the discourse. Content remains grounded in the uploaded exercise corpus, though you should be aware that most of what follows generalises to structured-prediction settings and to the PAC-learnability results we will not cover."
+    },
+    {
+      "exchange_index": 1,
+      "exchange_id": "ex_0001",
+      "analogy_requested": false,
+      "original_tutor_text": "That is too broad. Classification is supervised prediction of a discrete class label. The word supervised matters because the model learns from examples that already have labels. Grouping without given labels is clustering, which appears later in Exercise 6.",
+      "variant_tutor_text": "Your characterisation is under-constrained. Classification is the induction of a hypothesis h: X to Y over a discrete codomain under empirical risk minimisation, where supervision denotes access to a labelled sample drawn i.i.d. from the joint distribution. Partition induction absent label supervision is a distinct objective, addressed under Exercise 6, and relates to the density-based and spectral formulations you will meet elsewhere."
+    },
+    {
+      "exchange_index": 2,
+      "exchange_id": "ex_0002",
+      "analogy_requested": false,
+      "original_tutor_text": "Exactly. In that table, Defaulted Borrower is the target attribute, and Y or N are the class labels. The other columns, such as Home Owner, Marital Status, Level of Education, and Annual Income, are input attributes used to predict it.",
+      "variant_tutor_text": "Affirmative. Defaulted Borrower constitutes the response variable with codomain {Y, N}; Home Owner, Marital Status, Level of Education and Annual Income constitute the covariate vector. This is the standard design-matrix formulation, and the same decomposition underlies generalised linear models and the feature-map view used in kernel methods."
+    },
+    {
+      "exchange_index": 3,
+      "exchange_id": "ex_0003",
+      "analogy_requested": false,
+      "original_tutor_text": "Write learning phase and classification phase. In the learning phase, the model is built from labeled training data. In the classification phase, the model predicts the label of a new instance. Testing uses this prediction phase to evaluate performance, but the conceptual two phases are learning and classification.",
+      "variant_tutor_text": "Your terminology conflates the operational split with the conceptual one. The canonical decomposition is induction and deduction: the learning phase performs inductive hypothesis construction over the labelled sample; the classification phase performs deductive application of the induced hypothesis to an unseen instance. Testing is an instantiation of the latter used for generalisation estimation, which is itself a question of bias-variance decomposition."
+    },
+    {
+      "exchange_index": 4,
+      "exchange_id": "ex_0004",
+      "analogy_requested": false,
+      "original_tutor_text": "Not exactly. The learning set is the labeled data available for learning and evaluation. It is split into a training set and a test set so that the model is learned on one part and checked on unseen data. Think of training data as practice questions and the test set as exam questions. If the exam questions were already used for practice, the score would be misleading.",
+      "variant_tutor_text": "Not equivalent. The learning set is the full labelled sample available for both induction and generalisation estimation; it admits a partition into training and test subsets so that the estimate of generalisation error is computed on a sample disjoint from the one used for hypothesis selection. Failure to enforce disjointness yields an optimistically biased estimator, which is the same pathology that motivates nested cross-validation under hyperparameter search."
+    },
+    {
+      "exchange_index": 5,
+      "exchange_id": "ex_0005",
+      "analogy_requested": false,
+      "original_tutor_text": "That is correct. Home Owner is binary categorical. Marital Status is nominal categorical because Single, Married, and Divorced are not naturally ordered. Level of Education is ordinal because Low, Moderate, and High have order. Annual Income is numerical. Defaulted Borrower is categorical and is the target.",
+      "variant_tutor_text": "Correct. Home Owner is a binary nominal covariate; Marital Status is nominal with cardinality three and no induced total order; Level of Education is ordinal, admitting a total order without a well-defined metric; Annual Income is ratio-scaled; Defaulted Borrower is the nominal response. The measurement-scale taxonomy here is Stevens's, and it constrains which similarity functions are admissible downstream."
+    },
+    {
+      "exchange_index": 6,
+      "exchange_id": "ex_0006",
+      "analogy_requested": false,
+      "original_tutor_text": "The symbols are not the key issue. The meaning is. Low, Moderate, and High are words, but they carry order. Marital Status also uses words, but Single, Married, and Divorced do not form a ranked scale. That contrast is the reason one is ordinal and the other is nominal categorical.",
+      "variant_tutor_text": "The orthography is not the discriminating property; the induced order relation is. Low, Moderate and High admit a total order, hence ordinal. Single, Married and Divorced admit no such relation, hence nominal. Note that ordinality without an interval structure means differences are not defined, which is why monotone transformations are permissible but arithmetic means are not."
+    },
+    {
+      "exchange_index": 7,
+      "exchange_id": "ex_0007",
+      "analogy_requested": false,
+      "original_tutor_text": "No. That is the base-rate trap. The test quality is not the same as P(sick | positive). Since only 1 percent of people are sick, the healthy group is huge. Even a 1 percent false-positive rate among healthy people can produce many positive tests.",
+      "variant_tutor_text": "Negative. You have committed a base-rate fallacy by conflating the likelihood P(+ | S) with the posterior P(S | +). Under a prevalence of 0.01, the healthy stratum dominates the sample space, so even a false-positive rate of 0.01 generates a substantial absolute count of positives from that stratum. This is the same phenomenon that governs precision degradation under class imbalance."
+    },
+    {
+      "exchange_index": 8,
+      "exchange_id": "ex_0008",
+      "analogy_requested": true,
+      "original_tutor_text": "Think of the test as a very accurate alarm in a building with 100 rooms. Only 1 room has a fire. The alarm catches that fire, but it also falsely rings in about 1 of the 99 safe rooms. So after hearing an alarm, fire and false alarm are roughly equally plausible. That is why the answer becomes 50 percent.",
+      "variant_tutor_text": "Consider a matched-filter detector operating at a signal-to-noise ratio where the prior probability of signal presence is 0.01. The detector's true-positive rate is 0.99, but the noise-only ensemble is ninety-nine times larger, so the expected count of noise-triggered detections approximately equals the expected count of genuine ones. The receiver-operating characteristic tells you nothing about which hypothesis to favour post-detection without the prior, which is why the posterior evaluates to 0.5."
+    },
+    {
+      "exchange_index": 9,
+      "exchange_id": "ex_0009",
+      "analogy_requested": false,
+      "original_tutor_text": "Let S mean sick and + mean positive. P(S | +) = P(+ | S)P(S) divided by [P(+ | S)P(S) + P(+ | healthy)P(healthy)]. Substitute: 0.99*0.01 / [(0.99*0.01) + (0.01*0.99)] = 0.0099/0.0198 = 0.5. So the probability is 50 percent.",
+      "variant_tutor_text": "Let S denote the disease state and + the observed test outcome. By Bayes' theorem with marginalisation over the partition {S, not-S}: P(S | +) = P(+ | S)P(S) / [P(+ | S)P(S) + P(+ | not-S)P(not-S)] = (0.99)(0.01) / [(0.99)(0.01) + (0.01)(0.99)] = 0.0099/0.0198 = 0.5. The denominator is the evidence term, and in the general case it is the normalising constant that makes variational approximation necessary."
+    },
+    {
+      "exchange_index": 10,
+      "exchange_id": "ex_0010",
+      "analogy_requested": false,
+      "original_tutor_text": "For each class, Naive Bayes computes a score: prior probability of the class times the product of conditional probabilities of the observed attribute values given that class. Then it chooses the class with the larger score. Compactly: score(c) = P(c) times product P(x_i | c).",
+      "variant_tutor_text": "Naive Bayes performs maximum a posteriori classification under a factorised likelihood: the discriminant for class c is P(c) times the product over i of P(x_i | c), and the decision rule is the argmax over c of that quantity. In log-space this is an additive discriminant, which is what makes it a linear classifier in the space of log-probabilities, a fact you will need if you meet logistic regression later."
+    },
+    {
+      "exchange_index": 11,
+      "exchange_id": "ex_0011",
+      "analogy_requested": false,
+      "original_tutor_text": "No. It is called naive because it assumes conditional independence of attributes given the class. That means once you condition on DB=Y or DB=N, the model treats attributes such as Home Owner and Marital Status as independent evidence. The assumption is strong, but it makes the classifier simple.",
+      "variant_tutor_text": "The nomenclature refers to the conditional-independence assumption, not to performance. The model posits that the covariates are mutually independent conditional on the class variable, which factorises a joint distribution of exponential size into a product of marginals. The assumption is generally violated, yet the induced decision boundary is frequently robust to that violation, a result attributable to the argmax being insensitive to calibration error in the estimated posterior."
+    },
+    {
+      "exchange_index": 12,
+      "exchange_id": "ex_0012",
+      "analogy_requested": false,
+      "original_tutor_text": "Yes. Count the target labels first. There are 3 DB=Y rows and 7 DB=N rows out of 10. So P(DB=Y)=3/10 and P(DB=N)=7/10. These are priors because they are known before looking at the new instance attributes.",
+      "variant_tutor_text": "Estimate the class marginals by maximum likelihood over the empirical distribution. The sample contains three realisations of DB=Y and seven of DB=N over ten observations, hence P(DB=Y)=3/10 and P(DB=N)=7/10. These are the prior marginals in the sense that they are estimable without conditioning on the covariate vector of the query instance; under a Dirichlet prior they would instead be posterior-mean estimates."
+    },
+    {
+      "exchange_index": 13,
+      "exchange_id": "ex_0013",
+      "analogy_requested": false,
+      "original_tutor_text": "Your numerator is right, but your denominator is wrong. Conditional probability means restrict the table to the condition first. There are 3 DB=Y rows, and all 3 have Home Owner=N. So P(Home Owner=N | DB=Y)=3/3, not 3/10.",
+      "variant_tutor_text": "Your numerator is correct; your denominator is not. Conditioning induces a restriction of the sample space to the conditioning event before normalisation. The event DB=Y has cardinality three, and all three realisations satisfy Home Owner=N, so P(Home Owner=N | DB=Y)=3/3, not 3/10. Normalising over the unrestricted space would yield the joint rather than the conditional."
+    },
+    {
+      "exchange_index": 14,
+      "exchange_id": "ex_0014",
+      "analogy_requested": false,
+      "original_tutor_text": "Yes. For DB=Y, Married never appears, so P(Married | DB=Y)=0. If income is treated discretely, Income=90 does not appear among DB=N rows, so P(Income=90 | DB=N)=0. Since Naive Bayes multiplies probabilities, one zero can erase a whole class score.",
+      "variant_tutor_text": "Correct. The event (Married, DB=Y) has empty support, so its maximum-likelihood estimate is identically zero; under a discrete treatment of income, (Income=90, DB=N) likewise has empty support. Because the discriminant is a product over covariates, a single zero-valued factor annihilates the entire class discriminant. This is the sparsity pathology that motivates additive smoothing generally."
+    },
+    {
+      "exchange_index": 15,
+      "exchange_id": "ex_0015",
+      "analogy_requested": true,
+      "original_tutor_text": "Imagine rating a recipe by multiplying ingredient scores. If one ingredient gets exactly zero, the whole recipe score becomes zero, even if every other ingredient is excellent. That is what an unseen attribute value can do to a Naive Bayes class score.",
+      "variant_tutor_text": "Consider a product-form utility over a compiler's optimisation passes, where the overall objective is the product of per-pass gain factors. A pass with a measured gain factor of exactly zero drives the product to zero regardless of the multiplicative contribution of every other pass, because the product operator has zero as an absorbing element. The maximum-likelihood estimate of an unobserved attribute-value pair has the same absorbing behaviour in the Naive Bayes discriminant."
+    },
+    {
+      "exchange_index": 16,
+      "exchange_id": "ex_0016",
+      "analogy_requested": false,
+      "original_tutor_text": "Only if you also adjust the denominator. For a categorical value, Laplace smoothing uses (count + 1)/(class_count + number_of_possible_values). Adding one only to the numerator is a common wrong shortcut.",
+      "variant_tutor_text": "Only under simultaneous denominator correction. The Laplace estimator for a categorical covariate is (count + 1)/(class_count + |V|), where |V| denotes the cardinality of the value domain, so that the smoothed estimates remain a normalised probability mass function. Incrementing the numerator alone violates normalisation and is the common error; the general form is the symmetric Dirichlet prior with concentration parameter one."
+    },
+    {
+      "exchange_index": 17,
+      "exchange_id": "ex_0017",
+      "analogy_requested": false,
+      "original_tutor_text": "Yes, treating income as a discrete value for this exercise calculation. DB=N score = 7/10 * 5/9 * 5/10 * 1/17, about 0.0114. DB=Y score = 3/10 * 4/5 * 1/6 * 2/13, about 0.00615. Since 0.0114 is larger, classify X as DB=N.",
+      "variant_tutor_text": "Affirmative, under a discrete treatment of the income covariate for this instantiation. The DB=N discriminant evaluates to 7/10 * 5/9 * 5/10 * 1/17, approximately 0.0114; the DB=Y discriminant evaluates to 3/10 * 4/5 * 1/6 * 2/13, approximately 0.00615. The argmax selects DB=N. Note these are unnormalised posteriors, so the ratio rather than the magnitude is what carries decision-theoretic content."
+    },
+    {
+      "exchange_index": 18,
+      "exchange_id": "ex_0018",
+      "analogy_requested": false,
+      "original_tutor_text": "It does not contradict it if we state the assumption. Numeric attributes can be discretized, or modeled with a distribution such as a Gaussian for each class. The Gaussian version estimates class-specific mean and variance and uses the density as the conditional likelihood. In the table calculation, we treated income as discrete because the exercise asks for attribute-value conditional probabilities and Laplace smoothing.",
+      "variant_tutor_text": "There is no inconsistency once the parametric assumption is made explicit. A continuous covariate admits either a discretisation into ordered bins or a class-conditional parametric density, canonically Gaussian, whose class-specific mean and variance are estimated by maximum likelihood and whose density value substitutes for the conditional mass. This instantiation adopts discretisation because the exercise specifies attribute-value conditionals under additive smoothing."
+    },
+    {
+      "exchange_index": 19,
+      "exchange_id": "ex_0019",
+      "analogy_requested": false,
+      "original_tutor_text": "That is the problem. Information Gain can prefer attributes with many distinct values. ID is the obvious example: splitting by ID creates one-row pure leaves, so training uncertainty disappears. But ID usually does not generalize to future examples.",
+      "variant_tutor_text": "That is precisely the pathology. Information Gain is biased toward high-cardinality partitions: the ID covariate induces a partition into singleton cells, each of which is class-pure, so the conditional entropy of the response given the partition vanishes and the mutual information attains its maximum. The induced hypothesis has no generalisation capacity, which is a variance-dominated regime in bias-variance terms."
+    },
+    {
+      "exchange_index": 20,
+      "exchange_id": "ex_0020",
+      "analogy_requested": true,
+      "original_tutor_text": "Using ID as a split is like a teacher memorizing each student's seat number instead of learning the topic. It can perfectly explain past classroom seating, but it does not help with a new student. That is why high Information Gain from ID is suspicious.",
+      "variant_tutor_text": "Consider a hash function evaluated as a compression scheme. A function that maps every input to a distinct bucket achieves perfect discrimination on the observed key set and zero residual collision entropy, yet it encodes only the identity of the observed keys and transfers no structure to unseen keys. A partition induced by a primary key has exactly this property, which is why an Information Gain of one from ID is diagnostic of memorisation rather than of structure."
+    },
+    {
+      "exchange_index": 21,
+      "exchange_id": "ex_0021",
+      "analogy_requested": false,
+      "original_tutor_text": "Gain Ratio reduces that bias by normalizing Information Gain with split information. If a split fragments data into many tiny branches, the split information is large, so the ratio becomes less attractive. This is why ID can have Information Gain 1 but a Gain Ratio around 0.231.",
+      "variant_tutor_text": "Gain Ratio applies a normalisation by the split information, which is the entropy of the partition-induced distribution over child cells. A partition into many low-cardinality cells has high split information, so the normalised statistic is attenuated. Consequently the ID covariate can attain a mutual information of one while its Gain Ratio is approximately 0.231. The construction is a crude penalisation term, related in spirit to the description-length criteria used elsewhere."
+    },
+    {
+      "exchange_index": 22,
+      "exchange_id": "ex_0022",
+      "analogy_requested": false,
+      "original_tutor_text": "Entropy means class uncertainty. A pure node has entropy 0. A perfectly mixed binary node, such as 10 positives and 10 negatives, has entropy 1. Information Gain measures how much the split reduces that uncertainty, using weighted child entropies.",
+      "variant_tutor_text": "Entropy is the expected self-information of the class variable under the empirical distribution, measured in bits. A class-pure node has entropy zero; a binary node with equiprobable classes, for instance ten positives and ten negatives, has entropy one. Information Gain is the mutual information between the covariate and the response, computed as parent entropy minus the size-weighted expectation of child entropies."
+    },
+    {
+      "exchange_index": 23,
+      "exchange_id": "ex_0023",
+      "analogy_requested": false,
+      "original_tutor_text": "Because child nodes can have different sizes. A child with 10 cases should influence the split more than a child with 1 case. So the child entropy is weighted by child size divided by parent size. Equal averaging would distort the split quality.",
+      "variant_tutor_text": "Because the child entropies must be aggregated under the induced measure rather than under the counting measure. A cell containing ten observations carries ten times the probability mass of a cell containing one, so each child entropy enters weighted by the ratio of child cardinality to parent cardinality. Unweighted averaging would compute an expectation under the wrong measure and would misrank partitions."
+    },
+    {
+      "exchange_index": 24,
+      "exchange_id": "ex_0024",
+      "analogy_requested": false,
+      "original_tutor_text": "Yes. Graduation gives meaningful groups: Middle School is pure class 1, High School is mostly class 0, and College is mixed. Its Gain Ratio is about 0.436, while ID's Gain Ratio is about 0.231. So Gain Ratio pushes us away from ID-like memorization.",
+      "variant_tutor_text": "Affirmative. The Graduation covariate induces cells with non-degenerate class structure: Middle School is class-pure, High School is class-dominant, and College is mixed. Its Gain Ratio is approximately 0.436 against approximately 0.231 for ID, so the normalised criterion reverses the ranking that unnormalised mutual information would produce. This is regularisation by criterion design rather than by explicit penalty."
+    },
+    {
+      "exchange_index": 25,
+      "exchange_id": "ex_0025",
+      "analogy_requested": false,
+      "original_tutor_text": "Use this memory bridge: optimistic trusts training error only; pessimistic adds a penalty for leaf count; reduced-error uses validation performance to decide pruning. So the three differ by what evidence they trust: training, training plus complexity, or validation.",
+      "variant_tutor_text": "The three estimators differ in the evidence set over which the risk functional is computed. The optimistic estimator evaluates resubstitution error on the induction sample; the pessimistic estimator augments resubstitution error with a complexity term linear in leaf cardinality; the reduced-error criterion evaluates on a held-out validation partition. The first is a biased estimator of generalisation risk, the second a penalised one, the third an unbiased one under the usual assumptions."
+    },
+    {
+      "exchange_index": 26,
+      "exchange_id": "ex_0026",
+      "analogy_requested": false,
+      "original_tutor_text": "k is the number of leaf nodes. The exercise explicitly defines complexity using leaf nodes, so the penalty is Omega * k / Ntrain. Do not use internal nodes or total nodes.",
+      "variant_tutor_text": "k denotes leaf cardinality. The exercise specifies the complexity functional over terminal nodes, so the penalised risk is resubstitution error plus Omega * k / Ntrain. Internal-node or total-node cardinality would define a different functional and is not the specified one; the choice of complexity measure is itself a modelling decision, as in the structural-risk-minimisation framework."
+    },
+    {
+      "exchange_index": 27,
+      "exchange_id": "ex_0027",
+      "analogy_requested": false,
+      "original_tutor_text": "Yes. That is the trade-off. A larger tree can fit training data better but pay a higher complexity penalty. Think of it like a rulebook: a rulebook with too many tiny rules may explain old cases, but it may be less reliable for new ones.",
+      "variant_tutor_text": "Correct, and the trade-off is the point. A higher-capacity hypothesis attains lower resubstitution error while incurring a larger complexity penalty, so the penalised objective can be minimised by the lower-capacity model. This is the discrete analogue of the regularisation path in penalised estimation, and the Omega parameter plays the role of the regularisation coefficient."
+    },
+    {
+      "exchange_index": 28,
+      "exchange_id": "ex_0028",
+      "analogy_requested": false,
+      "original_tutor_text": "Reduced-error pruning considers pruning a node by replacing its subtree with a leaf labeled by the most common class at that node. The pruning is accepted if validation-set performance becomes no worse. If performance is equal, the simpler tree is preferred.",
+      "variant_tutor_text": "Reduced-error pruning evaluates, for a candidate internal node, the substitution of its induced subtree by a terminal node labelled with the majority class under the local empirical distribution. The substitution is accepted when validation risk does not increase, with ties resolved toward the lower-capacity hypothesis. The procedure is greedy and bottom-up, hence not guaranteed to reach the global optimum of the penalised objective."
+    },
+    {
+      "exchange_index": 29,
+      "exchange_id": "ex_0029",
+      "analogy_requested": false,
+      "original_tutor_text": "Then there is no majority class, so a tie-breaking rule is needed. A careful tutor should not pretend the tie is obvious. It should state the ambiguity and then state the assumption used, such as breaking ties toward positive or negative consistently.",
+      "variant_tutor_text": "Then the local empirical distribution is equiprobable and the majority-class label is not identified, so the procedure requires an explicit tie-breaking rule. The rule must be declared rather than left implicit, since an undeclared convention makes the induced hypothesis non-reproducible; a consistent bias toward one class is the usual choice, and the asymmetric-cost formulation would resolve it by expected loss instead."
+    },
+    {
+      "exchange_index": 30,
+      "exchange_id": "ex_0030",
+      "analogy_requested": false,
+      "original_tutor_text": "Because TP, FP, TN, and FN depend on the positive class. Here TP means true Y predicted Y, FN means true Y predicted N, FP means true N predicted Y, and TN means true N predicted N. If you use N as positive, every metric changes.",
+      "variant_tutor_text": "Because the confusion-matrix cells are defined relative to a designated positive class. Under Y positive, TP counts (actual Y, predicted Y), FN counts (actual Y, predicted N), FP counts (actual N, predicted Y), and TN counts (actual N, predicted N). Designating N positive transposes the matrix and consequently transforms every derived functional. Only the accuracy functional is invariant under that transposition."
+    },
+    {
+      "exchange_index": 31,
+      "exchange_id": "ex_0031",
+      "analogy_requested": false,
+      "original_tutor_text": "From the table: TP=2, because two Y cases are predicted Y. FN=1, because one Y case is predicted N. FP=2, because two N cases are predicted Y. TN=5, because five N cases are predicted N.",
+      "variant_tutor_text": "From the contingency table: TP=2, since two actual-Y instances receive predicted label Y; FN=1, since one actual-Y instance receives predicted label N; FP=2, since two actual-N instances receive predicted label Y; TN=5, since five actual-N instances receive predicted label N. The margins of this table are what the chi-squared independence test would condition on."
+    },
+    {
+      "exchange_index": 32,
+      "exchange_id": "ex_0032",
+      "analogy_requested": false,
+      "original_tutor_text": "Precision asks: among predicted Y cases, how many were truly Y? Recall asks: among actual Y cases, how many did we catch? Here precision = 2/(2+2)=0.5 and recall = 2/(2+1)=0.667. Same TP, different denominator.",
+      "variant_tutor_text": "The two functionals differ in their normalising margin. Precision conditions on the predicted-positive margin: TP/(TP+FP) = 2/(2+2) = 0.5. Recall conditions on the actual-positive margin: TP/(TP+FN) = 2/(2+1) = 0.667. The numerator is common; the conditioning event differs. In the decision-theoretic view they correspond to different asymmetric loss functions."
+    },
+    {
+      "exchange_index": 33,
+      "exchange_id": "ex_0033",
+      "analogy_requested": false,
+      "original_tutor_text": "Sensitivity is recall: TP/(TP+FN). Specificity is TN/(TN+FP). Here sensitivity is 2/3, about 0.667, and specificity is 5/7, about 0.714.",
+      "variant_tutor_text": "Sensitivity is definitionally identical to recall, TP/(TP+FN). Specificity is the corresponding functional on the actual-negative margin, TN/(TN+FP). Numerically sensitivity is 2/3, approximately 0.667, and specificity is 5/7, approximately 0.714. The pair (1 - specificity, sensitivity) is the coordinate that traces the receiver-operating characteristic as the decision threshold varies."
+    },
+    {
+      "exchange_index": 34,
+      "exchange_id": "ex_0034",
+      "analogy_requested": false,
+      "original_tutor_text": "F1 is 2PR/(P+R). With precision 0.5 and recall 0.667, F1 is about 0.571. Do not compute F1 from accuracy. Accuracy is (TP+TN)/total = 7/10 = 0.7, which is a separate metric.",
+      "variant_tutor_text": "F1 is the harmonic mean of precision and recall, 2PR/(P+R), evaluating to approximately 0.571 at P=0.5 and R=0.667. It is not derivable from accuracy, which is the trace-normalised functional (TP+TN)/N = 7/10 = 0.7 and conditions on no margin at all. The harmonic mean is chosen over the arithmetic mean because it is dominated by the smaller argument, which is the F-beta family at beta equal to one."
+    },
+    {
+      "exchange_index": 35,
+      "exchange_id": "ex_0035",
+      "analogy_requested": false,
+      "original_tutor_text": "The margin of error is Z * sqrt(p(1-p)/N). N is inside the denominator under the square root. So larger N makes the margin smaller and the interval narrower. Smaller N makes the interval wider.",
+      "variant_tutor_text": "The margin of error is Z * sqrt(p(1-p)/N), so N enters through the standard error of the binomial proportion estimator, which decays as N to the power minus one half. Consequently the interval contracts at the root-N rate. This is the normal approximation to the binomial and is unreliable when Np or N(1-p) is small, where the Wilson or Clopper-Pearson construction is preferred."
+    },
+    {
+      "exchange_index": 36,
+      "exchange_id": "ex_0036",
+      "analogy_requested": false,
+      "original_tutor_text": "The interval is two-sided. A 90 percent interval leaves 5 percent in each tail, so the table entry is 0.95, which gives Z=1.64. Using 1.28 would confuse the one-sided 0.90 entry with the two-sided interval requirement.",
+      "variant_tutor_text": "The construction is two-sided, so the 90 percent nominal coverage allocates 5 percent to each tail and the required quantile is the 0.95 point of the standard normal, giving Z=1.64. The 1.28 value is the 0.90 quantile and corresponds to a one-sided construction; substituting it conflates one-sided and two-sided coverage. The distinction is the same one that governs one- versus two-tailed hypothesis tests."
+    },
+    {
+      "exchange_index": 37,
+      "exchange_id": "ex_0037",
+      "analogy_requested": false,
+      "original_tutor_text": "Margin = 1.64 * sqrt(0.85*0.15/200), about 0.041. The interval is 0.85 plus or minus 0.041, so approximately [0.809, 0.891]. With N=50 it is wider, and with N=500 it is narrower.",
+      "variant_tutor_text": "Margin = 1.64 * sqrt((0.85)(0.15)/200), approximately 0.041, hence the interval is 0.85 plus or minus 0.041, approximately [0.809, 0.891]. Under N=50 the interval dilates by a factor of two, and under N=500 it contracts by a factor of approximately 1.58, both by the root-N scaling. The coverage statement is frequentist and does not license a probability statement about the parameter."
+    },
+    {
+      "exchange_index": 38,
+      "exchange_id": "ex_0038",
+      "analogy_requested": false,
+      "original_tutor_text": "No. The exercise gives a Z-statistic because the difference must be statistically significant. A small accuracy difference may be a draw. Use the given formula and the rule: classifier A wins only if Z > 1.64.",
+      "variant_tutor_text": "Negative. Ranking by point estimate ignores the sampling variability of the difference, so the exercise specifies a Z-statistic for the difference of two proportions. The decision rule accepts classifier A as superior only when Z exceeds 1.64, which is the one-sided 0.95 critical value. A difference failing that threshold is not evidence of equality, merely absence of evidence of difference."
+    },
+    {
+      "exchange_index": 39,
+      "exchange_id": "ex_0039",
+      "analogy_requested": false,
+      "original_tutor_text": "Congressional Voting Records gives Z about -2.69, so DT wins. Dermatology gives Z about 1.67, so NB wins. Employee attrition gives Z about -0.27, so it is a draw. Therefore NB has 1 win, 1 draw, 1 loss; DT also has 1 win, 1 draw, 1 loss.",
+      "variant_tutor_text": "Under the specified statistic with A=NB and B=DT: Congressional Voting Records yields Z approximately -2.69, so DT dominates; Dermatology yields Z approximately 1.67, so NB dominates; Employee Attrition yields Z approximately -0.27, which fails the critical value in both directions and is therefore indeterminate. The resulting tallies are one win, one indeterminate and one loss for each, so the comparison does not identify a dominant learner. No multiple-comparison correction is applied here."
+    },
+    {
+      "exchange_index": 40,
+      "exchange_id": "ex_0040",
+      "analogy_requested": false,
+      "original_tutor_text": "Yes, and include the random parts. A random forest is an ensemble of decision trees combined by voting. The random components are random training samples for the trees and random subsets of attributes considered during split construction.",
+      "variant_tutor_text": "Affirmative, with the stochastic components specified. A random forest is a bagged ensemble of decision-tree base learners aggregated by plurality vote, with two independent randomisation mechanisms: bootstrap resampling of the induction sample per base learner, and random subspace selection of the covariate set at each split. Both mechanisms act to decorrelate the base learners, which is what reduces the variance component of the ensemble risk."
+    },
+    {
+      "exchange_index": 41,
+      "exchange_id": "ex_0041",
+      "analogy_requested": true,
+      "original_tutor_text": "Think of one decision tree as one judge. A random forest is a panel of judges. Each judge sees a slightly different sample of cases and different subsets of evidence, then the panel votes. The analogy stops there, because the actual method is still an ensemble of decision trees.",
+      "variant_tutor_text": "Consider an ensemble of independent noisy estimators of a common parameter, each with identical bias and finite variance. Averaging M such estimators leaves the bias unchanged and reduces the variance by a factor approaching M under independence, and by a factor governed by the mean pairwise correlation otherwise. Bootstrap resampling and random subspace selection are the mechanisms that drive that correlation down; the ensemble is still a collection of decision trees, so the estimator analogy should not be pushed past the variance argument."
+    },
+    {
+      "exchange_index": 42,
+      "exchange_id": "ex_0042",
+      "analogy_requested": false,
+      "original_tutor_text": "Use a ladder. Hold-out is one train-test split. Random subsampling repeats random hold-out splits. Cross-validation uses k folds and rotates the test fold. Stratified cross-validation preserves class proportions in folds. Leave-one-out is k-fold with k equal to the number of instances. Bootstrap samples with replacement.",
+      "variant_tutor_text": "The family is ordered by how the resampling scheme partitions the sample. Hold-out is a single partition; random subsampling is a Monte Carlo replication of hold-out; k-fold cross-validation induces a partition into k blocks with each serving once as the evaluation block; stratified cross-validation constrains the partition to preserve the class marginal; leave-one-out is the limiting case at k equal to sample size; the bootstrap resamples with replacement and evaluates on the out-of-bag complement. They trade bias against variance of the risk estimate differently."
+    },
+    {
+      "exchange_index": 43,
+      "exchange_id": "ex_0043",
+      "analogy_requested": false,
+      "original_tutor_text": "No. Clustering assigns cluster memberships, but those are not predefined target labels learned from labeled examples. Classification is supervised; clustering is unsupervised. Clustering discovers groups based on similarity or distance.",
+      "variant_tutor_text": "Negative. Cluster membership is a latent assignment induced from the covariate geometry, not a prediction of an observed response variable estimated from labelled supervision. Classification operates under supervision; partition induction does not, and its objective is defined over a similarity or dissimilarity functional rather than over an empirical risk with respect to labels. The latent-variable formulation makes this explicit under a mixture model."
+    },
+    {
+      "exchange_index": 44,
+      "exchange_id": "ex_0044",
+      "analogy_requested": false,
+      "original_tutor_text": "Classification example: predict Defaulted Borrower as Y or N from labeled borrower records. Clustering example: group customers by similar buying behavior without pre-existing group labels. The first predicts a known target; the second discovers structure.",
+      "variant_tutor_text": "Supervised instance: estimate the response Defaulted Borrower over {Y, N} from a labelled sample of borrower records. Unsupervised instance: induce a partition of a customer population over purchase-behaviour covariates with no observed group membership. The first estimates a known response; the second induces latent structure whose validity must be assessed by an internal index such as silhouette rather than by held-out risk."
+    },
+    {
+      "exchange_index": 45,
+      "exchange_id": "ex_0045",
+      "analogy_requested": false,
+      "original_tutor_text": "Choose K initial centroids; assign each point to the nearest centroid; recompute each centroid as the mean of assigned points; repeat assignment and recomputation until assignments or centroids stop changing. The objective is to reduce SSE, the sum of squared distances from each point to its assigned centroid.",
+      "variant_tutor_text": "Initialise K centroids; assign each observation to the centroid minimising Euclidean distance, which induces a Voronoi partition of the covariate space; recompute each centroid as the arithmetic mean of its assigned observations; iterate until the assignment map is stationary. The procedure is coordinate descent on the within-cluster sum of squared deviations, SSE, and therefore converges monotonically to a local optimum with no global guarantee."
+    },
+    {
+      "exchange_index": 46,
+      "exchange_id": "ex_0046",
+      "analogy_requested": false,
+      "original_tutor_text": "No. A centroid is the mean of assigned points, so it can lie between original points. For example, after one Exercise 6 assignment, a centroid can become (3.5, 6.2), even though no original point has exactly that coordinate.",
+      "variant_tutor_text": "Negative. The centroid is the arithmetic mean of the assigned observations and therefore need not lie in the support of the empirical distribution. Following one assignment step in the Exercise 6 instance a centroid attains (3.5, 6.2), which coincides with no observation. Requiring the exemplar to be an observed point defines a different objective, namely the K-medoids formulation."
+    },
+    {
+      "exchange_index": 47,
+      "exchange_id": "ex_0047",
+      "analogy_requested": false,
+      "original_tutor_text": "Let C1=p10=(7,3) and C2=p11=(6.5,1). After the first assignment, C1 gets p5, p6, p7, p8, p10. C2 gets p1, p2, p3, p4, p9, p11. The SSE using the starting centroids is 224.750.",
+      "variant_tutor_text": "Initialising C1=p10=(7,3) and C2=p11=(6.5,1) and applying the assignment step under Euclidean distance: C1 receives {p5, p6, p7, p8, p10} and C2 receives {p1, p2, p3, p4, p9, p11}. The objective evaluated at the initial centroids is SSE=224.750. That this initialisation is arbitrary is the reason k-means++ seeding exists."
+    },
+    {
+      "exchange_index": 48,
+      "exchange_id": "ex_0048",
+      "analogy_requested": false,
+      "original_tutor_text": "Take coordinate-wise means. For C1, average p5, p6, p7, p8, and p10 to get (3.5, 6.2). For C2, average p1, p2, p3, p4, p9, and p11 to get approximately (3.583, 1.583).",
+      "variant_tutor_text": "By coordinate-wise arithmetic mean over each cluster's assigned observations. Averaging {p5, p6, p7, p8, p10} yields C1=(3.5, 6.2); averaging {p1, p2, p3, p4, p9, p11} yields C2 approximately (3.583, 1.583). The mean is the minimiser of the sum of squared deviations, which is precisely why the update step takes this form and not, say, the componentwise median."
+    },
+    {
+      "exchange_index": 49,
+      "exchange_id": "ex_0049",
+      "analogy_requested": false,
+      "original_tutor_text": "Yes. That word again refers to the loop step. Using the updated centroids, C1 gets p5, p6, p7, p8, and C2 gets p1, p2, p3, p4, p9, p10, p11. The new centroids are C1=(2.625, 7.000) and C2 approximately (4.071, 1.786). SSE drops to about 50.407.",
+      "variant_tutor_text": "Affirmative; the referent is the assignment step of the coordinate-descent iteration. Under the updated centroids, C1 receives {p5, p6, p7, p8} and C2 receives {p1, p2, p3, p4, p9, p10, p11}, giving C1=(2.625, 7.000) and C2 approximately (4.071, 1.786), with the objective decreasing to SSE approximately 50.407. Monotone decrease is guaranteed because each step is an exact minimisation in one block of variables."
+    },
+    {
+      "exchange_index": 50,
+      "exchange_id": "ex_0050",
+      "analogy_requested": false,
+      "original_tutor_text": "Because after initialization, p10 is just a normal data point. It is reassigned to whichever updated centroid is closer. Initial centroid status does not permanently lock a point into that cluster.",
+      "variant_tutor_text": "Because the initialisation confers no persistent status on the observation. Following the first update, p10 is an ordinary element of the sample and is reassigned by the same nearest-centroid rule as any other, so it migrates whenever the updated centroid geometry favours the alternative cell. Initialisation affects only which local optimum the descent reaches."
+    },
+    {
+      "exchange_index": 51,
+      "exchange_id": "ex_0051",
+      "analogy_requested": false,
+      "original_tutor_text": "Using C1=(2.625,7.000) and C2=(4.071,1.786), the assignments stay the same. Since assignments and centroids no longer change, K-Means terminates. The final SSE is about 42.830.",
+      "variant_tutor_text": "At C1=(2.625,7.000) and C2=(4.071,1.786) the assignment map is stationary, so the coordinate-descent iteration has reached a fixed point and terminates with SSE approximately 42.830. Stationarity of the assignment map is the standard termination predicate; it certifies local optimality only, and a different initialisation may terminate at a different fixed point with a larger objective."
+    },
+    {
+      "exchange_index": 52,
+      "exchange_id": "ex_0052",
+      "analogy_requested": true,
+      "original_tutor_text": "Use the city-block analogy. Manhattan distance is walking along blocks: sum |x_i - y_i|. Euclidean distance is straight-line distance: sqrt(sum (x_i - y_i)^2). Both are distances, so smaller means more similar.",
+      "variant_tutor_text": "Consider the two functionals as instances of the Minkowski p-norm on the difference vector. Manhattan distance is the p=1 case, sum over i of |x_i - y_i|; Euclidean distance is the p=2 case, the square root of the sum over i of (x_i - y_i) squared. Both are metrics in the formal sense, satisfying identity, symmetry and the triangle inequality, so both are dissimilarity functionals for which smaller values denote greater proximity; the p=1 case is the one that stays well-behaved in high dimension."
+    },
+    {
+      "exchange_index": 53,
+      "exchange_id": "ex_0053",
+      "analogy_requested": false,
+      "original_tutor_text": "Cosine similarity compares vector direction. It is x dot y divided by ||x|| times ||y||. It is a similarity, so larger means more similar. In general it ranges from -1 to 1; for nonnegative data it commonly ranges from 0 to 1.",
+      "variant_tutor_text": "Cosine similarity is the inner product normalised by the product of Euclidean norms, x dot y divided by ||x|| times ||y||, hence the cosine of the angle subtended in the inner-product space. It is a similarity rather than a dissimilarity functional, so larger values denote greater proximity. Its range is [-1, 1] in general and [0, 1] on the nonnegative orthant; it is scale-invariant, which is why it is standard for term-frequency representations."
+    },
+    {
+      "exchange_index": 54,
+      "exchange_id": "ex_0054",
+      "analogy_requested": false,
+      "original_tutor_text": "Advantages: it is simple, efficient, and easy to explain. Disadvantages: K must be chosen, results can depend on initialization, centroids are sensitive to outliers, and the method works best for compact, centroid-friendly clusters. It struggles with very different sizes, densities, or non-globular shapes.",
+      "variant_tutor_text": "The favourable properties are low computational complexity, linear in sample size per iteration, and interpretability of the centroid as a cluster representative. The unfavourable ones are the requirement to specify K exogenously, sensitivity of the attained local optimum to initialisation, non-robustness of the mean to outlying observations, and an implicit isotropic-variance assumption that restricts it to compact, approximately spherical cells of comparable cardinality and density."
+    },
+    {
+      "exchange_index": 55,
+      "exchange_id": "ex_0055",
+      "analogy_requested": false,
+      "original_tutor_text": "Not exactly. Each split uses K-Means with K=2, but the full algorithm repeats binary splitting. It starts with all points in one cluster, chooses a cluster to split, tries bisections, keeps the split with the lowest SSE, and repeats until the desired number of clusters exists.",
+      "variant_tutor_text": "Not equivalent. Each bisection applies the K=2 instantiation, but the enclosing procedure is a divisive hierarchical scheme: it initialises with the trivial partition, selects a cell for bisection under a specified criterion, evaluates candidate bisections and retains the one minimising SSE, and recurses until the target cardinality is attained. The output is therefore a dendrogram truncated at K, not a flat partition."
+    },
+    {
+      "exchange_index": 56,
+      "exchange_id": "ex_0056",
+      "analogy_requested": false,
+      "original_tutor_text": "Standard K-Means tries to form K clusters directly. Bisecting K-Means builds K clusters through repeated two-way splits. That repeated splitting is the key difference, not merely the use of K=2 inside each split.",
+      "variant_tutor_text": "Standard K-Means performs a single simultaneous optimisation over all K cells; bisecting K-Means performs a sequence of nested binary optimisations. The distinguishing property is the divisive hierarchical control structure, not the cardinality of each local instantiation. The former is sensitive to global initialisation; the latter is sensitive instead to the cell-selection criterion at each level."
+    },
+    {
+      "exchange_index": 57,
+      "exchange_id": "ex_0057",
+      "analogy_requested": false,
+      "original_tutor_text": "Yes. Exercise 1 introduces supervised classification and data roles. Exercise 2 gives probabilistic classification with Bayes and Naive Bayes. Exercise 3 studies decision-tree split criteria and pruning estimates. Exercise 4 evaluates classifiers and compares models. Exercise 6 moves to unsupervised clustering, where distances and centroids matter more than target labels.",
+      "variant_tutor_text": "Affirmative. Exercise 1 establishes the supervised induction framework and the design-matrix formulation; Exercise 2 develops probabilistic classification under a factorised likelihood with additive smoothing; Exercise 3 treats recursive partitioning, impurity-based split criteria and penalised complexity; Exercise 4 addresses risk estimation, interval construction and paired comparison under sampling variability; Exercise 6 transitions to unsupervised partition induction, where the objective is defined over a dissimilarity functional rather than over an empirical risk with respect to observed labels."
+    },
+    {
+      "exchange_index": 58,
+      "exchange_id": "ex_0058",
+      "analogy_requested": false,
+      "original_tutor_text": "If someone says, 'K-Means predicts the target attribute of each point,' what is wrong with that sentence? Use the words supervised, unsupervised, and target attribute.",
+      "variant_tutor_text": "Evaluate the following proposition: 'K-Means estimates the response variable of each observation.' Identify the category error, using the terms supervised, unsupervised and response variable in your answer."
+    },
+    {
+      "exchange_index": 59,
+      "exchange_id": "ex_0059",
+      "analogy_requested": false,
+      "original_tutor_text": "Correct. You separated the concepts cleanly: classification predicts a target attribute from labeled training data; K-Means groups unlabeled data by distance to centroids.",
+      "variant_tutor_text": "Correct. You have distinguished the two objectives without conflation: supervised induction estimates an observed response from a labelled sample, whereas K-Means induces a latent partition under a dissimilarity functional with no observed response. The distinction is one of objective, not of algorithm, which is why the same distance computations appear in both settings."
+    },
+    {
+      "exchange_index": 60,
+      "exchange_id": "ex_0060",
+      "analogy_requested": false,
+      "original_tutor_text": "If P(Married | DB=Y)=0 and all other DB=Y probabilities are high, what happens to the DB=Y score without smoothing, and what method from the exercise fixes it?",
+      "variant_tutor_text": "Suppose the maximum-likelihood estimate of P(Married | DB=Y) is zero while all remaining DB=Y conditionals are bounded away from zero. State the resulting value of the DB=Y discriminant under unsmoothed estimation, and name the estimator specified in the exercise that resolves it."
+    },
+    {
+      "exchange_index": 61,
+      "exchange_id": "ex_0061",
+      "analogy_requested": false,
+      "original_tutor_text": "Correct. To make it exact, Laplace smoothing uses count plus one divided by class count plus number of possible values. The denominator detail is essential.",
+      "variant_tutor_text": "Correct. Stated precisely, the Laplace estimator is (count + 1)/(class_count + |V|), where |V| is the cardinality of the value domain; the denominator correction is what preserves normalisation of the smoothed conditional mass function. It is the posterior mean under a symmetric Dirichlet prior with concentration parameter one, which is the general form the exercise instantiates."
+    },
+    {
+      "exchange_index": 62,
+      "exchange_id": "ex_0062",
+      "analogy_requested": false,
+      "original_tutor_text": "Use four passes. First identify the task type: classification, probability, decision tree, evaluation, or clustering. Second write the formula before substituting numbers. Third name the denominator explicitly. Fourth interpret every numeric result in one sentence, such as classify as DB=N or larger N narrows the confidence interval.",
+      "variant_tutor_text": "Adopt a four-stage protocol. Identify the inferential task: supervised induction, probabilistic classification, recursive partitioning, risk estimation, or partition induction. State the estimator or functional symbolically before numerical substitution. Identify the conditioning event or normalising margin explicitly. Interpret each numerical result decision-theoretically in one statement, for instance that the argmax selects DB=N, or that the interval contracts at the root-N rate."
+    }
+  ]
+}

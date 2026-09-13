@@ -1,0 +1,336 @@
+{
+ "ex_0001": {
+  "primary": "KC_CLU_CORE_004",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0002": {
+  "primary": "KC_CLF_UND_006",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0003": {
+  "primary": "KC_CLF_UND_001",
+  "secondary": [
+   "KC_CLF_UND_002"
+  ],
+  "type": "multi_kc"
+ },
+ "ex_0004": {
+  "primary": "KC_CLF_UND_003",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0005": {
+  "primary": "KC_CLF_UND_007",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0006": {
+  "primary": "KC_CLF_UND_007",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0007": {
+  "primary": "KC_CLF_NB_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0008": {
+  "primary": "KC_CLF_NB_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0009": {
+  "primary": "KC_CLF_NB_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0010": {
+  "primary": "KC_CLF_NB_006",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0011": {
+  "primary": "KC_CLF_NB_004",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0012": {
+  "primary": "KC_CLF_NB_002",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0013": {
+  "primary": "KC_CLF_NB_003",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0014": {
+  "primary": "KC_CLF_NB_007",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0015": {
+  "primary": "KC_CLF_NB_007",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0016": {
+  "primary": "KC_CLF_NB_008",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0017": {
+  "primary": "KC_CLF_NB_008",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0018": {
+  "primary": "KC_CLF_NB_009",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0019": {
+  "primary": "KC_CLF_DT_006",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0020": {
+  "primary": "KC_CLF_DT_006",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0021": {
+  "primary": "KC_CLF_DT_008",
+  "secondary": [
+   "KC_CLF_DT_006"
+  ],
+  "type": "kc"
+ },
+ "ex_0022": {
+  "primary": "KC_CLF_DT_005",
+  "secondary": [
+   "KC_CLF_DT_006"
+  ],
+  "type": "multi_kc"
+ },
+ "ex_0023": {
+  "primary": "KC_CLF_DT_005",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0024": {
+  "primary": "KC_CLF_DT_008",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0025": {
+  "primary": "KC_CLF_PRUNE_002",
+  "secondary": [
+   "KC_CLF_PRUNE_003",
+   "KC_CLF_PRUNE_004"
+  ],
+  "type": "multi_kc"
+ },
+ "ex_0026": {
+  "primary": "KC_CLF_PRUNE_003",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0027": {
+  "primary": "KC_CLF_PRUNE_003",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0028": {
+  "primary": "KC_CLF_PRUNE_004",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0029": {
+  "primary": "KC_CLF_PRUNE_004",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0030": {
+  "primary": "KC_EVAL_BASIC_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0031": {
+  "primary": "KC_EVAL_BASIC_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0032": {
+  "primary": "KC_EVAL_BASIC_003",
+  "secondary": [
+   "KC_EVAL_BASIC_004"
+  ],
+  "type": "multi_kc"
+ },
+ "ex_0033": {
+  "primary": "KC_EVAL_BASIC_004",
+  "secondary": [
+   "KC_EVAL_BASIC_005"
+  ],
+  "type": "multi_kc"
+ },
+ "ex_0034": {
+  "primary": "KC_EVAL_BASIC_006",
+  "secondary": [
+   "KC_EVAL_BASIC_003",
+   "KC_EVAL_BASIC_004"
+  ],
+  "type": "kc"
+ },
+ "ex_0035": {
+  "primary": "KC_EVAL_COMP_008",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0036": {
+  "primary": "KC_EVAL_COMP_007",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0037": {
+  "primary": "KC_EVAL_COMP_002",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0038": {
+  "primary": "KC_EVAL_COMP_003",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0039": {
+  "primary": "KC_EVAL_COMP_003",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0040": {
+  "primary": "KC_EVAL_ENS_003",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0041": {
+  "primary": "KC_EVAL_ENS_003",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0042": {
+  "primary": "KC_EVAL_SAMP_001",
+  "secondary": [
+   "KC_EVAL_SAMP_002",
+   "KC_EVAL_SAMP_003",
+   "KC_EVAL_SAMP_006"
+  ],
+  "type": "multi_kc"
+ },
+ "ex_0043": {
+  "primary": "KC_CLU_CORE_004",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0044": {
+  "primary": "KC_CLU_CORE_004",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0045": {
+  "primary": "KC_CLU_KM_001",
+  "secondary": [
+   "KC_CLU_KM_002"
+  ],
+  "type": "kc"
+ },
+ "ex_0046": {
+  "primary": "KC_CLU_KM_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0047": {
+  "primary": "KC_CLU_KM_001",
+  "secondary": [
+   "KC_CLU_KM_002"
+  ],
+  "type": "kc"
+ },
+ "ex_0048": {
+  "primary": "KC_CLU_KM_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0049": {
+  "primary": "KC_CLU_KM_001",
+  "secondary": [
+   "KC_CLU_KM_002"
+  ],
+  "type": "kc"
+ },
+ "ex_0050": {
+  "primary": "KC_CLU_KM_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0051": {
+  "primary": "KC_CLU_KM_001",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0052": {
+  "primary": "KC_CLU_SIM_004",
+  "secondary": [
+   "KC_CLU_SIM_003"
+  ],
+  "type": "multi_kc"
+ },
+ "ex_0053": {
+  "primary": "KC_CLU_SIM_005",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0054": {
+  "primary": "KC_CLU_KM_005",
+  "secondary": [
+   "KC_CLU_KM_004"
+  ],
+  "type": "kc"
+ },
+ "ex_0055": {
+  "primary": "KC_CLU_KM_006",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0056": {
+  "primary": "KC_CLU_KM_006",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0058": {
+  "primary": "KC_CLU_CORE_004",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0059": {
+  "primary": "KC_CLU_CORE_004",
+  "secondary": [],
+  "type": "kc"
+ },
+ "ex_0060": {
+  "primary": "KC_CLF_NB_007",
+  "secondary": [
+   "KC_CLF_NB_008"
+  ],
+  "type": "multi_kc"
+ },
+ "ex_0061": {
+  "primary": "KC_CLF_NB_007",
+  "secondary": [
+   "KC_CLF_NB_008"
+  ],
+  "type": "multi_kc"
+ }
+}

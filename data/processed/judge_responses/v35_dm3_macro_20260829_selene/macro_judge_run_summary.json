@@ -1,0 +1,10 @@
+{
+  "prompts": 1,
+  "json_extracted": 1,
+  "json_failed": 0,
+  "model_path": "/home/hpcuser/projects/selene_judge/models/Selene-1-Llama-3.3-70B",
+  "model_revision_requested": null,
+  "model_revision_resolved": "37ad448f3d1ab7579cbccb0d8418b2808573a30b",
+  "max_new_tokens": 4096,
+  "elapsed_seconds": 10.4
+}

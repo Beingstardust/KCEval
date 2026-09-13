@@ -1,0 +1,63 @@
+{
+  "local_family": {
+    "deferred_partial_dimensions": [
+      "scaffolding_quality",
+      "student_level_calibration"
+    ],
+    "deferred_trust_flags": [
+      "student_context_hallucination_present"
+    ],
+    "evaluation_family_id": "kc_segment_local_dimensions_v1",
+    "evaluation_unit_type": "kc_segment",
+    "rationale": "Use original KC-level segments for dimensions that are primarily local to a single exchange or a short instructional response.",
+    "recommended_partial_dimensions": [
+      "error_detection",
+      "error_reasoning",
+      "error_localisation",
+      "solution_control",
+      "actionability_moving_forward",
+      "local_coherence_relevance",
+      "clarity_cognitive_load",
+      "proactive_clarification"
+    ],
+    "recommended_trust_flags": [
+      "curriculum_hallucination_present",
+      "domain_knowledge_hallucination_present"
+    ]
+  },
+  "notes": [
+    "This is a post-hoc additive preparation layer only.",
+    "It does not change v15 segmentation boundaries or dominant_kc_id selection.",
+    "Local-dimension packets and arc-dimension packets are prepared as separate families for downstream judging.",
+    "Existing prompt/response contract remains unchanged and may need a later versioned adapter if the judge should score only a subset of dimensions per family."
+  ],
+  "plan_version": "mixed_granularity_judge_plan_v1",
+  "source_run_dir": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\segmentation_runs\\tv_b_20260829\\v35_20260829",
+  "topic_family": {
+    "deferred_partial_dimensions": [
+      "error_detection",
+      "error_reasoning",
+      "error_localisation",
+      "solution_control",
+      "actionability_moving_forward",
+      "local_coherence_relevance",
+      "clarity_cognitive_load",
+      "proactive_clarification"
+    ],
+    "deferred_trust_flags": [
+      "curriculum_hallucination_present",
+      "domain_knowledge_hallucination_present"
+    ],
+    "evaluation_family_id": "topic_rollup_arc_dimensions_v1",
+    "evaluation_unit_type": "topic_rollup",
+    "rationale": "Use topic-rollup units for arc-level dimensions that need a wider multi-turn window rather than a single leaf-KC segment.",
+    "recommended_partial_dimensions": [
+      "scaffolding_quality",
+      "student_level_calibration"
+    ],
+    "recommended_trust_flags": [
+      "student_context_hallucination_present"
+    ]
+  },
+  "topic_rollup_path": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\topic_rollup\\v35_tv_b_topic_rollup_merged_min2.json"
+}

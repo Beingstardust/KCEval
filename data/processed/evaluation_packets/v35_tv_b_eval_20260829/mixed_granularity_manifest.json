@@ -1,0 +1,95 @@
+{
+  "local_audit": {
+    "assignment_count": 62,
+    "errors": [],
+    "evaluation_mode_counts": {
+      "branch_context_with_anchor": 1,
+      "broad_kc_set_low_confidence_anchor": 11,
+      "single_kc_primary": 24
+    },
+    "exchange_count": 62,
+    "missing_kc_review_count": 0,
+    "packet_count": 36,
+    "primary_kc_id_source_counts": {
+      "dominant_kc_id": 36
+    },
+    "segment_count": 36,
+    "segment_scope_counts": {
+      "branch_context": 1,
+      "broad_kc_set": 11,
+      "single_kc": 24
+    },
+    "status": "PASS",
+    "warnings": []
+  },
+  "local_family": {
+    "evaluation_family_id": "kc_segment_local_dimensions_v1",
+    "evaluation_mode_counts": {
+      "branch_context_with_anchor": 1,
+      "broad_kc_set_low_confidence_anchor": 11,
+      "single_kc_primary": 24
+    },
+    "focus_partial_dimensions": [
+      "error_detection",
+      "error_reasoning",
+      "error_localisation",
+      "solution_control",
+      "actionability_moving_forward",
+      "local_coherence_relevance",
+      "clarity_cognitive_load",
+      "proactive_clarification"
+    ],
+    "focus_trust_flags": [
+      "curriculum_hallucination_present",
+      "domain_knowledge_hallucination_present"
+    ],
+    "packet_count": 36,
+    "segment_scope_counts": {
+      "branch_context": 1,
+      "broad_kc_set": 11,
+      "single_kc": 24
+    }
+  },
+  "outputs": {
+    "local_packet_dir": "kc_segment_local",
+    "mixed_granularity_plan": "mixed_granularity_plan.json",
+    "mixed_granularity_summary": "mixed_granularity_summary.json",
+    "topic_packet_dir": "topic_rollup_arc"
+  },
+  "packet_pipeline": "segment_evaluation_packets_mixed_granularity_v1",
+  "schema": "mixed_granularity_evaluation_packet_manifest.v1",
+  "topic_audit": {
+    "errors": [],
+    "fragmentation_risk_count": 6,
+    "packet_count": 17,
+    "status": "PASS",
+    "topic_unit_count": 17,
+    "warnings": [
+      "fragmentation_risk:tv_b_20260829::topic_unit_0002",
+      "fragmentation_risk:tv_b_20260829::topic_unit_0003",
+      "fragmentation_risk:tv_b_20260829::topic_unit_0006",
+      "fragmentation_risk:tv_b_20260829::topic_unit_0008",
+      "fragmentation_risk:tv_b_20260829::topic_unit_0012",
+      "fragmentation_risk:tv_b_20260829::topic_unit_0013"
+    ]
+  },
+  "topic_family": {
+    "evaluation_family_id": "topic_rollup_arc_dimensions_v1",
+    "evaluation_mode_counts": {
+      "branch_context_with_anchor": 11,
+      "broad_kc_set_low_confidence_anchor": 6
+    },
+    "focus_partial_dimensions": [
+      "scaffolding_quality",
+      "student_level_calibration"
+    ],
+    "focus_trust_flags": [
+      "student_context_hallucination_present"
+    ],
+    "packet_count": 17,
+    "segment_scope_counts": {
+      "branch_context": 11,
+      "broad_kc_set": 6
+    }
+  }
+}

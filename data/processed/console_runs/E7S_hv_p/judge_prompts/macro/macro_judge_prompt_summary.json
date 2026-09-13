@@ -1,0 +1,6 @@
+{
+  "packet_dir": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\evaluation_packets\\macro",
+  "prompt_count": 1,
+  "prompt_pipeline": "dialogue_macro_judge_prompts_v1",
+  "rubric_version": "dialogue_macro_rubric_v1_from_proposal_section_6_5"
+}

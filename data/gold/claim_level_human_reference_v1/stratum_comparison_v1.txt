@@ -1,0 +1,29 @@
+TURN LEVEL (does the turn carry >=1 claim)
+  A1: 60 of 62 targets carry >=1 claim; 2 carry none or were never opened
+  A2: 61 of 62 targets carry >=1 claim; 1 carry none or were never opened
+  both annotators found >=1 claim on 59 turns
+  -> near-zero variance: almost every target turn carries a claim for both.
+     This measure cannot discriminate; do not report it as reliability.
+
+DOUBLY-ANCHORED SUBSET (both annotators independently marked the span)
+  claims: 101
+  A1 verdicts on them: {'NOT_YET_VERIFIED': 12, 'SUPPORTED': 80, 'INSUFFICIENT_EVIDENCE': 9}
+  usable (A1 verdict present): 89
+  verifiability: {'CURRICULUM_VERIFIABLE': 68, 'ARITHMETIC_VERIFIABLE': 20, 'DIALOGUE_VERIFIABLE': 1}
+  claim_type   : {'CONTEXTUAL_REJECTION': 10, 'DERIVATION_OR_COMPUTATION': 19, 'EXPLICIT_PROPOSITION': 46, 'CONTEXTUAL_ENDORSEMENT': 13, 'STUDENT_STATE_CLAIM': 1}
+  dialogues    : {'dm1': 40, 'dm2': 49}
+  turns spanned: 54
+
+A1-ONLY REMAINDER (no independent confirmation)
+  claims: 169, with A1 verdict: 161
+  verifiability: {'ARITHMETIC_VERIFIABLE': 49, 'CURRICULUM_VERIFIABLE': 111, 'DIALOGUE_VERIFIABLE': 1}
+  claim_type   : {'DERIVATION_OR_COMPUTATION': 49, 'EXPLICIT_PROPOSITION': 110, 'CONTEXTUAL_ENDORSEMENT': 1, 'STUDENT_STATE_CLAIM': 1}
+
+VERDICT DISTRIBUTION BY STRATUM (A1's own verdicts)
+  INSUFFICIENT_EVIDENCE  doubly-anchored   9 (10.1%)   A1-only  24 (14.9%)
+  SUPPORTED              doubly-anchored  80 (89.9%)   A1-only 137 (85.1%)
+
+  If these two distributions are similar, the granularity difference does not
+  co-vary with verdict, and a result on the full set is unlikely to be an artefact
+  of decomposition depth. That is testable now, with no new annotation.
+  Fisher exact on SUPPORTED rate: p = 0.3330  (odds ratio 1.557)

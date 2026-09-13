@@ -1,0 +1,11 @@
+dimension,owned_v1,owned_v2,segment_n_scored,segment_scored_rate,segment_delta,segment_p,topic_n_scored,topic_scored_rate,topic_delta,topic_p,verdict_v1
+error_detection,segment,segment,20+21,0.562,0.0476,1.0,19+14,0.786,0.0,1.0,neither scope
+error_reasoning,segment,segment,20+21,0.562,0.3333,0.0001,19+14,0.786,0.2237,0.0042,both scopes
+error_localisation,segment,segment,20+21,0.562,0.3333,0.0001,19+14,0.786,0.2237,0.0042,both scopes
+solution_control,segment,segment,37+35,0.986,0.0595,0.2399,25+17,1.0,0.0482,0.6326,neither scope
+scaffolding_quality,topic,topic,37+35,0.986,0.2737,0.0,25+17,1.0,0.2741,0.0001,both scopes
+actionability_moving_forward,segment,segment,37+35,0.986,0.2031,0.0002,25+17,1.0,0.2447,0.0003,both scopes
+local_coherence_relevance,segment,segment,37+36,1.0,0.0278,0.2417,25+17,1.0,0.0,1.0,neither scope
+clarity_cognitive_load,segment,segment,37+35,0.986,0.1031,0.0441,25+17,1.0,0.1953,0.0073,both scopes
+student_level_calibration,topic,topic,37+35,0.986,0.2459,0.0,25+17,1.0,0.2541,0.0004,both scopes
+proactive_clarification,segment,topic,2+1,0.041,1.0,0.3287,1+0,0.024,,,neither scope

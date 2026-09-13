@@ -1,0 +1,169 @@
+{
+  "dimensions": [
+    {
+      "applicability": "Use null only when no student error, misconception, or confusion is visible.",
+      "group": "diagnostics",
+      "id": "error_detection",
+      "question": "If the student makes an error or shows confusion, does the tutor notice it?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Use null only when no student error or misconception is present.",
+      "group": "diagnostics",
+      "id": "error_reasoning",
+      "question": "Does the tutor explain why the student's error or confusion is wrong?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Use null only when no student error or misconception is present.",
+      "group": "diagnostics",
+      "id": "error_localisation",
+      "question": "Does the tutor locate the specific part of the student's reasoning, step, or statement that is wrong?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Applicable for instructional segments.",
+      "group": "instructional_response",
+      "id": "solution_control",
+      "question": "Does the tutor control revealingness, avoiding unnecessary answer dumping when guided reasoning is appropriate?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Applicable for instructional segments.",
+      "group": "instructional_response",
+      "id": "scaffolding_quality",
+      "question": "Does the tutor support understanding through hints, steps, prompts, explanations, or gradual guidance?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Applicable for instructional segments.",
+      "group": "instructional_response",
+      "id": "actionability_moving_forward",
+      "question": "Does the tutor give the student a usable next step, correction, strategy, or way to continue?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Applicable for all segments.",
+      "group": "communication_calibration",
+      "id": "local_coherence_relevance",
+      "question": "Is the tutor response coherent and relevant to the student's current turn and segment context?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Applicable for instructional segments.",
+      "group": "communication_calibration",
+      "id": "clarity_cognitive_load",
+      "question": "Is the explanation clear and not unnecessarily overloaded for the learner?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Use null only when there is insufficient student context to infer level.",
+      "group": "communication_calibration",
+      "id": "student_level_calibration",
+      "question": "Is the explanation calibrated to the student's apparent level, prior statements, and current confusion?",
+      "score_type": "partial_0_0_5_1"
+    },
+    {
+      "applicability": "Use null when the student need is already clear and clarification is unnecessary.",
+      "group": "communication_calibration",
+      "id": "proactive_clarification",
+      "question": "When the student state or request is ambiguous, does the tutor appropriately ask or invite clarification rather than over-assuming?",
+      "score_type": "partial_0_0_5_1"
+    }
+  ],
+  "mode_policies": {
+    "branch_context_with_anchor": "Treat the resolved KC as a context anchor, not as exact truth. Evaluate whether the tutor response is pedagogically useful within the supplied branch/context KC set.",
+    "broad_kc_set_low_confidence_anchor": "Treat the resolved KC only as a low-confidence anchor. Evaluate the segment as a broad or recap-like multi-KC region using the evaluator_kc_set. Do not penalize the segment merely because it is not a precise single-KC unit.",
+    "single_kc_primary": "Evaluate primarily against the primary KC. The evaluator_kc_set may provide minor context, but do not let unrelated KCs distract from the primary KC judgment."
+  },
+  "output_schema": {
+    "dependency_adjustments": [
+      {
+        "affected_dimensions": [
+          "partial dimension ids affected by the rule"
+        ],
+        "applied": "boolean",
+        "reason": "short evidence-grounded reason",
+        "rule_id": "one of the provided dependency rule ids"
+      }
+    ],
+    "dimension_applicability": {
+      "actionability_moving_forward": "applicable | not_applicable | unclear",
+      "clarity_cognitive_load": "applicable | not_applicable | unclear",
+      "error_detection": "applicable | not_applicable | unclear",
+      "error_localisation": "applicable | not_applicable | unclear",
+      "error_reasoning": "applicable | not_applicable | unclear",
+      "local_coherence_relevance": "applicable | not_applicable | unclear",
+      "proactive_clarification": "applicable | not_applicable | unclear",
+      "scaffolding_quality": "applicable | not_applicable | unclear",
+      "solution_control": "applicable | not_applicable | unclear",
+      "student_level_calibration": "applicable | not_applicable | unclear"
+    },
+    "dimension_scores": {
+      "actionability_moving_forward": "0 | 0.5 | 1 | null after dependency adjustments",
+      "clarity_cognitive_load": "0 | 0.5 | 1 | null after dependency adjustments",
+      "error_detection": "0 | 0.5 | 1 | null after dependency adjustments",
+      "error_localisation": "0 | 0.5 | 1 | null after dependency adjustments",
+      "error_reasoning": "0 | 0.5 | 1 | null after dependency adjustments",
+      "local_coherence_relevance": "0 | 0.5 | 1 | null after dependency adjustments",
+      "proactive_clarification": "0 | 0.5 | 1 | null after dependency adjustments",
+      "scaffolding_quality": "0 | 0.5 | 1 | null after dependency adjustments",
+      "solution_control": "0 | 0.5 | 1 | null after dependency adjustments",
+      "student_level_calibration": "0 | 0.5 | 1 | null after dependency adjustments"
+    },
+    "evaluation_mode": "single_kc_primary | branch_context_with_anchor | broad_kc_set_low_confidence_anchor",
+    "evidence_quotes": [
+      "short quotes from supplied segment only"
+    ],
+    "flags": {
+      "major_correctness_error": "boolean",
+      "missed_student_need": "boolean",
+      "needs_human_review": "boolean",
+      "overly_answer_giving": "boolean",
+      "segment_boundary_problem": "boolean",
+      "ungrounded_claim": "boolean"
+    },
+    "kc_grounding": {
+      "context_kcs_used": [
+        "string"
+      ],
+      "primary_kc_used": "boolean",
+      "unsupported_or_wrong_kc_claims": [
+        "string"
+      ]
+    },
+    "micro_score_dependency_adjusted": "0.0 to 1.0, weighted mean after dependency adjustments",
+    "micro_score_raw": "0.0 to 1.0, weighted mean of raw_dimension_scores excluding nulls",
+    "rationale_short": "2-4 sentence explanation grounded only in the supplied packet",
+    "raw_dimension_scores": {
+      "actionability_moving_forward": "0 | 0.5 | 1 | null",
+      "clarity_cognitive_load": "0 | 0.5 | 1 | null",
+      "error_detection": "0 | 0.5 | 1 | null",
+      "error_localisation": "0 | 0.5 | 1 | null",
+      "error_reasoning": "0 | 0.5 | 1 | null",
+      "local_coherence_relevance": "0 | 0.5 | 1 | null",
+      "proactive_clarification": "0 | 0.5 | 1 | null",
+      "scaffolding_quality": "0 | 0.5 | 1 | null",
+      "solution_control": "0 | 0.5 | 1 | null",
+      "student_level_calibration": "0 | 0.5 | 1 | null"
+    },
+    "segment_id": "string",
+    "trust_adjusted_score": "0.0 to 1.0, after trust flag caps or penalties",
+    "trust_flags": {
+      "curriculum_hallucination_present": "0 | 1",
+      "domain_knowledge_hallucination_present": "0 | 1",
+      "student_context_hallucination_present": "0 | 1"
+    }
+  },
+  "partial_scale": {
+    "0": "poor, absent, misleading, or harmful",
+    "0.5": "partial, mixed, weak, or incomplete",
+    "1": "good, clearly present, useful, or appropriate",
+    "null": "not applicable"
+  },
+  "rubric_version": "segment_judge_rubric_v2_scale001_dependency_aware",
+  "trust_flag_scale": {
+    "0": "no material hallucination detected",
+    "1": "material hallucination detected"
+  }
+}

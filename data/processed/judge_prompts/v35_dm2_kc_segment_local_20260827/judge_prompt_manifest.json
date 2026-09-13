@@ -1,0 +1,12 @@
+{
+  "outputs": [
+    "segment_judge_prompts.jsonl",
+    "judge_prompt_summary.json",
+    "judge_prompt_audit.json",
+    "rubric_v1.json",
+    "judge_prompt_manifest.json"
+  ],
+  "packet_dir": "data\\processed\\evaluation_packets\\v35_dm2_eval_20260827\\kc_segment_local",
+  "profiles_path": null,
+  "prompt_pipeline": "segment_judge_prompts_v1b"
+}

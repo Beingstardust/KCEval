@@ -1,0 +1,13 @@
+{
+  "baseline_segment_count": 41,
+  "local_family_id": "kc_segment_local_dimensions_v1",
+  "local_packet_count": 41,
+  "packet_pipeline": "segment_evaluation_packets_mixed_granularity_v1",
+  "profiles_path": "data\\processed\\matching_profiles\\frozen_matching_profiles_20260810T212416Z_ablation1_reviewed_library_full159\\frozen_matching_profiles.jsonl",
+  "source_run_dir": "data\\processed\\segmentation_runs\\dm2_gold_holdout_dialogue_20260811\\v35_20260812_packet_staging",
+  "source_segmentation_pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
+  "topic_family_id": "topic_rollup_arc_dimensions_v1",
+  "topic_packet_count": 22,
+  "topic_rollup_path": "data\\processed\\topic_rollup\\v35_dm2_topic_rollup.json",
+  "topic_unit_count": 22
+}

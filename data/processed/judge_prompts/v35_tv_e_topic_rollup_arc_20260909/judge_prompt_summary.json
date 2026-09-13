@@ -1,0 +1,13 @@
+{
+  "evaluation_mode_counts": {
+    "branch_context_with_anchor": 23,
+    "broad_kc_set_low_confidence_anchor": 3
+  },
+  "judge_prompt_count": 26,
+  "kc_grounding_condition": "B_baseline",
+  "packet_dir": "data\\processed\\evaluation_packets\\v35_tv_e_eval_20260909\\topic_rollup_arc",
+  "profiles_path": "data\\processed\\console_runs\\DEMO_tv_a_from_existing_artifacts\\library\\frozen_matching_profiles.jsonl",
+  "prompt_pipeline": "segment_judge_prompts_v1b",
+  "rubric_version": "segment_judge_rubric_v2_scale001_dependency_aware",
+  "source_packet_count": 26
+}

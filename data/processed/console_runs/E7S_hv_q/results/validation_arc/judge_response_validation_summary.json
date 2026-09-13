@@ -1,0 +1,11 @@
+{
+  "duplicate_segment_response_count": 0,
+  "error_count": 0,
+  "missing_response_segment_count": 0,
+  "missing_response_segments": [],
+  "packet_count": 22,
+  "prompt_count": 22,
+  "response_count": 22,
+  "status": "PASS",
+  "valid_count": 22
+}

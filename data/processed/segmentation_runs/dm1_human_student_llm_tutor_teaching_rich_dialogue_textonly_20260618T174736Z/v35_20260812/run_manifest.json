@@ -1,0 +1,83 @@
+{
+  "dialogues_jsonl": "data/processed/segmentation_runs/dm1_human_student_llm_tutor_teaching_rich_dialogue_textonly_20260618T174736Z/normalized/normalized_dialogues.jsonl",
+  "parameters": {
+    "cross_encoder_active": true,
+    "dense_retrieval_active": true,
+    "domain_specific_terms_hardcoded": false,
+    "family_support_rank_cutoff": 25,
+    "internal_top_k": 60,
+    "profile_family_views_used": [
+      "student",
+      "tutor"
+    ],
+    "rrf_k": 11,
+    "strict_st_exchange_construction": true,
+    "tie_breaker_max_pipeline_margin": 999.0,
+    "tie_breaker_min_probability": 0.5,
+    "tie_breaker_min_probability_margin": 0.5,
+    "tie_breaker_model_path": "models/Qwen3-4B-Instruct-2507",
+    "tie_breaker_top_k": 5,
+    "top_k": 25
+  },
+  "pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
+  "profiles_path": "data/processed/matching_profiles/frozen_matching_profiles_20260810T212416Z_ablation1_reviewed_library_full159/frozen_matching_profiles.jsonl",
+  "summary": {
+    "abstained_low_confidence_count": 20,
+    "action_pass1_closed_set": 37,
+    "action_pass1_protected_from_continuation_relative_evidence_v19": 6,
+    "action_pass2_branch_guided_best_candidate": 1,
+    "action_pass2_broad_multibranch_closed_set": 12,
+    "action_pass2_same_neighbour_rescue": 1,
+    "action_pass2_tie_breaker_promotion_retained": 3,
+    "action_pending_pass2": 3,
+    "band_high": 14,
+    "band_low": 23,
+    "band_medium": 23,
+    "band_none": 3,
+    "cross_encoder_active": true,
+    "dense_retrieval_active": true,
+    "dialogue_count": 1,
+    "exact_override_exchange_count": 24,
+    "exchange_count": 63,
+    "exchanges_with_secondary_kcs": 60,
+    "excluded_meta_exchange_count": 1,
+    "excluded_meta_exchange_ids": [
+      "dm1_human_student_llm_tutor_teaching_rich_dialogue_textonly_20260618T174736Z::ex_0000"
+    ],
+    "family_support_rank_cutoff": 25,
+    "final_AUTO_HIGH_KC": 14,
+    "final_AUTO_LOW_KC": 23,
+    "final_AUTO_MEDIUM_KC": 23,
+    "final_NON_KC": 3,
+    "finished_utc": "2026-08-12T18:46:17.911194+00:00",
+    "low_confidence_no_strong_match_count": 3,
+    "missing_kc_review_count": 0,
+    "pass1_AUTO_HIGH_KC": 14,
+    "pass1_AUTO_MEDIUM_KC": 23,
+    "pass1_NEEDS_PASS2": 23,
+    "pass1_NON_KC": 3,
+    "pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
+    "pre_fusion_non_kc_gate_hits": 3,
+    "profile_count": 159,
+    "profile_family_views_used": [
+      "student",
+      "tutor"
+    ],
+    "rrf_k": 11,
+    "secondary_kc_count_distribution": {
+      "3": 60
+    },
+    "segment_count": 35,
+    "started_utc": "2026-08-12T18:06:27.926310+00:00",
+    "tie_breaker_active": true,
+    "tie_breaker_changed_count": 15,
+    "tie_breaker_gated_in_count": 60,
+    "tie_breaker_max_pipeline_margin": 999.0,
+    "tie_breaker_min_probability": 0.5,
+    "tie_breaker_min_probability_margin": 0.5,
+    "tie_breaker_model_path": "models/Qwen3-4B-Instruct-2507",
+    "tie_breaker_top_k": 5,
+    "tie_breaker_uses_prior_context": true,
+    "turn_count": 126
+  }
+}

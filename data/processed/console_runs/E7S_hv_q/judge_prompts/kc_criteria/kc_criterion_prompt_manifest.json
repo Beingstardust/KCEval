@@ -1,0 +1,10 @@
+{
+  "contract_version": "kc_criterion_judge_response_contract_v1",
+  "units_total": 42,
+  "units_with_criteria": 41,
+  "units_skipped_no_criteria": [
+    "E7S_hv_q::seg_0002"
+  ],
+  "criterion_instances": 128,
+  "sha256": "c2cf1f9155b28602541bea36862ce8d5c7f9a1dad13e091b8fb8077545bda447"
+}

@@ -1,0 +1,10 @@
+{
+  "errors": [],
+  "fragmentation_risk_count": 1,
+  "packet_count": 22,
+  "status": "PASS",
+  "topic_unit_count": 22,
+  "warnings": [
+    "fragmentation_risk:dm2_gold_holdout_dialogue_20260811::topic_unit_0001"
+  ]
+}

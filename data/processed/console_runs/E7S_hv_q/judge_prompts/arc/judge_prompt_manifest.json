@@ -1,0 +1,12 @@
+{
+  "outputs": [
+    "segment_judge_prompts.jsonl",
+    "judge_prompt_summary.json",
+    "judge_prompt_audit.json",
+    "rubric_v1.json",
+    "judge_prompt_manifest.json"
+  ],
+  "packet_dir": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_q\\evaluation_packets\\topic_rollup_arc",
+  "profiles_path": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_q\\library\\frozen_matching_profiles.jsonl",
+  "prompt_pipeline": "segment_judge_prompts_v1b"
+}

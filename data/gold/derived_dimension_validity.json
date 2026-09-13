@@ -1,0 +1,60 @@
+{
+ "clarity_cognitive_load": {
+  "scope": "segment",
+  "method": "derived: presentation-load components, no judge",
+  "evidence": "sv1 ground truth, load gap significant at p=0.0026; T1 vs T5 63/63 exchanges harder to read, mean FK-grade gap +6.46",
+  "statistic": 0.0026498675066246686,
+  "passes": true,
+  "judge_note": "+0.013, p = 1.0000 on the same T1-vs-T5 contrast (Finding 20)",
+  "script": "scripts/derive_clarity_load.py"
+ },
+ "proactive_clarification": {
+  "scope": "segment",
+  "method": "derived: clarification RATE on the ambiguity-labelled subset",
+  "evidence": "14/14 correct across 2 independently generated corpora; worst false-positive rate elsewhere 0.000",
+  "statistic": 1.0,
+  "passes": true,
+  "judge_note": "+0.250, p = 0.108 at n = 9; 0.065 pooled (doc 26)",
+  "script": "scripts/derive_clarification_rate.py"
+ },
+ "student_level_calibration": {
+  "scope": "arc",
+  "method": "derived: explicit miscalibration only (student disclaims a term)",
+  "evidence": "11/17 on the covered labelled subset across two corpora. The negative half works (9/11); the positive half does not (2/6) and implicit calibration needs a learner model.",
+  "statistic": 0.6470588235294118,
+  "passes": false,
+  "partial": true,
+  "judge_note": "+0.001, p = 1.0000 (Finding 20)",
+  "script": "scripts/derive_level_calibration.py"
+ },
+ "sequentiality": {
+  "scope": "macro",
+  "method": "derived: library-cued forward references, no judge",
+  "evidence": "7/12 planted forward references caught across three corpora; 18/239 = 0.075 on unlabelled exchanges. On the T1/T4 minimal pair the only exchanges flagged in T4 and not T1 are plants.",
+  "statistic": 0.5833333333333334,
+  "passes": true,
+  "judge_note": "0/4 planted; scored a perfect 1.000 (Finding 18)",
+  "script": "scripts/derive_sequentiality.py"
+ },
+ "consistency": {
+  "scope": "macro",
+  "method": "in-context decomposed probe, not a whole-dialogue rating",
+  "evidence": "2/5 planted self-misattributions caught, with ZERO false positives on the clean arm and on T4's untouched exchanges (Selene, the project judge). The three misses are judgement failures, not detection failures: the probe saw the backward reference every time and returned supported=yes on two and cannot_tell on one. Precise and insensitive. Six approaches documented as failing, including three dialogue/NLI models all BELOW chance (AUC 0.328, 0.328, 0.383). Qwen3-8B also caught 2, but a DIFFERENT two.",
+  "statistic": 0.4,
+  "passes": false,
+  "partial": true,
+  "judge_note": "whole-dialogue rating scored a perfect 1.00 on 5 planted violations",
+  "script": "scripts/derive_consistency.py",
+  "artifact_present": true
+ },
+ "criterion_applicability": {
+  "scope": "segment (criterion pass)",
+  "method": "derived: criterion APPLICABILITY rate",
+  "evidence": "good 0.296 vs pedagogically degraded 0.153, Fisher p=0.0095; the three non-pedagogical arms correctly flat (p=0.48, 0.49, 0.35). The RATING channel separates nothing (p=1.0000).",
+  "statistic": 0.009525316698261548,
+  "passes": true,
+  "post_hoc": true,
+  "judge_note": "K_s (mean rating over applicable criteria): p = 0.1954",
+  "script": "scripts/derive_criterion_applicability.py"
+ }
+}

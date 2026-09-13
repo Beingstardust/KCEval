@@ -1,0 +1,13 @@
+{
+  "baseline_segment_count": 38,
+  "local_family_id": "kc_segment_local_dimensions_v1",
+  "local_packet_count": 38,
+  "packet_pipeline": "segment_evaluation_packets_mixed_granularity_v1",
+  "profiles_path": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\matching_profiles\\frozen_matching_profiles_20260810T212416Z_ablation1_reviewed_library_full159\\frozen_matching_profiles.jsonl",
+  "source_run_dir": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\segmentation_runs\\tv_c_20260829\\v35_20260829",
+  "source_segmentation_pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
+  "topic_family_id": "topic_rollup_arc_dimensions_v1",
+  "topic_packet_count": 11,
+  "topic_rollup_path": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\topic_rollup\\v35_tv_c_topic_rollup_merged_min2.json",
+  "topic_unit_count": 11
+}

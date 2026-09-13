@@ -1,0 +1,82 @@
+{
+  "method": "H7.3 machinery imported verbatim from analyze_e7_holdout.py; only the unit score field differs between the two decompositions",
+  "seed": 1234,
+  "premise_audit": {
+    "H1": {
+      "arc_units": 21,
+      "arc_units_where_b_equals_p": 21,
+      "arc_units_with_k_s": 0,
+      "local_units": 42,
+      "local_units_where_b_below_p": 39
+    },
+    "H2": {
+      "arc_units": 22,
+      "arc_units_where_b_equals_p": 22,
+      "arc_units_with_k_s": 0,
+      "local_units": 42,
+      "local_units_where_b_below_p": 38
+    }
+  },
+  "did_reported_b_s": {
+    "observed": 0.08527777777777779,
+    "ci": [
+      0.026527777777777782,
+      0.14527777777777778
+    ],
+    "p_one_sided": 0.003739962600373996,
+    "p_two_sided": 0.007429925700742993,
+    "p_one_sided_mc_ci": [
+      0.0033707583412356107,
+      0.004127369610680989
+    ],
+    "n_pairs": 40,
+    "direction": "greater",
+    "field": "b_s",
+    "common_support_size": 40,
+    "restricted": {
+      "H1": {
+        "local": 0.8186111111111112,
+        "arc": 0.9798611111111111,
+        "R": 0.1612499999999999
+      },
+      "H2": {
+        "local": 0.7236111111111112,
+        "arc": 0.9701388888888889,
+        "R": 0.24652777777777768
+      }
+    }
+  },
+  "did_raw_p_s": {
+    "observed": 0.01875,
+    "ci": [
+      -0.013888888888888897,
+      0.06319444444444446
+    ],
+    "p_one_sided": 0.23060769392306077,
+    "p_two_sided": 0.46299537004629954,
+    "p_one_sided_mc_ci": [
+      0.22799964938350512,
+      0.23322104836217025
+    ],
+    "n_pairs": 40,
+    "direction": "greater",
+    "field": "p_s",
+    "common_support_size": 40,
+    "restricted": {
+      "H1": {
+        "local": 0.9715277777777779,
+        "arc": 0.9798611111111111,
+        "R": 0.008333333333333193
+      },
+      "H2": {
+        "local": 0.9430555555555555,
+        "arc": 0.9701388888888889,
+        "R": 0.027083333333333348
+      }
+    }
+  },
+  "widening_total": 0.08527777777777779,
+  "widening_judge_component": 0.01875,
+  "widening_cap_and_criteria_component": 0.06652777777777778,
+  "cap_and_criteria_share": 0.7801302931596091
+}

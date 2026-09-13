@@ -1,0 +1,40 @@
+{
+  "dataset": "MRBench v3 dev set (BEA 2025 shared task)",
+  "source_url": "https://raw.githubusercontent.com/kaushal0494/UnifyingAITutorEvaluation/main/BEA_Shared_Task_2025_Datasets/mrbench_v3_devset.json",
+  "repository": "github.com/kaushal0494/UnifyingAITutorEvaluation",
+  "licence": "CC BY-SA 4.0",
+  "findings_paper": "Kochmar et al., BEA @ ACL 2025, arXiv:2507.10579",
+  "downloaded_utc": "2026-09-01",
+  "sha256": "a395feab801de50d44b73e1e9b88f84824a1f1d92e15ae86842d90c2b6dbf33c",
+  "bytes": 1578346,
+  "dialogues": 300,
+  "tutor_responses": 2476,
+  "responses_by_tutor": {
+    "Expert": 300,
+    "GPT4": 300,
+    "Gemini": 300,
+    "Llama31405B": 300,
+    "Llama318B": 300,
+    "Mistral": 300,
+    "Novice": 76,
+    "Phi3": 300,
+    "Sonnet": 300
+  },
+  "annotation_tracks": {
+    "Actionability": 2476,
+    "Mistake_Identification": 2476,
+    "Mistake_Location": 2476,
+    "Providing_Guidance": 2476
+  },
+  "matches_doc_46": {
+    "dialogues_expected": 300,
+    "responses_expected": 2476,
+    "dialogues_ok": true,
+    "responses_ok": true
+  },
+  "test_split_note": "The test split's gold labels are NOT public (doc 46 \u00a71). Only the dev split is used, which is the split the 50+ competing teams developed on, so no leaderboard claim is possible.",
+  "known_groups_available": {
+    "Expert": 300,
+    "Novice": 76
+  }
+}

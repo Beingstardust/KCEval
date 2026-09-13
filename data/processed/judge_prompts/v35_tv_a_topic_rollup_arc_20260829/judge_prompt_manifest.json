@@ -1,0 +1,12 @@
+{
+  "outputs": [
+    "segment_judge_prompts.jsonl",
+    "judge_prompt_summary.json",
+    "judge_prompt_audit.json",
+    "rubric_v1.json",
+    "judge_prompt_manifest.json"
+  ],
+  "packet_dir": "data\\processed\\evaluation_packets\\v35_tv_a_eval_20260829\\topic_rollup_arc",
+  "profiles_path": "data\\processed\\matching_profiles\\frozen_matching_profiles_20260810T212416Z_ablation1_reviewed_library_full159\\frozen_matching_profiles.jsonl",
+  "prompt_pipeline": "segment_judge_prompts_v1b"
+}

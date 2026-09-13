@@ -1,0 +1,39 @@
+{
+  "workbook": "data\\gold\\tutor_evaluator_human_validation_PASS2_TO_FILL.xlsx",
+  "sheet_summaries": [
+    {
+      "sheet": "Focus Pass 1",
+      "total_rows": 115,
+      "complete_rows": 115,
+      "incomplete_rows": 0,
+      "rows_with_hard_errors": 0
+    },
+    {
+      "sheet": "Judge Validation",
+      "total_rows": 115,
+      "complete_rows": 115,
+      "incomplete_rows": 0,
+      "rows_with_hard_errors": 0
+    },
+    {
+      "sheet": "Macro Validation",
+      "total_rows": 2,
+      "complete_rows": 2,
+      "incomplete_rows": 0,
+      "rows_with_hard_errors": 0
+    },
+    {
+      "sheet": "Focus Pass 2",
+      "total_rows": 115,
+      "complete_rows": 115,
+      "incomplete_rows": 0,
+      "rows_with_hard_errors": 0
+    }
+  ],
+  "row_count_errors": [],
+  "hard_error_count": 0,
+  "hard_errors": [],
+  "total_incomplete_rows": 0,
+  "status": "PASS",
+  "status_reason": "complete_and_valid"
+}

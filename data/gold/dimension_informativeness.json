@@ -1,0 +1,477 @@
+{
+  "partial_dimensions": {
+    "error_detection": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 76,
+        "raw_agreement": 0.8289,
+        "weighted_kappa": 0.6516,
+        "weighted_kappa_ci": [
+          0.4783802333562115,
+          0.8118811881188119
+        ],
+        "gwet_ac2": 0.6707,
+        "gwet_ac2_ci": [
+          0.5007778738115817,
+          0.8266253869969041
+        ],
+        "human_marginals": {
+          "1": 25,
+          "N/A": 51
+        },
+        "judge_marginals": {
+          "1": 36,
+          "N/A": 40
+        },
+        "reliable": true
+      },
+      "informativeness": {
+        "entropy_bits": 0.998,
+        "modal_class_proportion": 0.5263,
+        "na_rate": 0.5263,
+        "between_arm_variance": 0.026808,
+        "arm_means": [
+          1.0,
+          0.6964,
+          0.9545
+        ],
+        "corpus_varied": true,
+        "responds_to_perturbation": true
+      },
+      "classification": "reliable|varied|responds"
+    },
+    "error_reasoning": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 76,
+        "raw_agreement": 0.8289,
+        "weighted_kappa": 0.6516,
+        "weighted_kappa_ci": [
+          0.479095270733379,
+          0.8126760563380282
+        ],
+        "gwet_ac2": 0.6707,
+        "gwet_ac2_ci": [
+          0.5000865501125151,
+          0.8288563615891911
+        ],
+        "human_marginals": {
+          "1": 25,
+          "N/A": 51
+        },
+        "judge_marginals": {
+          "1": 36,
+          "N/A": 40
+        },
+        "reliable": true
+      },
+      "informativeness": {
+        "entropy_bits": 0.998,
+        "modal_class_proportion": 0.5263,
+        "na_rate": 0.5263,
+        "between_arm_variance": 0.030538,
+        "arm_means": [
+          0.9815,
+          0.6429,
+          0.8871
+        ],
+        "corpus_varied": true,
+        "responds_to_perturbation": true
+      },
+      "classification": "reliable|varied|responds"
+    },
+    "error_localisation": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 76,
+        "raw_agreement": 0.8158,
+        "weighted_kappa": 0.6281,
+        "weighted_kappa_ci": [
+          0.4521112255406796,
+          0.7849310222851079
+        ],
+        "gwet_ac2": 0.7567,
+        "gwet_ac2_ci": [
+          0.5354672671706612,
+          0.8504918032786883
+        ],
+        "human_marginals": {
+          "1": 25,
+          "N/A": 51
+        },
+        "judge_marginals": {
+          "1": 35,
+          "N/A": 40,
+          "0.5": 1
+        },
+        "reliable": true
+      },
+      "informativeness": {
+        "entropy_bits": 1.0847,
+        "modal_class_proportion": 0.5263,
+        "na_rate": 0.5263,
+        "between_arm_variance": 0.032647,
+        "arm_means": [
+          0.963,
+          0.619,
+          0.8871
+        ],
+        "corpus_varied": true,
+        "responds_to_perturbation": true
+      },
+      "classification": "reliable|varied|responds"
+    },
+    "solution_control": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 76,
+        "raw_agreement": 0.7763,
+        "weighted_kappa": -0.0695,
+        "weighted_kappa_ci": [
+          -0.13245033112582782,
+          0.0
+        ],
+        "gwet_ac2": 0.7209,
+        "gwet_ac2_ci": [
+          0.569811320754717,
+          0.8499802605606002
+        ],
+        "human_marginals": {
+          "1": 62,
+          "0.5": 14
+        },
+        "judge_marginals": {
+          "1": 73,
+          "0.5": 3
+        },
+        "reliable": false
+      },
+      "informativeness": {
+        "entropy_bits": 0.2399,
+        "modal_class_proportion": 0.9605,
+        "na_rate": 0.0,
+        "between_arm_variance": 0.005229,
+        "arm_means": [
+          0.9821,
+          0.8469,
+          0.959
+        ],
+        "corpus_varied": false,
+        "responds_to_perturbation": true
+      },
+      "classification": "unreliable|flat|responds"
+    },
+    "scaffolding_quality": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 37,
+        "raw_agreement": 0.7838,
+        "weighted_kappa": 0.1591,
+        "weighted_kappa_ci": [
+          0.0,
+          0.48467966573816157
+        ],
+        "gwet_ac2": 0.7178,
+        "gwet_ac2_ci": [
+          0.45618993781797634,
+          0.9021595416483033
+        ],
+        "human_marginals": {
+          "1": 28,
+          "0.5": 9
+        },
+        "judge_marginals": {
+          "1": 36,
+          "0.5": 1
+        },
+        "reliable": false
+      },
+      "informativeness": {
+        "entropy_bits": 0.1793,
+        "modal_class_proportion": 0.973,
+        "na_rate": 0.0,
+        "between_arm_variance": 0.027762,
+        "arm_means": [
+          0.9375,
+          0.6327,
+          0.9016
+        ],
+        "corpus_varied": false,
+        "responds_to_perturbation": true
+      },
+      "classification": "unreliable|flat|responds"
+    },
+    "actionability_moving_forward": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 76,
+        "raw_agreement": 0.9342,
+        "weighted_kappa": -0.0326,
+        "weighted_kappa_ci": [
+          -0.06211180124223592,
+          0.0
+        ],
+        "gwet_ac2": 0.9297,
+        "gwet_ac2_ci": [
+          0.8499802605606002,
+          0.9866678361547233
+        ],
+        "human_marginals": {
+          "1": 74,
+          "0.5": 2
+        },
+        "judge_marginals": {
+          "1": 73,
+          "0.5": 3
+        },
+        "reliable": false
+      },
+      "informativeness": {
+        "entropy_bits": 0.2399,
+        "modal_class_proportion": 0.9605,
+        "na_rate": 0.0,
+        "between_arm_variance": 0.024555,
+        "arm_means": [
+          0.9107,
+          0.6122,
+          0.8443
+        ],
+        "corpus_varied": false,
+        "responds_to_perturbation": true
+      },
+      "classification": "unreliable|flat|responds"
+    },
+    "local_coherence_relevance": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 76,
+        "raw_agreement": 0.9868,
+        "weighted_kappa": 0.0,
+        "weighted_kappa_ci": [
+          0.0,
+          0.0
+        ],
+        "gwet_ac2": 0.9867,
+        "gwet_ac2_ci": [
+          0.9445255474452554,
+          0.9866678361547233
+        ],
+        "human_marginals": {
+          "1": 75,
+          "0.5": 1
+        },
+        "judge_marginals": {
+          "1": 76
+        },
+        "reliable": false
+      },
+      "informativeness": {
+        "entropy_bits": 0.0,
+        "modal_class_proportion": 1.0,
+        "na_rate": 0.0,
+        "between_arm_variance": 0.000125,
+        "arm_means": [
+          0.9911,
+          0.9694,
+          0.9754
+        ],
+        "corpus_varied": false,
+        "responds_to_perturbation": false
+      },
+      "classification": "unreliable|flat|inert"
+    },
+    "clarity_cognitive_load": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 76,
+        "raw_agreement": 0.8947,
+        "weighted_kappa": 0.1648,
+        "weighted_kappa_ci": [
+          -0.05190311418685112,
+          0.48993288590604034
+        ],
+        "gwet_ac2": 0.88,
+        "gwet_ac2_ci": [
+          0.7787941787941788,
+          0.9578441342331515
+        ],
+        "human_marginals": {
+          "1": 74,
+          "0.5": 2
+        },
+        "judge_marginals": {
+          "1": 68,
+          "0.5": 8
+        },
+        "reliable": false
+      },
+      "informativeness": {
+        "entropy_bits": 0.4855,
+        "modal_class_proportion": 0.8947,
+        "na_rate": 0.0,
+        "between_arm_variance": 0.000668,
+        "arm_means": [
+          1.0,
+          0.949,
+          0.9672
+        ],
+        "corpus_varied": false,
+        "responds_to_perturbation": false
+      },
+      "classification": "unreliable|flat|inert"
+    },
+    "student_level_calibration": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 37,
+        "raw_agreement": 0.8919,
+        "weighted_kappa": 0.0,
+        "weighted_kappa_ci": [
+          0.0,
+          0.0
+        ],
+        "gwet_ac2": 0.8796,
+        "gwet_ac2_ci": [
+          0.7321266968325791,
+          0.9722326454033772
+        ],
+        "human_marginals": {
+          "1": 37
+        },
+        "judge_marginals": {
+          "1": 33,
+          "0.5": 4
+        },
+        "reliable": false
+      },
+      "informativeness": {
+        "entropy_bits": 0.4942,
+        "modal_class_proportion": 0.8919,
+        "na_rate": 0.0,
+        "between_arm_variance": 0.00159,
+        "arm_means": [
+          0.9909,
+          0.9184,
+          0.9833
+        ],
+        "corpus_varied": false,
+        "responds_to_perturbation": true
+      },
+      "classification": "unreliable|flat|responds"
+    },
+    "proactive_clarification": {
+      "scale": "ordinal_0_0.5_1",
+      "reliability": {
+        "n": 76,
+        "raw_agreement": 0.9868,
+        "weighted_kappa": 0.0,
+        "weighted_kappa_ci": [
+          0.0,
+          0.0
+        ],
+        "gwet_ac2": 0.9867,
+        "gwet_ac2_ci": [
+          0.9445255474452554,
+          0.9866678361547233
+        ],
+        "human_marginals": {
+          "N/A": 76
+        },
+        "judge_marginals": {
+          "N/A": 75,
+          "1": 1
+        },
+        "reliable": false
+      },
+      "informativeness": {
+        "entropy_bits": 0.1011,
+        "modal_class_proportion": 0.9868,
+        "na_rate": 0.9868,
+        "between_arm_variance": 0.021125,
+        "arm_means": [
+          0.9,
+          0.68,
+          0.9545
+        ],
+        "corpus_varied": false,
+        "responds_to_perturbation": true
+      },
+      "classification": "unreliable|flat|responds"
+    }
+  },
+  "trust_flags": {
+    "curriculum_hallucination_present": {
+      "scale": "binary",
+      "n_scored": 113,
+      "judge_positives": 0,
+      "prevalence": 0.0,
+      "between_arm_variance": 0.000611,
+      "arm_positive_rates": [
+        0.0,
+        0.0204,
+        0.0492
+      ],
+      "inference_status": "UNDERPOWERED_NO_INFERENCE",
+      "reason": "only 0 positive(s) in 113 scored units; below the pre-declared minimum of 5. Reliability statistics are undefined rather than estimated."
+    },
+    "student_context_hallucination_present": {
+      "scale": "binary",
+      "n_scored": 113,
+      "judge_positives": 0,
+      "prevalence": 0.0,
+      "between_arm_variance": 0.0,
+      "arm_positive_rates": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_status": "UNDERPOWERED_NO_INFERENCE",
+      "reason": "only 0 positive(s) in 113 scored units; below the pre-declared minimum of 5. Reliability statistics are undefined rather than estimated."
+    },
+    "domain_knowledge_hallucination_present": {
+      "scale": "binary",
+      "n_scored": 113,
+      "judge_positives": 0,
+      "prevalence": 0.0,
+      "between_arm_variance": 0.000274,
+      "arm_positive_rates": [
+        0.0,
+        0.0204,
+        0.0328
+      ],
+      "inference_status": "UNDERPOWERED_NO_INFERENCE",
+      "reason": "only 0 positive(s) in 113 scored units; below the pre-declared minimum of 5. Reliability statistics are undefined rather than estimated."
+    }
+  },
+  "seed": 1234,
+  "n_bootstrap": 10000,
+  "note": "reliability and informativeness are separate properties; see doc 48 \u00a72",
+  "classification_grid": {
+    "reliable|varied|responds": [
+      "error_detection",
+      "error_reasoning",
+      "error_localisation"
+    ],
+    "unreliable|flat|responds": [
+      "solution_control",
+      "scaffolding_quality",
+      "actionability_moving_forward",
+      "student_level_calibration",
+      "proactive_clarification"
+    ],
+    "unreliable|flat|inert": [
+      "local_coherence_relevance",
+      "clarity_cognitive_load"
+    ]
+  },
+  "classification_labels": {
+    "reliable|varied|responds": "empirically strong: reliably judged, corpus exercises it, responds to degradation",
+    "reliable|flat|responds": "reliably judged and responsive to designed degradation, but NOT exercised by the natural corpus",
+    "reliable|flat|inert": "reliably judged, but not demonstrated to discriminate in this corpus",
+    "reliable|varied|inert": "reliably judged and varied, but did not move under designed degradation",
+    "unreliable|varied|responds": "responds to degradation but evaluator agreement not established",
+    "unreliable|flat|responds": "responds to designed degradation only; agreement not established, corpus flat",
+    "unreliable|flat|inert": "not demonstrated to discriminate in this corpus, agreement not established",
+    "unreliable|varied|inert": "corpus varies but neither agreement nor perturbation response established"
+  }
+}

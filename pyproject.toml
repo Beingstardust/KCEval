@@ -1,0 +1,33 @@
+[project]
+name = "kceval"
+version = "0.1.0"
+description = "KCEval: curriculum-indexed, scope-aware and traceable evaluation of AI tutor dialogues"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.optional-dependencies]
+# Needed only to RE-RUN the KC-indexing / segmentation pipeline (Section 3.3 of the paper) or the
+# naive-retrieval baselines from scratch. Not needed to reproduce any reported number: every script
+# under REPRODUCE.md's "pure recompute" section runs on the frozen artifacts in data/ with the
+# standard library only.
+segmentation = [
+  "torch",
+  "transformers",
+  "sentence-transformers",
+  "scikit-learn",
+  "numpy",
+]
+# Needed only to build the KC-annotation gold workbooks / naive-retrieval baseline scorer that read
+# .xlsx files (not required for the reproduction path in REPRODUCE.md).
+workbooks = [
+  "openpyxl",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

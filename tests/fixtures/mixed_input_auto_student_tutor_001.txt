@@ -1,0 +1,12 @@
+This is extra data before the conversation.
+Exercise 1 description:
+This should not be segmented.
+
+Student: I am confused about classification. Is it just grouping things?
+Tutor: Not exactly. Classification predicts a predefined class label from labeled data.
+
+Student: So clustering is different because labels are not predefined?
+Tutor: Correct. Clustering groups points without target labels.
+
+This is after-analysis and should not be segmented.
+The student seemed confused.

@@ -1,0 +1,14 @@
+This is a note before the actual conversation.
+Exercise source: this paragraph should not enter segmentation.
+The following dialogue is what should be segmented.
+
+BEGIN CONVERSATION
+Student: I am confused about classification. Is it just grouping things?
+Tutor: Not exactly. Classification predicts a predefined class label from labeled data.
+Student: So clustering is different because labels are not predefined?
+Tutor: Correct. Clustering groups points without target labels.
+END CONVERSATION
+
+After-notes:
+The student seemed confused.
+Do not segment this note.

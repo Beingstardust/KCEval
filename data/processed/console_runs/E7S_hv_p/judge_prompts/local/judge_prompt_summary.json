@@ -1,0 +1,14 @@
+{
+  "evaluation_mode_counts": {
+    "branch_context_with_anchor": 5,
+    "broad_kc_set_low_confidence_anchor": 8,
+    "single_kc_primary": 29
+  },
+  "judge_prompt_count": 42,
+  "kc_grounding_condition": "B_baseline",
+  "packet_dir": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\evaluation_packets\\kc_segment_local",
+  "profiles_path": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\library\\frozen_matching_profiles.jsonl",
+  "prompt_pipeline": "segment_judge_prompts_v1b",
+  "rubric_version": "segment_judge_rubric_v2_scale001_dependency_aware",
+  "source_packet_count": 42
+}

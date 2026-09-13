@@ -1,0 +1,747 @@
+{
+  "n_items": 115,
+  "A1_vs_A2": {
+    "per_dimension": {
+      "actionability_moving_forward": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.18421052631578946,
+          "kappa": -0.01991341991341993,
+          "wkappa": -0.01237890204520986,
+          "ac": -0.23590768472636683
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "clarity_cognitive_load": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.8157894736842105,
+          "kappa": -0.04518664047151248,
+          "wkappa": -0.04395604395604402,
+          "ac": 0.8852098612113382
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "curriculum_hallucination_present": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.9736842105263158,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9729825808745113
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "domain_knowledge_hallucination_present": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.9605263157894737,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9589374155785682
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "error_detection": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.5657894736842105,
+          "kappa": 0.25268176400476755,
+          "wkappa": 0.2526817640047675,
+          "ac": 0.13532149629374232
+        },
+        "rating": {
+          "n": 24,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 25,
+        "n_scored_y": 56
+      },
+      "error_localisation": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.5657894736842105,
+          "kappa": 0.25268176400476755,
+          "wkappa": 0.2526817640047675,
+          "ac": 0.13532149629374232
+        },
+        "rating": {
+          "n": 24,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 25,
+        "n_scored_y": 56
+      },
+      "error_reasoning": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.9078947368421053,
+          "kappa": 0.797564687975647,
+          "wkappa": 0.7975646879756468,
+          "ac": 0.8312450436161777
+        },
+        "rating": {
+          "n": 23,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 25,
+        "n_scored_y": 28
+      },
+      "local_coherence_relevance": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.9736842105263158,
+          "kappa": -0.006622516556288663,
+          "wkappa": -0.008849557522123908,
+          "ac": 0.9798250918046809
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "proactive_clarification": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 0
+        },
+        "n_scored_x": 0,
+        "n_scored_y": 0
+      },
+      "scaffolding_quality": {
+        "applicability": {
+          "n": 39,
+          "raw": 0.7692307692307693,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.7100371747211897
+        },
+        "rating": {
+          "n": 30,
+          "raw": 0.5,
+          "kappa": 0.07407407407407414,
+          "wkappa": 0.05263157894736836,
+          "ac": 0.4671052631578946
+        },
+        "n_scored_x": 39,
+        "n_scored_y": 30
+      },
+      "solution_control": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.6710526315789473,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.5463769846006924
+        },
+        "rating": {
+          "n": 51,
+          "raw": 0.27450980392156865,
+          "kappa": 0.018720748829953185,
+          "wkappa": 0.021715526601520097,
+          "ac": -0.06929518032570708
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 51
+      },
+      "student_context_hallucination_present": {
+        "applicability": {
+          "n": 39,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 39,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 39,
+        "n_scored_y": 39
+      },
+      "student_level_calibration": {
+        "applicability": {
+          "n": 39,
+          "raw": 0.8717948717948718,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.8543145311916325
+        },
+        "rating": {
+          "n": 34,
+          "raw": 0.6470588235294118,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.746389978005164
+        },
+        "n_scored_x": 39,
+        "n_scored_y": 34
+      }
+    },
+    "pooled_applicability": {
+      "n": 877,
+      "raw": 0.8722919042189282,
+      "kappa": 0.6564272972122146,
+      "wkappa": 0.6564272972122145,
+      "ac": 0.7968803313639814
+    },
+    "pooled_rating": {
+      "n": 605,
+      "raw": 0.7570247933884298,
+      "kappa": 0.5732833693988494,
+      "wkappa": 0.6460310726238704,
+      "ac": 0.6758290709707184
+    }
+  },
+  "A1_vs_judge": {
+    "per_dimension": {
+      "actionability_moving_forward": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.9342105263157895,
+          "kappa": -0.0326086956521745,
+          "wkappa": -0.032608695652173836,
+          "ac": 0.9297402237219192
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "clarity_cognitive_load": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.8947368421052632,
+          "kappa": 0.164835164835165,
+          "wkappa": 0.1648351648351648,
+          "ac": 0.87998420844848
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "curriculum_hallucination_present": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.9736842105263158,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9729825808745113
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "domain_knowledge_hallucination_present": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.9605263157894737,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9589374155785682
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "error_detection": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.8289473684210527,
+          "kappa": 0.6516220028208746,
+          "wkappa": 0.6516220028208745,
+          "ac": 0.6707215464089319
+        },
+        "rating": {
+          "n": 24,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 25,
+        "n_scored_y": 36
+      },
+      "error_localisation": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.8289473684210527,
+          "kappa": 0.6516220028208746,
+          "wkappa": 0.6516220028208745,
+          "ac": 0.6707215464089319
+        },
+        "rating": {
+          "n": 24,
+          "raw": 0.9583333333333334,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9565610859728507
+        },
+        "n_scored_x": 25,
+        "n_scored_y": 36
+      },
+      "error_reasoning": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.8289473684210527,
+          "kappa": 0.6516220028208746,
+          "wkappa": 0.6516220028208745,
+          "ac": 0.6707215464089319
+        },
+        "rating": {
+          "n": 24,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 25,
+        "n_scored_y": 36
+      },
+      "local_coherence_relevance": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.9868421052631579,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9866678361547233
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "proactive_clarification": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.9868421052631579,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9866678361547233
+        },
+        "rating": {
+          "n": 0
+        },
+        "n_scored_x": 0,
+        "n_scored_y": 1
+      },
+      "scaffolding_quality": {
+        "applicability": {
+          "n": 39,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 39,
+          "raw": 0.7692307692307693,
+          "kappa": 0.14180929095354564,
+          "wkappa": 0.14180929095354522,
+          "ac": 0.6954446854663775
+        },
+        "n_scored_x": 39,
+        "n_scored_y": 39
+      },
+      "solution_control": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.7763157894736842,
+          "kappa": -0.06953642384105974,
+          "wkappa": -0.06953642384105962,
+          "ac": 0.7208598898131144
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "student_context_hallucination_present": {
+        "applicability": {
+          "n": 39,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 39,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 39,
+        "n_scored_y": 39
+      },
+      "student_level_calibration": {
+        "applicability": {
+          "n": 39,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 39,
+          "raw": 0.8974358974358975,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.886380189366351
+        },
+        "n_scored_x": 39,
+        "n_scored_y": 39
+      }
+    },
+    "pooled_applicability": {
+      "n": 877,
+      "raw": 0.9543899657924744,
+      "kappa": 0.8758397100567004,
+      "wkappa": 0.8758397100567004,
+      "ac": 0.9279921341464666
+    },
+    "pooled_rating": {
+      "n": 645,
+      "raw": 0.9224806201550387,
+      "kappa": 0.8331600266943957,
+      "wkappa": 0.9003939318214362,
+      "ac": 0.9304324236872942
+    }
+  },
+  "A2_vs_judge": {
+    "per_dimension": {
+      "actionability_moving_forward": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.21052631578947367,
+          "kappa": 0.011274934952298313,
+          "wkappa": 0.012185215272136563,
+          "ac": -0.2088810339114107
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "clarity_cognitive_load": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.75,
+          "kappa": -0.08083832335329284,
+          "wkappa": -0.028490028490028463,
+          "ac": 0.8453326668689862
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "curriculum_hallucination_present": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "domain_knowledge_hallucination_present": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "error_detection": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.6578947368421053,
+          "kappa": 0.33243243243243265,
+          "wkappa": 0.33243243243243237,
+          "ac": 0.34482758620689663
+        },
+        "rating": {
+          "n": 33,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 56,
+        "n_scored_y": 36
+      },
+      "error_localisation": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.6578947368421053,
+          "kappa": 0.33243243243243265,
+          "wkappa": 0.33243243243243237,
+          "ac": 0.34482758620689663
+        },
+        "rating": {
+          "n": 33,
+          "raw": 0.9696969696969697,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9687647893989588
+        },
+        "n_scored_x": 56,
+        "n_scored_y": 36
+      },
+      "error_reasoning": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.868421052631579,
+          "kappa": 0.7331460674157304,
+          "wkappa": 0.7331460674157304,
+          "ac": 0.7432432432432433
+        },
+        "rating": {
+          "n": 27,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 28,
+        "n_scored_y": 36
+      },
+      "local_coherence_relevance": {
+        "applicability": {
+          "n": 76,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 76,
+          "raw": 0.9868421052631579,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9866678361547233
+        },
+        "n_scored_x": 76,
+        "n_scored_y": 76
+      },
+      "proactive_clarification": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.9868421052631579,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.9866678361547233
+        },
+        "rating": {
+          "n": 0
+        },
+        "n_scored_x": 0,
+        "n_scored_y": 1
+      },
+      "scaffolding_quality": {
+        "applicability": {
+          "n": 39,
+          "raw": 0.7692307692307693,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.7100371747211897
+        },
+        "rating": {
+          "n": 30,
+          "raw": 0.5,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.5253296321998612
+        },
+        "n_scored_x": 30,
+        "n_scored_y": 39
+      },
+      "solution_control": {
+        "applicability": {
+          "n": 76,
+          "raw": 0.6710526315789473,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.5463769846006924
+        },
+        "rating": {
+          "n": 51,
+          "raw": 0.23529411764705882,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": -0.07765451664025363
+        },
+        "n_scored_x": 51,
+        "n_scored_y": 76
+      },
+      "student_context_hallucination_present": {
+        "applicability": {
+          "n": 39,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "rating": {
+          "n": 39,
+          "raw": 1.0,
+          "kappa": null,
+          "wkappa": null,
+          "ac": null
+        },
+        "n_scored_x": 39,
+        "n_scored_y": 39
+      },
+      "student_level_calibration": {
+        "applicability": {
+          "n": 39,
+          "raw": 0.8717948717948718,
+          "kappa": 0.0,
+          "wkappa": 0.0,
+          "ac": 0.8543145311916325
+        },
+        "rating": {
+          "n": 34,
+          "raw": 0.6470588235294118,
+          "kappa": 0.07482993197278898,
+          "wkappa": 0.1355932203389829,
+          "ac": 0.7508904039890099
+        },
+        "n_scored_x": 34,
+        "n_scored_y": 39
+      }
+    },
+    "pooled_applicability": {
+      "n": 877,
+      "raw": 0.8836944127708096,
+      "kappa": 0.6685366612814776,
+      "wkappa": 0.6685366612814774,
+      "ac": 0.8208357951871177
+    },
+    "pooled_rating": {
+      "n": 627,
+      "raw": 0.7655502392344498,
+      "kappa": 0.5778183916891112,
+      "wkappa": 0.6578949429446364,
+      "ac": 0.6967817348188982
+    }
+  }
+}

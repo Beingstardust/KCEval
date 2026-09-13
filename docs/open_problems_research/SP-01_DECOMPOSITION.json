@@ -1,0 +1,69 @@
+{
+  "analysis": "SP-1 resolution-gap decomposition across all available conditions",
+  "status": "FORENSIC - frozen artifacts only, no model run, no pipeline change",
+  "definitions": {
+    "local_raw": "exchange-weighted mean of p_s over local units",
+    "local_post_criteria": "exchange-weighted mean of (1-beta)*p_s + beta*k_s",
+    "local_final": "exchange-weighted mean of C_s (post-cap) = published D_segment",
+    "topic_raw": "exchange-weighted mean of p_s over topic units",
+    "topic_final": "exchange-weighted mean of topic score = published D_ARC",
+    "R_reported": "topic_final - local_final",
+    "R_raw": "topic_raw - local_raw",
+    "criteria_contribution": "local_raw - local_post_criteria",
+    "cap_contribution": "local_post_criteria - local_final",
+    "post_processing_component": "R_reported - R_raw"
+  },
+  "conditions": {
+    "replication_clean": {
+      "local_raw": 0.9741161616161615,
+      "local_post_criteria": 0.9628787878787878,
+      "local_final": 0.8169191919191914,
+      "topic_raw": 0.9798611111111111,
+      "topic_final": 0.9798611111111111,
+      "n_local": 42,
+      "n_topic": 21,
+      "n_local_capped": 35,
+      "n_local_with_k_s": 29,
+      "n_topic_with_k_s": 0,
+      "topic_b_equals_p_all": true,
+      "beta": 0.2,
+      "source": "console score_provenance",
+      "R_reported": 0.1629419191919197,
+      "R_raw": 0.005744949494949525,
+      "criteria_contribution": 0.011237373737373768,
+      "cap_contribution": 0.1459595959595964,
+      "post_processing_component": 0.15719696969697017,
+      "post_processing_share": 0.96474234792716
+    },
+    "replication_corrupted": {
+      "local_raw": 0.9482323232323232,
+      "local_post_criteria": 0.9353535353535353,
+      "local_final": 0.7214646464646459,
+      "topic_raw": 0.9728535353535354,
+      "topic_final": 0.9728535353535354,
+      "n_local": 42,
+      "n_topic": 22,
+      "n_local_capped": 36,
+      "n_local_with_k_s": 28,
+      "n_topic_with_k_s": 0,
+      "topic_b_equals_p_all": true,
+      "beta": 0.2,
+      "source": "console score_provenance",
+      "R_reported": 0.25138888888888944,
+      "R_raw": 0.024621212121212155,
+      "criteria_contribution": 0.012878787878787934,
+      "cap_contribution": 0.21388888888888935,
+      "post_processing_component": 0.22676767676767728,
+      "post_processing_share": 0.9020592667001508
+    },
+    "reference_REF": {
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\mohds\\\\Documents\\\\KCEval\\\\scripts\\\\analyze_grounded_factuality.py'"
+    },
+    "pedagogical_degradation_PED_DEG": {
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\mohds\\\\Documents\\\\KCEval\\\\scripts\\\\analyze_grounded_factuality.py'"
+    },
+    "factual_corruption_FACT_CORR": {
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\mohds\\\\Documents\\\\KCEval\\\\scripts\\\\analyze_grounded_factuality.py'"
+    }
+  }
+}

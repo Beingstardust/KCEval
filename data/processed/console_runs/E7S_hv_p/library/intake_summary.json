@@ -1,0 +1,50 @@
+{
+  "shape": "reviewed_library_v2",
+  "kc_count": 159,
+  "warnings": [
+    "68/159 KCs have no reviewer_criteria; K_s will be None for units resolving only to them."
+  ],
+  "stats": {
+    "shape": "reviewed_library_v2",
+    "kc_count": 159,
+    "non_kc_rows_skipped": 0,
+    "with_matching_cues": 159,
+    "with_surface_forms": 159,
+    "with_sibling_names": 159,
+    "with_evaluation_support": 159,
+    "with_reviewer_criteria": 91,
+    "criteria_total": 104,
+    "with_evidence_spans": 138,
+    "topic_count": 23
+  },
+  "manifest": {
+    "created_utc": "2026-09-01T16:27:04.348253+00:00",
+    "schema_version": "frozen_matching_profile_manifest.v1",
+    "builder": "src/seg_eval/console/profile_adapter_v1.py",
+    "source_description": "frozen_reviewed_library.jsonl",
+    "source_sha256": "656e5ec613741677b7d2bd7edb19d1e87ab8bfaa9dee080489a5b1dc5f9b6196",
+    "profile_count": 159,
+    "profile_path": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\library\\frozen_matching_profiles.jsonl",
+    "profile_sha256": "53fd21f8efb8322f3d4ee5be713bdb4551dc4ca825faf64422f2337e62d18424",
+    "reviewed_library_path": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\library\\reviewed_library.jsonl",
+    "reviewed_library_sha256": "24ce9715363c675e1b82541bdd5f6c10c1c13333398b784311f19608722df3b5",
+    "field_nonempty_counts": {
+      "context_profile.leaf_topic": 159,
+      "context_profile.source_hierarchy_path": 159,
+      "context_profile.topic_path": 159,
+      "negative_profile.sibling_contrast_notes": 159,
+      "negative_profile.sibling_kc_names": 159,
+      "positive_profile.anchor_quality": 159,
+      "positive_profile.canonical_terms": 159,
+      "positive_profile.matched_surface_terms_from_evidence": 138,
+      "positive_profile.likely_dialogue_surface_forms": 159,
+      "positive_profile.matching_cues": 159
+    },
+    "evidence_backed_count": 138,
+    "reviewer_authored_no_evidence_count": 21,
+    "criteria_total": 104,
+    "kcs_with_criteria": 91,
+    "kcs_with_evaluation_support": 159
+  },
+  "disabled_passes": []
+}

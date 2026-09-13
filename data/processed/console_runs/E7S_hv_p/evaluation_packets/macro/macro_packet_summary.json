@@ -1,0 +1,8 @@
+{
+  "dialogue_id": "E7S_hv_p",
+  "exchange_count": 44,
+  "finished_utc": "2026-09-01T17:06:55.333212+00:00",
+  "packet_pipeline": "dialogue_macro_packets_v1",
+  "source_run_dir": "R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\segmentation",
+  "started_utc": "2026-09-01T17:06:55.330267+00:00"
+}

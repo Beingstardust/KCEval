@@ -1,0 +1,12 @@
+{
+  "errors": [],
+  "fragmentation_risk_count": 3,
+  "packet_count": 17,
+  "status": "PASS",
+  "topic_unit_count": 17,
+  "warnings": [
+    "fragmentation_risk:dm1_human_student_llm_tutor_teaching_rich_dialogue_textonly_20260618T174736Z::topic_unit_0000",
+    "fragmentation_risk:dm1_human_student_llm_tutor_teaching_rich_dialogue_textonly_20260618T174736Z::topic_unit_0003",
+    "fragmentation_risk:dm1_human_student_llm_tutor_teaching_rich_dialogue_textonly_20260618T174736Z::topic_unit_0007"
+  ]
+}

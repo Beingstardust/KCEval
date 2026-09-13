@@ -1,0 +1,81 @@
+{
+  "schema": "human_validation_dataset_manifest.v1",
+  "source_artifacts": {
+    "dm1_local_packets": {
+      "path": "data/processed/evaluation_packets/v35_dm1_eval_20260824_focus_target/kc_segment_local/segment_evaluation_packets.jsonl",
+      "sha256": "e24e4f3b4d59ddef14e5430a10ab8a200b8824f76608a770d59580882a3a6d51"
+    },
+    "dm1_arc_packets": {
+      "path": "data/processed/evaluation_packets/v35_dm1_eval_20260824_focus_target/topic_rollup_arc/segment_evaluation_packets.jsonl",
+      "sha256": "f958b1e60d858fc1f1f1e18fb3f0bbd87c993170b70da00f1dc2c523176a953b"
+    },
+    "dm2_local_packets": {
+      "path": "data/processed/evaluation_packets/v35_dm2_eval_20260827/kc_segment_local/segment_evaluation_packets.jsonl",
+      "sha256": "b2dc749f4e970bee3576f7248023102b6c3e325ed88b669aa4f0ecf7bca1ca88"
+    },
+    "dm2_arc_packets": {
+      "path": "data/processed/evaluation_packets/v35_dm2_eval_20260827/topic_rollup_arc/segment_evaluation_packets.jsonl",
+      "sha256": "013fecef545e88c3aa00048cac64111e2cc24ec0c55218318c9b79d48d700faf"
+    },
+    "dm1_local_prompts": {
+      "path": "data/processed/judge_prompts/v35_dm1_kc_segment_local_20260820/segment_judge_prompts.jsonl",
+      "sha256": "88733a2bad81b07d75f5c2aca93019980f596cb10a680c80fdb42005fca06aa4"
+    },
+    "dm1_arc_prompts": {
+      "path": "data/processed/judge_prompts/v35_dm1_topic_rollup_arc_20260820/segment_judge_prompts.jsonl",
+      "sha256": "ae8c94939df71d5d02af9cafe85bdd3971fad6942aa0d2a2eb6bc811f53d2216"
+    },
+    "dm2_local_prompts": {
+      "path": "data/processed/judge_prompts/v35_dm2_kc_segment_local_20260827/segment_judge_prompts.jsonl",
+      "sha256": "e9236ea2ebb406fa2f4ea2eb1b503dbe0d25d7befbc9a5e17669057365d6a5c5"
+    },
+    "dm2_arc_prompts": {
+      "path": "data/processed/judge_prompts/v35_dm2_topic_rollup_arc_20260827/segment_judge_prompts.jsonl",
+      "sha256": "7ecfb5f238e50384cbfa41340ffc3599943a5b69abc8a984c4d8d87d269fc5c4"
+    },
+    "dm1_local_responses": {
+      "path": "data/processed/judge_responses/v35_dm1_kc_segment_local_20260824_v2/judge_responses.jsonl",
+      "sha256": "61542c1a0a629f938a225a14b6a76dcc01081f7098bc9838ffbf7d13ebaa06b6"
+    },
+    "dm1_arc_responses": {
+      "path": "data/processed/judge_responses/v35_dm1_topic_rollup_arc_20260824_v2/judge_responses.jsonl",
+      "sha256": "bf2a2281f11ca07f4fa9780576f4f59d177ac5c5b399822c6fdf7c271e411008"
+    },
+    "dm2_local_responses": {
+      "path": "data/processed/judge_responses/v35_dm2_kc_segment_local_20260827/judge_responses.jsonl",
+      "sha256": "767372dc67f8be2530fd45d7eaa4184706805d3d25df9a8b9e7d6677df9128d5"
+    },
+    "dm2_arc_responses": {
+      "path": "data/processed/judge_responses/v35_dm2_topic_rollup_arc_20260827/judge_responses.jsonl",
+      "sha256": "358686918dc07a64295ef7915d0f1f6ccd4c104539234312d555ee503e447eb4"
+    },
+    "dm1_macro_packets": {
+      "path": "data/processed/evaluation_packets/v35_dm1_macro_20260827/dialogue_macro_packets.jsonl",
+      "sha256": "308bdece00ae55efb608b76f13287974c19946351d1a573e0bfa07b56626d9c4"
+    },
+    "dm2_macro_packets": {
+      "path": "data/processed/evaluation_packets/v35_dm2_macro_20260827/dialogue_macro_packets.jsonl",
+      "sha256": "9c204a4126e94f920efe67704653f2c31a86acc5f4513d563116e2ad54851487"
+    },
+    "dm1_macro_responses": {
+      "path": "data/processed/judge_responses/v35_dm1_macro_20260827/macro_judge_responses.jsonl",
+      "sha256": "0905f67e84dd2f9f214a1eb3464b5e475dcca6df3f63043e14822f9b3d59e1b4"
+    },
+    "dm2_macro_responses": {
+      "path": "data/processed/judge_responses/v35_dm2_macro_20260827/macro_judge_responses.jsonl",
+      "sha256": "aa0a3c83bf9f99c8cae29a6884990ae692a41f838b75f0f6982f830789e66ba6"
+    }
+  },
+  "evaluation_unit_count": 115,
+  "macro_row_count": 2,
+  "by_dialogue": {
+    "dm1_human_student_llm_tutor_teaching_rich_dialogue_textonly_20260618T174736Z": 52,
+    "dm2_gold_holdout_dialogue_20260811": 63
+  },
+  "by_family": {
+    "local": 76,
+    "arc": 39
+  },
+  "dataset_path": "data\\processed\\human_validation\\dataset_v1.jsonl",
+  "macro_dataset_path": "data\\processed\\human_validation\\macro_dataset_v1.jsonl"
+}

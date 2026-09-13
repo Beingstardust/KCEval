@@ -1,0 +1,502 @@
+{
+ "turns": {
+  "a1": 60,
+  "a2": 61,
+  "shared": 59,
+  "only_a1": [
+   "dm1_t051"
+  ],
+  "only_a2": [
+   "dm1_t011",
+   "dm1_t027"
+  ]
+ },
+ "claims": {
+  "a1": 272,
+  "a2": 108,
+  "a1_shared": 270,
+  "a2_shared": 104
+ },
+ "alignment": {
+  "matched": 101,
+  "a1_unmatched": 169,
+  "a2_unmatched": 3,
+  "recall_a2_vs_a1": 0.37407407407407406,
+  "precision_a2_vs_a1": 0.9711538461538461,
+  "f1": 0.5401069518716578
+ },
+ "per_turn": [
+  {
+   "turn": "dm1_t003",
+   "a1": 5,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t005",
+   "a1": 3,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t009",
+   "a1": 4,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t015",
+   "a1": 5,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t017",
+   "a1": 1,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 0,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t023",
+   "a1": 3,
+   "a2": 3,
+   "matched": 2,
+   "a1_only": 1,
+   "a2_only": 1
+  },
+  {
+   "turn": "dm1_t025",
+   "a1": 2,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t029",
+   "a1": 3,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t033",
+   "a1": 2,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t035",
+   "a1": 2,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 0,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t047",
+   "a1": 3,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t049",
+   "a1": 3,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t055",
+   "a1": 3,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t059",
+   "a1": 2,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t067",
+   "a1": 3,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t077",
+   "a1": 4,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t079",
+   "a1": 3,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t081",
+   "a1": 3,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t085",
+   "a1": 7,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 5,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t087",
+   "a1": 6,
+   "a2": 4,
+   "matched": 4,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t093",
+   "a1": 3,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t099",
+   "a1": 4,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t107",
+   "a1": 4,
+   "a2": 3,
+   "matched": 3,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t109",
+   "a1": 3,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t111",
+   "a1": 3,
+   "a2": 4,
+   "matched": 3,
+   "a1_only": 0,
+   "a2_only": 1
+  },
+  {
+   "turn": "dm1_t115",
+   "a1": 6,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 5,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t119",
+   "a1": 3,
+   "a2": 3,
+   "matched": 3,
+   "a1_only": 0,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t121",
+   "a1": 1,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 0,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm1_t123",
+   "a1": 3,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 1,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t005",
+   "a1": 4,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t009",
+   "a1": 6,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 4,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t015",
+   "a1": 5,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t017",
+   "a1": 5,
+   "a2": 3,
+   "matched": 3,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t025",
+   "a1": 4,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t033",
+   "a1": 5,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 4,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t035",
+   "a1": 6,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 4,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t039",
+   "a1": 4,
+   "a2": 2,
+   "matched": 1,
+   "a1_only": 3,
+   "a2_only": 1
+  },
+  {
+   "turn": "dm2_t041",
+   "a1": 5,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 4,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t043",
+   "a1": 4,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t045",
+   "a1": 6,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 4,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t047",
+   "a1": 5,
+   "a2": 3,
+   "matched": 3,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t049",
+   "a1": 7,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 6,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t051",
+   "a1": 7,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 6,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t053",
+   "a1": 6,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 4,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t055",
+   "a1": 4,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t057",
+   "a1": 6,
+   "a2": 3,
+   "matched": 3,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t061",
+   "a1": 3,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 2,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t063",
+   "a1": 7,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 6,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t065",
+   "a1": 7,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 6,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t069",
+   "a1": 6,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 4,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t071",
+   "a1": 6,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 5,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t075",
+   "a1": 7,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 5,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t077",
+   "a1": 7,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 5,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t079",
+   "a1": 9,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 7,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t081",
+   "a1": 8,
+   "a2": 4,
+   "matched": 4,
+   "a1_only": 4,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t083",
+   "a1": 5,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t085",
+   "a1": 5,
+   "a2": 2,
+   "matched": 2,
+   "a1_only": 3,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t087",
+   "a1": 7,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 6,
+   "a2_only": 0
+  },
+  {
+   "turn": "dm2_t089",
+   "a1": 7,
+   "a2": 1,
+   "matched": 1,
+   "a1_only": 6,
+   "a2_only": 0
+  }
+ ]
+}

@@ -1,0 +1,458 @@
+[
+  {
+    "student": {
+      "text": "I want to work through the Data Mining exercise sheets, but I do not want just final answers. I want to understand why the answers make sense. Can we start from Exercise 1? My first confusion is basic: what exactly is classification?"
+    },
+    "tutor": {
+      "text": "Yes. Classification is the task of assigning a class label to an instance whose label is unknown. In the source material, a classifier is a model learned from a training set, where each training instance already has attribute values and a known class label. Then the learned model is applied to unseen instances to predict their class labels."
+    }
+  },
+  {
+    "student": {
+      "text": "So classification is not just describing data. It predicts a label. But the exercise asks for two phases. Are those training and testing?"
+    },
+    "tutor": {
+      "text": "Close, but say it more carefully. The two phases are learning and classification. In the learning phase, the learning algorithm uses labeled training data to build a model. In the classification phase, the model is applied to unlabeled or unseen instances to predict their class label. The source text also calls the model-building step induction and the label-prediction step deduction."
+    }
+  },
+  {
+    "student": {
+      "text": "Can I say that loan default prediction is a real-world classification problem, because the model predicts whether a borrower defaults?"
+    },
+    "tutor": {
+      "text": "Yes. That matches the exercise table. Each borrower has attributes such as Home Owner, Marital Status, Level of Education, and Annual Income. The class label is Defaulted Borrower, with values Y or N. A model would learn from known borrowers and then predict Y or N for a new borrower."
+    }
+  },
+  {
+    "student": {
+      "text": "What is the learning set? I keep mixing up learning set, training set, and test set."
+    },
+    "tutor": {
+      "text": "The learning set is the labeled data available for building and evaluating a classifier. It is split into a training set and a test set because the model must be learned on one part and evaluated on data not used to fit the model. If we evaluate only on the same data used for learning, the model may look good simply because it memorized patterns in the training data."
+    }
+  },
+  {
+    "student": {
+      "text": "So the test set is not supposed to influence model selection?"
+    },
+    "tutor": {
+      "text": "Correct. The source material stresses that a test set should be independently chosen and not used to influence model selection. Otherwise, the reported test performance is no longer a clean estimate of performance on unseen instances."
+    }
+  },
+  {
+    "student": {
+      "text": "Now target attribute: is it simply the column we predict?"
+    },
+    "tutor": {
+      "text": "Yes. In a classification task, the target attribute is the class label. It must have discrete class values. In the borrower table, Defaulted Borrower is the target attribute because the model predicts Y or N."
+    }
+  },
+  {
+    "student": {
+      "text": "For the variable types in Exercise 1, I think Home Owner is categorical, Marital Status is categorical, Level of Education is ordinal, Annual Income is numerical, and Defaulted Borrower is categorical. Is that right?"
+    },
+    "tutor": {
+      "text": "That is right. Home Owner is categorical with values Y and N. Marital Status is categorical with values such as Single, Married, and Divorced. Level of Education is ordinal because Low, Moderate, and High have an order. Annual Income is numerical. Defaulted Borrower is categorical and is also the target attribute."
+    }
+  },
+  {
+    "student": {
+      "text": "One thing bothers me. Home Owner is Y or N, so could it also be called binary?"
+    },
+    "tutor": {
+      "text": "Yes. Binary is a special case of a discrete attribute with only two values. In the exercise's requested categories, you can call Home Owner categorical. More specifically, it is binary categorical."
+    }
+  },
+  {
+    "student": {
+      "text": "Good. Let us move to Exercise 2. The medical test question feels like a trick. The test is 99 percent reliable, so my instinct says the patient is 99 percent likely to be sick after a positive test."
+    },
+    "tutor": {
+      "text": "That instinct ignores the base rate. Only 1 percent of the population is sick. We need Bayes' theorem: P(sick | positive) = P(positive | sick) P(sick) divided by P(positive). The positive result can happen either because the person is sick and the test correctly returns positive, or because the person is healthy and the test falsely returns positive."
+    }
+  },
+  {
+    "student": {
+      "text": "Can you compute it with the numbers?"
+    },
+    "tutor": {
+      "text": "Yes. P(sick) = 0.01, P(healthy) = 0.99, P(positive | sick) = 0.99, and P(positive | healthy) = 0.01. So P(sick | positive) = 0.99 * 0.01 / [(0.99 * 0.01) + (0.01 * 0.99)] = 0.0099 / 0.0198 = 0.5. The answer is 50 percent, not 99 percent."
+    }
+  },
+  {
+    "student": {
+      "text": "That is surprisingly low. So reliability alone is not enough; prevalence matters."
+    },
+    "tutor": {
+      "text": "Exactly. A rare disease means many positive tests can come from healthy people, even when the false positive rate is only 1 percent."
+    }
+  },
+  {
+    "student": {
+      "text": "Now Naive Bayes. I know it uses Bayes' theorem, but what is the full classifier idea?"
+    },
+    "tutor": {
+      "text": "For each possible class y, Naive Bayes computes a score proportional to P(y) multiplied by the product of P(attribute value | y) over the attributes. It predicts the class with the highest score. It is called naive because it assumes that the attributes are conditionally independent given the class label."
+    }
+  },
+  {
+    "student": {
+      "text": "So for a borrower, it multiplies things like P(Home Owner = N | DB = Y), P(Married | DB = Y), and P(Income = 90 | DB = Y)?"
+    },
+    "tutor": {
+      "text": "Yes, if the income value is being treated as a discrete observed value. If income is handled as numeric, the source material says we can either discretize it or assume a distribution such as Gaussian and estimate mean and variance for each class."
+    }
+  },
+  {
+    "student": {
+      "text": "The exercise asks how Naive Bayes handles numeric attributes and asks for the formula. What should I write?"
+    },
+    "tutor": {
+      "text": "Write that for a continuous attribute, Naive Bayes can assume a probability distribution for that attribute within each class. The common example in the source is Gaussian. For class y_j and attribute X_i, P(X_i = x_i | Y = y_j) = 1 / sqrt(2*pi*sigma_ij^2) * exp[-(x_i - mu_ij)^2 / (2*sigma_ij^2)]. Here mu_ij and sigma_ij^2 are estimated from training instances of class y_j."
+    }
+  },
+  {
+    "student": {
+      "text": "Now the borrower table. For DB = Y and DB = N, I need conditional probabilities. Can we count the classes first?"
+    },
+    "tutor": {
+      "text": "Yes. There are 10 borrowers. DB = Y occurs 3 times. DB = N occurs 7 times. So P(DB = Y) = 3/10 and P(DB = N) = 7/10."
+    }
+  },
+  {
+    "student": {
+      "text": "For Home Owner, all DB = Y cases have Home Owner = N, right?"
+    },
+    "tutor": {
+      "text": "Correct. For DB = Y, Home Owner = N occurs 3/3 and Home Owner = Y occurs 0/3. For DB = N, Home Owner = N occurs 4/7 and Home Owner = Y occurs 3/7."
+    }
+  },
+  {
+    "student": {
+      "text": "For Marital Status, DB = Y has Divorced once and Single twice, but Married never. DB = N has Single twice, Married four times, and Divorced once."
+    },
+    "tutor": {
+      "text": "Exactly. So for DB = Y: P(Single | Y) = 2/3, P(Divorced | Y) = 1/3, P(Married | Y) = 0/3. For DB = N: P(Single | N) = 2/7, P(Married | N) = 4/7, P(Divorced | N) = 1/7."
+    }
+  },
+  {
+    "student": {
+      "text": "The instance is Home Owner = N, Marital Status = Married, Annual Income = 90. Without zero handling, if I treat income as a categorical value, I get zeros. Is that the zero-frequency problem?"
+    },
+    "tutor": {
+      "text": "Yes. Without smoothing, any unseen or absent attribute value within a class gives a conditional probability of zero. For this instance, P(Married | DB = Y) is zero. Also, if Annual Income = 90 is treated as a discrete value, P(Income = 90 | DB = N) is zero. A single zero can collapse the whole product score to zero."
+    }
+  },
+  {
+    "student": {
+      "text": "So the classifier can become useless because one missing combination destroys the whole class score."
+    },
+    "tutor": {
+      "text": "Yes. That is why the exercise asks about the zero-frequency problem and Laplace estimation. Laplace estimation adds a small count so that unseen values do not receive probability zero."
+    }
+  },
+  {
+    "student": {
+      "text": "Let us compute the Laplace version for the same instance. Can we use the simple add-one formula?"
+    },
+    "tutor": {
+      "text": "Yes. For a categorical attribute with k possible values, Laplace estimate is (count + 1) / (class_count + k). For Home Owner there are 2 values. For Marital Status there are 3 values. If Annual Income is treated as a discrete attribute in this table, there are 10 distinct income values."
+    }
+  },
+  {
+    "student": {
+      "text": "Then for DB = N: P(Home Owner = N | N) = (4 + 1)/(7 + 2) = 5/9, P(Married | N) = (4 + 1)/(7 + 3) = 5/10, and P(Income = 90 | N) = (0 + 1)/(7 + 10) = 1/17."
+    },
+    "tutor": {
+      "text": "Correct. Multiply with the prior: score(DB = N) = 7/10 * 5/9 * 5/10 * 1/17 = 7/612, approximately 0.0114."
+    }
+  },
+  {
+    "student": {
+      "text": "For DB = Y: P(Home Owner = N | Y) = (3 + 1)/(3 + 2) = 4/5, P(Married | Y) = (0 + 1)/(3 + 3) = 1/6, and P(Income = 90 | Y) = (1 + 1)/(3 + 10) = 2/13."
+    },
+    "tutor": {
+      "text": "Correct again. Multiply with the prior: score(DB = Y) = 3/10 * 4/5 * 1/6 * 2/13 = 2/325, approximately 0.00615. Since 0.0114 is greater than 0.00615, the Laplace-smoothed discrete Naive Bayes classification is DB = N."
+    }
+  },
+  {
+    "student": {
+      "text": "Now Exercise 3. The question asks why Information Gain can be problematic. Is the problem that it likes attributes with too many values?"
+    },
+    "tutor": {
+      "text": "Yes. Information Gain tends to prefer attributes with many distinct values. An ID attribute can split the data into tiny or single-instance groups and appear to remove all uncertainty, but that does not mean it generalizes. Gain Ratio counters this by dividing the gain by a split-information term, penalizing splits that fragment the data too much."
+    }
+  },
+  {
+    "student": {
+      "text": "In the Exercise 3 table, ID has a unique value for every row. So it should get maximum information gain, right?"
+    },
+    "tutor": {
+      "text": "Yes. The root has 10 class 1 and 10 class 0 instances, so the root entropy is 1. Splitting by ID creates 20 pure leaves, each with entropy 0. Therefore Information Gain for ID is 1. But the split information is log2(20), approximately 4.322, so Gain Ratio for ID is about 0.231."
+    }
+  },
+  {
+    "student": {
+      "text": "So ID looks perfect by Information Gain but weaker by Gain Ratio. What about Gender?"
+    },
+    "tutor": {
+      "text": "For Gender, the F group has 6 positives and 4 negatives, while the M group has 4 positives and 6 negatives. The weighted entropy is about 0.971, so Information Gain is about 0.029. Since the split information for two equal groups is 1, the Gain Ratio is also about 0.029."
+    }
+  },
+  {
+    "student": {
+      "text": "Graduation looks more meaningful because Middle School is all class 1 and High School is mostly class 0."
+    },
+    "tutor": {
+      "text": "Exactly. Graduation gives Information Gain about 0.628 and Gain Ratio about 0.436. It is the strongest attribute here by Gain Ratio."
+    }
+  },
+  {
+    "student": {
+      "text": "And Eye Color?"
+    },
+    "tutor": {
+      "text": "Eye Color is weak in this table. Its Information Gain is about 0.012 and its Gain Ratio is about 0.006. The class distributions inside its color groups are not very pure."
+    }
+  },
+  {
+    "student": {
+      "text": "So if I summarize: ID has IG 1.000 and GR 0.231, Gender has IG 0.029 and GR 0.029, Graduation has IG 0.628 and GR 0.436, and Eye Color has IG 0.012 and GR 0.006."
+    },
+    "tutor": {
+      "text": "That is a good rounded summary. The main conceptual lesson is not just the numbers; it is that Information Gain alone can be misled by ID-like attributes."
+    }
+  },
+  {
+    "student": {
+      "text": "Now the decision-tree error estimates in Exercise 3 confuse me. What are optimistic, pessimistic, and reduced-error estimates?"
+    },
+    "tutor": {
+      "text": "The optimistic error estimate is the training error rate of the tree. The pessimistic error estimate adds a complexity penalty based on the number of leaf nodes: err_p(T) = err_o(T) + Omega * k / N_train. Reduced-error pruning uses validation-set error instead of training-set error."
+    }
+  },
+  {
+    "student": {
+      "text": "For the first tree in the figure, I count five leaves. The leaf mistakes are 0, 2, 1, 2, and 1 if each leaf predicts its majority class. So 6 mistakes out of 20."
+    },
+    "tutor": {
+      "text": "Correct. For Tree 1, err_o = 6/20 = 0.30. With Omega = 2, k = 5, and N_train = 20, err_p = 0.30 + 2 * 5/20 = 0.80."
+    }
+  },
+  {
+    "student": {
+      "text": "For the second tree, it has three leaves. The leaf mistakes are 4 for the tie leaf, 0 for the pure negative leaf, and 4 for the mixed leaf. So 8 mistakes out of 20."
+    },
+    "tutor": {
+      "text": "Yes. Tree 2 has err_o = 8/20 = 0.40. With k = 3, err_p = 0.40 + 2 * 3/20 = 0.70. So pessimistic error prefers the simpler second tree despite its higher training error."
+    }
+  },
+  {
+    "student": {
+      "text": "Reduced-error pruning depends on the validation rows 21 to 25. But the second tree has a tie at A = 0 with -:4 and +:4. What class should that leaf predict?"
+    },
+    "tutor": {
+      "text": "That is an important ambiguity. The exercise says each leaf is labeled by majority class, but one Tree 2 leaf has no majority. A tie-breaking rule is needed. If the tie is broken as positive, Tree 2 makes 1 validation error out of 5. If the tie is broken as negative, it makes 3 validation errors out of 5. The first tree makes 4 validation errors out of 5 under the natural majority labels."
+    }
+  },
+  {
+    "student": {
+      "text": "That is useful because I was trying to force one answer, but the figure itself leaves a tie."
+    },
+    "tutor": {
+      "text": "Exactly. In a clean solution, state the tie issue instead of hiding it. If your course uses a fixed tie convention, apply that convention consistently."
+    }
+  },
+  {
+    "student": {
+      "text": "Now Exercise 4. The confusion matrix has Y as positive. Can I identify TP, FP, TN, FN?"
+    },
+    "tutor": {
+      "text": "Yes. From the table: TP means true Y predicted Y, which occurs 2 times. FN means true Y predicted N, which occurs 1 time. FP means true N predicted Y, which occurs 2 times. TN means true N predicted N, which occurs 5 times."
+    }
+  },
+  {
+    "student": {
+      "text": "Then accuracy is (TP + TN)/total = (2 + 5)/10 = 0.70."
+    },
+    "tutor": {
+      "text": "Correct. Precision = TP/(TP + FP) = 2/(2 + 2) = 0.50. Recall = TP/(TP + FN) = 2/(2 + 1) = 0.667. Sensitivity is the same as recall. Specificity = TN/(TN + FP) = 5/(5 + 2) = 0.714. F1 = 2 * precision * recall / (precision + recall) = 0.571."
+    }
+  },
+  {
+    "student": {
+      "text": "Why is recall also called sensitivity?"
+    },
+    "tutor": {
+      "text": "The source material states that true positive rate is also known as sensitivity in the medical community and recall in information retrieval. All three refer to TP/(TP + FN)."
+    }
+  },
+  {
+    "student": {
+      "text": "For the confidence interval question, p = 0.85 and N = 200. It asks for 90 percent confidence. Why do we use Z = 1.64?"
+    },
+    "tutor": {
+      "text": "A 90 percent two-sided confidence interval leaves 5 percent in each tail, so we use the 0.95 quantile from the exercise table. The table gives Z = 1.64 for Pr[X < Z] = 0.95."
+    }
+  },
+  {
+    "student": {
+      "text": "Then the margin is 1.64 * sqrt(0.85 * 0.15 / 200), which is about 0.041."
+    },
+    "tutor": {
+      "text": "Correct. The interval is approximately 0.85 ± 0.041, so [0.809, 0.891]. With N = 50, the margin increases to about 0.083, giving [0.767, 0.933]. With N = 500, the margin decreases to about 0.026, giving [0.824, 0.876]. Larger test sets give narrower intervals."
+    }
+  },
+  {
+    "student": {
+      "text": "For the wins, draws, and losses between NB and DT, do we just compare accuracy directly?"
+    },
+    "tutor": {
+      "text": "No. The exercise gives a Z-statistic and says a classifier wins if Z > 1.64. For each dataset, compute the average accuracy p = (p_A + p_B)/2 and then Z = (p_A - p_B) / sqrt(2p(1-p)/N). Direct accuracy differences alone are not enough because N affects significance."
+    }
+  },
+  {
+    "student": {
+      "text": "If I take A = NB and B = DT, what happens?"
+    },
+    "tutor": {
+      "text": "Congressional Voting Records gives Z about -2.688, so DT significantly wins. Dermatology gives Z about 1.666, so NB significantly wins. Employee attrition gives Z about -0.273, so it is a draw. Therefore NB has 1 win, 1 draw, and 1 loss; DT also has 1 win, 1 draw, and 1 loss."
+    }
+  },
+  {
+    "student": {
+      "text": "Exercise 4 also asks about random forests. What should I say without going beyond the sheet?"
+    },
+    "tutor": {
+      "text": "Say that an ensemble classifier combines multiple base classifiers, often by majority voting. A random forest is an ensemble of decision trees. The random components are the use of randomly sampled training data for individual trees and random subsets of attributes when choosing splits. The final prediction is made by combining the trees' votes."
+    }
+  },
+  {
+    "student": {
+      "text": "And the evaluation methods: hold-out, random subsampling, cross-validation, stratified cross-validation, leave-one-out, and bootstrap. Can we keep those concise?"
+    },
+    "tutor": {
+      "text": "Hold-out splits labeled data into training and test sets once. Random subsampling repeats hold-out several times with different random splits. Cross-validation partitions data into k folds and rotates which fold is used for testing. Stratified cross-validation preserves class proportions in each fold. Leave-one-out cross-validation is k-fold cross-validation where k equals the number of instances, so each test fold has one instance. Bootstrap samples training sets with replacement and evaluates using instances not selected or through bootstrap-based error estimation."
+    }
+  },
+  {
+    "student": {
+      "text": "Now Exercise 6. What is clustering, and how is it different from classification?"
+    },
+    "tutor": {
+      "text": "Clustering is unsupervised grouping of objects so that objects in the same cluster are similar and objects in different clusters are less similar. Classification is supervised because the training data has class labels and the goal is to learn a model for predicting labels. Clustering does not start with given class labels."
+    }
+  },
+  {
+    "student": {
+      "text": "A real-life example for clustering would be grouping customers by purchase behavior, while classification would be predicting whether a borrower defaults."
+    },
+    "tutor": {
+      "text": "Yes. That distinction is clear: grouping without known labels versus predicting known label categories."
+    }
+  },
+  {
+    "student": {
+      "text": "For K-Means, I know there are centroids and assignments, but I do not fully understand the objective function."
+    },
+    "tutor": {
+      "text": "K-Means chooses K centroids, assigns each point to the closest centroid, recomputes each centroid as the mean of the points assigned to it, and repeats. For Euclidean data, the objective is usually to minimize SSE, the sum of squared distances between each point and its assigned centroid."
+    }
+  },
+  {
+    "student": {
+      "text": "So a centroid is not necessarily an actual data point?"
+    },
+    "tutor": {
+      "text": "Correct. A centroid is the mean position of the points in a cluster. It can be located between data points and does not have to equal one of the original objects."
+    }
+  },
+  {
+    "student": {
+      "text": "When does K-Means stop?"
+    },
+    "tutor": {
+      "text": "It stops when assignments no longer change, which also means the centroids no longer change. The source also notes that practical implementations may stop with a weaker condition, such as when only a small percentage of points change clusters."
+    }
+  },
+  {
+    "student": {
+      "text": "What advantages and disadvantages should I mention?"
+    },
+    "tutor": {
+      "text": "Advantages: K-Means is simple and efficient, and works well for many Euclidean-style data sets. Disadvantages: it is sensitive to initialization, can be affected by outliers, requires choosing K, assumes a meaningful centroid, and struggles with non-globular clusters or clusters of very different sizes or densities."
+    }
+  },
+  {
+    "student": {
+      "text": "Exercise 6 asks for Manhattan distance, Euclidean distance, and cosine similarity. Can we list formulas and meanings?"
+    },
+    "tutor": {
+      "text": "For two vectors x and y, Manhattan distance is sum_i |x_i - y_i|. Euclidean distance is sqrt(sum_i (x_i - y_i)^2). Both are dissimilarities: smaller means more similar, and their minimum is 0. Cosine similarity is (x dot y) / (||x|| ||y||). It measures angle-based similarity, often useful when direction matters more than magnitude. For nonnegative data, it ranges from 0 to 1; in general vector spaces it can range from -1 to 1."
+    }
+  },
+  {
+    "student": {
+      "text": "Now the K-Means calculation. Initial centroids are p10 = (7, 3) and p11 = (6.5, 1), right?"
+    },
+    "tutor": {
+      "text": "Yes. Let us call them C1 = (7, 3) and C2 = (6.5, 1). With Euclidean distance, after the first assignment, C1 gets p5, p6, p7, p8, and p10. C2 gets p1, p2, p3, p4, p9, and p11."
+    }
+  },
+  {
+    "student": {
+      "text": "Then the new centroids are means. C1 from p5, p6, p7, p8, p10 is (3.5, 6.2). C2 from the other six points is approximately (3.583, 1.583)."
+    },
+    "tutor": {
+      "text": "Correct. The SSE for iteration 1 using the starting centroids is 224.750."
+    }
+  },
+  {
+    "student": {
+      "text": "What happens in the second iteration?"
+    },
+    "tutor": {
+      "text": "Using C1 = (3.5, 6.2) and C2 = (3.583, 1.583), C1 gets p5, p6, p7, and p8. C2 gets p1, p2, p3, p4, p9, p10, and p11. The new centroids are C1 = (2.625, 7.000) and C2 = (4.071, 1.786). The SSE for this iteration is approximately 50.407."
+    }
+  },
+  {
+    "student": {
+      "text": "And the third iteration?"
+    },
+    "tutor": {
+      "text": "Using C1 = (2.625, 7.000) and C2 = (4.071, 1.786), the assignments remain the same: C1 has p5, p6, p7, p8, and C2 has p1, p2, p3, p4, p9, p10, p11. The centroids do not change, so K-Means terminates. The final SSE is approximately 42.830."
+    }
+  },
+  {
+    "student": {
+      "text": "Why did the SSE drop so much from the first to the second iteration?"
+    },
+    "tutor": {
+      "text": "Because the initial centroids p10 and p11 are both in the lower-right area. After recomputing centroids, one centroid moves toward the upper cluster around y values 6 to 8, and the other moves toward the lower cluster. That makes point-to-centroid distances much smaller."
+    }
+  },
+  {
+    "student": {
+      "text": "Finally, bisecting K-Means. Is it just K-Means with K = 2?"
+    },
+    "tutor": {
+      "text": "Not exactly. Bisecting K-Means repeatedly splits one existing cluster into two using basic K-Means with K = 2. It starts with all points in one cluster, chooses a cluster to split, performs several trial bisections, keeps the split with the lowest SSE, and repeats until the desired number of clusters is reached."
+    }
+  },
+  {
+    "student": {
+      "text": "So the difference is that standard K-Means tries to produce all K clusters at once, but bisecting K-Means builds them by repeated binary splits."
+    },
+    "tutor": {
+      "text": "Exactly. The source material also notes that bisecting K-Means can be less susceptible to initialization problems because each split uses only two centroids and can try several bisections before keeping the one with lowest SSE."
+    }
+  },
+  {
+    "student": {
+      "text": "I think I see the flow now: Exercise 1 is the language of supervised classification, Exercise 2 is probabilistic classification, Exercise 3 is decision-tree splitting and pruning, Exercise 4 is evaluation, and Exercise 6 is unsupervised clustering."
+    },
+    "tutor": {
+      "text": "That is the right high-level map. Keep the distinction clear: supervised classification uses labels, Naive Bayes estimates class probabilities, decision trees choose splits using impurity or information measures, model evaluation estimates generalization performance, and clustering groups unlabeled data by similarity or distance."
+    }
+  }
+]

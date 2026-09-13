@@ -1,0 +1,90 @@
+{
+  "local_audit": {
+    "assignment_count": 44,
+    "errors": [],
+    "evaluation_mode_counts": {
+      "branch_context_with_anchor": 5,
+      "broad_kc_set_low_confidence_anchor": 8,
+      "single_kc_primary": 28
+    },
+    "exchange_count": 44,
+    "missing_kc_review_count": 0,
+    "packet_count": 41,
+    "primary_kc_id_source_counts": {
+      "dominant_kc_id": 41
+    },
+    "segment_count": 41,
+    "segment_scope_counts": {
+      "branch_context": 5,
+      "broad_kc_set": 8,
+      "single_kc": 28
+    },
+    "status": "PASS",
+    "warnings": []
+  },
+  "local_family": {
+    "evaluation_family_id": "kc_segment_local_dimensions_v1",
+    "evaluation_mode_counts": {
+      "branch_context_with_anchor": 5,
+      "broad_kc_set_low_confidence_anchor": 8,
+      "single_kc_primary": 28
+    },
+    "focus_partial_dimensions": [
+      "error_detection",
+      "error_reasoning",
+      "error_localisation",
+      "solution_control",
+      "actionability_moving_forward",
+      "local_coherence_relevance",
+      "clarity_cognitive_load",
+      "proactive_clarification"
+    ],
+    "focus_trust_flags": [
+      "curriculum_hallucination_present",
+      "domain_knowledge_hallucination_present"
+    ],
+    "packet_count": 41,
+    "segment_scope_counts": {
+      "branch_context": 5,
+      "broad_kc_set": 8,
+      "single_kc": 28
+    }
+  },
+  "outputs": {
+    "local_packet_dir": "kc_segment_local",
+    "mixed_granularity_plan": "mixed_granularity_plan.json",
+    "mixed_granularity_summary": "mixed_granularity_summary.json",
+    "topic_packet_dir": "topic_rollup_arc"
+  },
+  "packet_pipeline": "segment_evaluation_packets_mixed_granularity_v1",
+  "schema": "mixed_granularity_evaluation_packet_manifest.v1",
+  "topic_audit": {
+    "errors": [],
+    "fragmentation_risk_count": 1,
+    "packet_count": 22,
+    "status": "PASS",
+    "topic_unit_count": 22,
+    "warnings": [
+      "fragmentation_risk:dm2_gold_holdout_dialogue_20260811::topic_unit_0001"
+    ]
+  },
+  "topic_family": {
+    "evaluation_family_id": "topic_rollup_arc_dimensions_v1",
+    "evaluation_mode_counts": {
+      "branch_context_with_anchor": 21,
+      "broad_kc_set_low_confidence_anchor": 1
+    },
+    "focus_partial_dimensions": [
+      "scaffolding_quality",
+      "student_level_calibration"
+    ],
+    "focus_trust_flags": [
+      "student_context_hallucination_present"
+    ],
+    "packet_count": 22,
+    "segment_scope_counts": {
+      "branch_context": 21,
+      "broad_kc_set": 1
+    }
+  }
+}

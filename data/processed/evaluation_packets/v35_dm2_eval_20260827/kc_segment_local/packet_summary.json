@@ -1,0 +1,28 @@
+{
+  "evaluation_family_id": "kc_segment_local_dimensions_v1",
+  "evaluation_mode_counts": {
+    "branch_context_with_anchor": 5,
+    "broad_kc_set_low_confidence_anchor": 8,
+    "single_kc_primary": 28
+  },
+  "focus_partial_dimensions": [
+    "error_detection",
+    "error_reasoning",
+    "error_localisation",
+    "solution_control",
+    "actionability_moving_forward",
+    "local_coherence_relevance",
+    "clarity_cognitive_load",
+    "proactive_clarification"
+  ],
+  "focus_trust_flags": [
+    "curriculum_hallucination_present",
+    "domain_knowledge_hallucination_present"
+  ],
+  "packet_count": 41,
+  "segment_scope_counts": {
+    "branch_context": 5,
+    "broad_kc_set": 8,
+    "single_kc": 28
+  }
+}

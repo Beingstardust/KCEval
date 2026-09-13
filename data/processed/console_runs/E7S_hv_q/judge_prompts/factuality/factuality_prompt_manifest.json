@@ -1,0 +1,7 @@
+{
+  "contract_version": "grounded_factuality_response_contract_v1",
+  "units_total": 42,
+  "units_with_reference": 42,
+  "skipped_no_reference": [],
+  "sha256": "8e5035454a7df8de956d5743640e669d85b25d961c70a81d49435537070272fd"
+}

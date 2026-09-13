@@ -1,0 +1,19 @@
+{
+  "evaluation_family_id": "topic_rollup_arc_dimensions_v1",
+  "evaluation_mode_counts": {
+    "branch_context_with_anchor": 11,
+    "broad_kc_set_low_confidence_anchor": 6
+  },
+  "focus_partial_dimensions": [
+    "scaffolding_quality",
+    "student_level_calibration"
+  ],
+  "focus_trust_flags": [
+    "student_context_hallucination_present"
+  ],
+  "packet_count": 17,
+  "segment_scope_counts": {
+    "branch_context": 11,
+    "broad_kc_set": 6
+  }
+}

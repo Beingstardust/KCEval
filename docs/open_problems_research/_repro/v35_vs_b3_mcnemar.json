@@ -1,0 +1,42 @@
+{
+  "analysis": "paired exact McNemar, v35 vs B3_dense_profile, exact agreement",
+  "status": "FORENSIC - reads frozen predictions only; no model run, no code changed",
+  "why": "the +14.7pp headline margin is v35 minus B3, but the only stored paired test was mcnemar_v35_vs_B2 against a different baseline",
+  "source_artifact": "data/gold/kc_assignment_baselines.json",
+  "scoring": "exact = predicted KC id equals gold primary; identical to baseline_kc_assignment.score(); all recorded offsets are 0 and are asserted",
+  "per_corpus": {
+    "dm1": {
+      "both_correct": 32,
+      "v35_only": 17,
+      "other_only": 3,
+      "both_wrong": 8,
+      "n": 60,
+      "v35_exact_n": 49,
+      "other_exact_n": 35
+    },
+    "dm2": {
+      "both_correct": 23,
+      "v35_only": 5,
+      "other_only": 4,
+      "both_wrong": 10,
+      "n": 42,
+      "v35_exact_n": 28,
+      "other_exact_n": 27
+    }
+  },
+  "pooled": {
+    "n": 102,
+    "both_correct": 55,
+    "v35_correct_other_wrong": 22,
+    "v35_wrong_other_correct": 7,
+    "both_wrong": 18,
+    "discordant": 29,
+    "v35_exact": 0.7549019607843137,
+    "B3_dense_profile_exact": 0.6078431372549019,
+    "margin_pp": 14.70588235294118,
+    "p_two_sided_exact": 0.008130058646202087,
+    "significant_at_0_05": true,
+    "test": "exact McNemar (two-sided binomial on discordant pairs)"
+  },
+  "reconstruction_exact_against_frozen_artifact": true
+}

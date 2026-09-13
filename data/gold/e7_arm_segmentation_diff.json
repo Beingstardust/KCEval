@@ -1,0 +1,80 @@
+{
+  "purpose": "confound check for the E7 paired tests: did corruption move segment boundaries?",
+  "exchanges_compared": 44,
+  "injected_exchanges": 16,
+  "segment_groupings": {
+    "clean": 42,
+    "corrupt": 42,
+    "identical": 42,
+    "clean_only": [],
+    "corrupt_only": [],
+    "boundaries_moved": false
+  },
+  "resolved_kc_changed": {
+    "count": 4,
+    "of_which_injected": 3,
+    "rows": [
+      {
+        "exchange_id": "ex_0012",
+        "injected": false,
+        "clean": "KC_CLF_DT_006",
+        "corrupt": "KC_FSEL_GOOD_006"
+      },
+      {
+        "exchange_id": "ex_0017",
+        "injected": true,
+        "clean": "KC_EVAL_BASIC_003",
+        "corrupt": "KC_EVAL_BASIC_004"
+      },
+      {
+        "exchange_id": "ex_0019",
+        "injected": true,
+        "clean": "KC_EVAL_BASIC_002",
+        "corrupt": "KC_EVAL_COMP_001"
+      },
+      {
+        "exchange_id": "ex_0022",
+        "injected": true,
+        "clean": "KC_EVAL_ROC_003",
+        "corrupt": "KC_EVAL_COMP_003"
+      }
+    ]
+  },
+  "confidence_label_changed": {
+    "count": 5,
+    "of_which_injected": 4,
+    "rows": [
+      {
+        "exchange_id": "ex_0000",
+        "injected": true,
+        "clean": "AUTO_HIGH_KC",
+        "corrupt": "AUTO_LOW_KC"
+      },
+      {
+        "exchange_id": "ex_0004",
+        "injected": true,
+        "clean": "AUTO_HIGH_KC",
+        "corrupt": "AUTO_MEDIUM_KC"
+      },
+      {
+        "exchange_id": "ex_0012",
+        "injected": false,
+        "clean": "AUTO_HIGH_KC",
+        "corrupt": "AUTO_MEDIUM_KC"
+      },
+      {
+        "exchange_id": "ex_0017",
+        "injected": true,
+        "clean": "AUTO_HIGH_KC",
+        "corrupt": "AUTO_MEDIUM_KC"
+      },
+      {
+        "exchange_id": "ex_0036",
+        "injected": true,
+        "clean": "AUTO_MEDIUM_KC",
+        "corrupt": "AUTO_LOW_KC"
+      }
+    ]
+  },
+  "interpretation": "A boundary change would confound the paired tests. KC and confidence changes do not: they are the pipeline responding to corrupted content, and the paired statistic is computed over the same exchange partition either way."
+}

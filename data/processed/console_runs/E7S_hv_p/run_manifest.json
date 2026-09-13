@@ -1,0 +1,330 @@
+{
+  "run_id": "E7S_hv_p",
+  "tutor_id": "hv_p",
+  "created_utc": "2026-09-01T16:27:04.238915+00:00",
+  "dialogue_source_name": "hv_p_source.json",
+  "dialogue_sha256": "baf88a42b639d4f72d86b4bb4895794cd3df0f3e451db934a748de6e9a809f09",
+  "library_source_name": "frozen_reviewed_library.jsonl",
+  "library_sha256": "656e5ec613741677b7d2bd7edb19d1e87ab8bfaa9dee080489a5b1dc5f9b6196",
+  "library_shape": "reviewed_library_v2",
+  "library_kc_count": 159,
+  "judge": {
+    "model_id": "Selene-1-Llama-3.3-70B",
+    "model_path": "/beegfs2/scratch/hpcuser/selene_judge_ant1_fallback/models/Selene-1-Llama-3.3-70B",
+    "model_revision": "37ad448f3d1ab7579cbccb0d8418b2808573a30b",
+    "serving": "served",
+    "served_model_name": "selene-1-llama-3.3-70b",
+    "tensor_parallel_size": 2,
+    "gpu_type": "h100",
+    "max_model_len": 40960,
+    "gpu_memory_utilization": 0.95,
+    "port": 8010,
+    "max_tokens": 3000,
+    "decoding": "greedy",
+    "solution_control_version": "v4"
+  },
+  "segmentation": {
+    "pipeline_version": "v35",
+    "top_k": 25,
+    "internal_top_k": 60,
+    "cross_encoder": true,
+    "dense_retrieval": true,
+    "tie_breaker_model_path": "/beegfs1/home/hpcuser/projects/seg_eval_v28_run/models/Qwen3-4B-Instruct-2507",
+    "tie_breaker_top_k": 5,
+    "tie_breaker_max_pipeline_margin": 999.0,
+    "tie_breaker_min_probability": 0.5,
+    "tie_breaker_min_probability_margin": 0.5,
+    "gpu_type": "h100"
+  },
+  "aggregation": {
+    "alpha": 0.8,
+    "beta": 0.2,
+    "rho": 0.8,
+    "alpha_sweep": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "beta_sweep": [
+      0.0,
+      0.25,
+      0.5
+    ]
+  },
+  "remote": {
+    "host": "sofja",
+    "remote_root": "/beegfs2/scratch/hpcuser/seg_eval_console",
+    "python": "/beegfs1/home/hpcuser/projects/seg_eval_v28_run/.venv28/bin/python3",
+    "serving_python": "/beegfs2/scratch/hpcuser/selene_cu126/.venv/bin/python3",
+    "partition": "gpu",
+    "cpus_per_task": 32,
+    "mem": "200G",
+    "judge_mem": "200G",
+    "max_segmentation_minutes": 120,
+    "max_judge_minutes": 360,
+    "nodelist": "",
+    "hf_home": "/beegfs2/scratch/hpcuser/hf_home",
+    "gpu_type": "a100",
+    "segmentation_gpus": 0,
+    "segmentation_partition": "medium",
+    "extra_env": [
+      [
+        "LD_LIBRARY_PATH",
+        "/beegfs1/software/python/python-3.11.3/lib:/beegfs1/software/cuda/cuda-12.4/lib64:${LD_LIBRARY_PATH:-}"
+      ],
+      [
+        "PYTHONPATH",
+        "src:/beegfs2/scratch/hpcuser/selene_cu126/stubs"
+      ],
+      [
+        "HF_HUB_OFFLINE",
+        "1"
+      ],
+      [
+        "TRANSFORMERS_OFFLINE",
+        "1"
+      ],
+      [
+        "SEG_EVAL_DENSE_MODEL_PATH",
+        "/beegfs1/home/hpcuser/projects/seg_eval_v28_run/models/bge-small-en-v1.5"
+      ],
+      [
+        "SEG_EVAL_RERANKER_MODEL_PATH",
+        "/beegfs1/home/hpcuser/projects/seg_eval_v28_run/models/bge-reranker-v2-m3"
+      ]
+    ]
+  },
+  "enabled_passes": [
+    "local",
+    "arc",
+    "factuality",
+    "answer_revelation",
+    "kc_criteria",
+    "macro"
+  ],
+  "stages": {
+    "intake_library": {
+      "status": "pending",
+      "started_utc": null,
+      "finished_utc": null,
+      "message": "",
+      "detail": {}
+    },
+    "intake_dialogue": {
+      "status": "pending",
+      "started_utc": null,
+      "finished_utc": null,
+      "message": "",
+      "detail": {}
+    },
+    "segmentation": {
+      "status": "done",
+      "started_utc": "2026-09-01T16:27:22.323538+00:00",
+      "finished_utc": "2026-09-01T17:06:54.510823+00:00",
+      "message": "job 255922 completed",
+      "detail": {
+        "job_id": "255922",
+        "code_sha256": "5b068f3b0256b2442e132a37634b0257d8016e80b3f630c55592b507d1da7744",
+        "input_sha256": "37289e1c99bf181f7e6649a1f6c414b55ef3eac37afdd80931c7ac1295ddd8c7",
+        "remote_dir": "/beegfs2/scratch/hpcuser/seg_eval_console/runs/E7S_hv_p",
+        "slurm_state": "RUNNING",
+        "reason": "cn117",
+        "fetched": [
+          "segmentation"
+        ]
+      }
+    },
+    "topic_rollup": {
+      "status": "done",
+      "started_utc": "2026-09-01T17:06:54.514871+00:00",
+      "finished_utc": "2026-09-01T17:06:54.783476+00:00",
+      "message": "",
+      "detail": {
+        "summary": {
+          "arc_unit_count": 22,
+          "arc_units_with_fragmentation_risk": 1,
+          "stdout_tail": "TOPIC_UNIT_COUNT=22\nFALLBACK_UNIT_COUNT=0\nFRAGMENTATION_RISK_UNIT_COUNT=1\nOUT_JSON=R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\topic_rollup\\topic_rollup.json\nOUT_REPORT=R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\topic_rollup\\topic_rollup_report.md"
+        }
+      }
+    },
+    "evaluation_packets": {
+      "status": "done",
+      "started_utc": "2026-09-01T17:06:54.787526+00:00",
+      "finished_utc": "2026-09-01T17:06:55.141501+00:00",
+      "message": "",
+      "detail": {
+        "summary": {
+          "packet_counts": {
+            "kc_segment_local": 42,
+            "topic_rollup_arc": 22
+          },
+          "stdout_tail": "s.jsonl\",\n  \"source_run_dir\": \"R:\\\\Thesis Project\\\\Segmentation and Evaluation\\\\kc_segmentation_kernel_v0_20260601\\\\data\\\\processed\\\\console_runs\\\\E7S_hv_p\\\\segmentation\",\n  \"source_segmentation_pipeline\": \"contactless_two_pass_v35_fixed_scorer_context_override_guard\",\n  \"topic_family_id\": \"topic_rollup_arc_dimensions_v1\",\n  \"topic_packet_count\": 22,\n  \"topic_rollup_path\": \"R:\\\\Thesis Project\\\\Segmentation and Evaluation\\\\kc_segmentation_kernel_v0_20260601\\\\data\\\\processed\\\\console_runs\\\\E7S_hv_p\\\\topic_rollup\\\\topic_rollup.json\",\n  \"topic_unit_count\": 22\n}\nLOCAL_PACKET_COUNT=42\nTOPIC_PACKET_COUNT=22\nLOCAL_AUDIT_STATUS=PASS\nTOPIC_AUDIT_STATUS=PASS\nOUT_DIR=R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\evaluation_packets"
+        }
+      }
+    },
+    "macro_packets": {
+      "status": "done",
+      "started_utc": "2026-09-01T17:06:55.144040+00:00",
+      "finished_utc": "2026-09-01T17:06:55.358352+00:00",
+      "message": "",
+      "detail": {
+        "summary": {
+          "stdout_tail": "{\n  \"out_dir\": \"R:\\\\Thesis Project\\\\Segmentation and Evaluation\\\\kc_segmentation_kernel_v0_20260601\\\\data\\\\processed\\\\console_runs\\\\E7S_hv_p\\\\evaluation_packets\\\\macro\",\n  \"summary\": {\n    \"dialogue_id\": \"E7S_hv_p\",\n    \"errors\": [],\n    \"exchange_count\": 44,\n    \"excluded_exchange_count\": 0,\n    \"status\": \"PASS\"\n  }\n}\nOUT_DIR=R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\evaluation_packets\\macro"
+        }
+      }
+    },
+    "judge_prompts": {
+      "status": "done",
+      "started_utc": "2026-09-01T17:06:55.362092+00:00",
+      "finished_utc": "2026-09-01T17:06:56.860728+00:00",
+      "message": "",
+      "detail": {
+        "summary": {
+          "prompt_counts": {
+            "local": 42,
+            "arc": 22,
+            "factuality": 42,
+            "answer_revelation": 42,
+            "kc_criteria": 41,
+            "macro": 1
+          },
+          "empty_passes": []
+        }
+      }
+    },
+    "judge_run": {
+      "status": "done",
+      "started_utc": "2026-09-01T17:07:12.826215+00:00",
+      "finished_utc": "2026-09-01T19:31:42.666209+00:00",
+      "message": "job 256138 completed",
+      "detail": {
+        "job_id": "256138",
+        "code_sha256": "13e2faa421c00f555725f5666b0a257ae2099350b347c2105fffd2d327c1dcb4",
+        "input_sha256": "1d2f4d08833bd115e341e1afe026790dea3b99e258cefeeb15afebba6371c603",
+        "remote_dir": "/beegfs2/scratch/hpcuser/seg_eval_console/runs/E7S_hv_p",
+        "slurm_state": "RUNNING",
+        "reason": "gpu03",
+        "output": "Check the job log; the stage may have failed after starting.",
+        "fetched": [
+          "judge_responses/local",
+          "judge_responses/arc",
+          "judge_responses/factuality",
+          "judge_responses/answer_revelation",
+          "judge_responses/kc_criteria",
+          "judge_responses/macro"
+        ]
+      }
+    },
+    "validate_responses": {
+      "status": "done",
+      "started_utc": "2026-09-01T19:31:42.673079+00:00",
+      "finished_utc": "2026-09-01T19:31:43.231722+00:00",
+      "message": "",
+      "detail": {
+        "summary": {
+          "families": {
+            "local": {
+              "duplicate_segment_response_count": 0,
+              "error_count": 0,
+              "missing_response_segment_count": 0,
+              "missing_response_segments": [],
+              "packet_count": 42,
+              "prompt_count": 42,
+              "response_count": 42,
+              "status": "PASS",
+              "valid_count": 42,
+              "coverage": 1.0
+            },
+            "arc": {
+              "duplicate_segment_response_count": 0,
+              "error_count": 1,
+              "missing_response_segment_count": 0,
+              "missing_response_segments": [],
+              "packet_count": 22,
+              "prompt_count": 22,
+              "response_count": 22,
+              "status": "FAIL",
+              "valid_count": 21,
+              "coverage": 0.9545454545454546
+            }
+          },
+          "passes": {
+            "macro": {
+              "status": "contract_valid"
+            },
+            "factuality": {
+              "status": "present",
+              "rows": 42
+            },
+            "answer_revelation": {
+              "status": "present",
+              "rows": 42
+            },
+            "kc_criteria": {
+              "status": "present",
+              "rows": 41
+            }
+          }
+        }
+      }
+    },
+    "aggregate": {
+      "status": "done",
+      "started_utc": "2026-09-01T19:31:43.235155+00:00",
+      "finished_utc": "2026-09-01T19:31:48.773341+00:00",
+      "message": "",
+      "detail": {
+        "summary": {
+          "final_score": 0.8495075757575754,
+          "reconstruction_exact": true,
+          "sweep": {
+            "alpha_beta": {
+              "0.5|0.0": 0.8521338383838379,
+              "0.5|0.25": 0.8469570707070704,
+              "0.5|0.5": 0.834204545454545,
+              "0.6|0.0": 0.8521338383838379,
+              "0.6|0.25": 0.8469570707070704,
+              "0.6|0.5": 0.834204545454545,
+              "0.7|0.0": 0.8521338383838379,
+              "0.7|0.25": 0.8469570707070704,
+              "0.7|0.5": 0.834204545454545,
+              "0.8|0.0": 0.8521338383838379,
+              "0.8|0.25": 0.8469570707070704,
+              "0.8|0.5": 0.834204545454545,
+              "0.9|0.0": 0.8521338383838379,
+              "0.9|0.25": 0.8469570707070704,
+              "0.9|0.5": 0.834204545454545,
+              "1.0|0.0": 0.8521338383838379,
+              "1.0|0.25": 0.8469570707070704,
+              "1.0|0.5": 0.834204545454545
+            },
+            "alpha_values": [
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "beta_values": [
+              0.0,
+              0.25,
+              0.5
+            ],
+            "min": 0.834204545454545,
+            "max": 0.8521338383838379,
+            "spread": 0.017929292929292906
+          },
+          "stdout_tail": "hv_p: T=0.8495  units=63  targets=29  trust_capped=40  K_s_units=29  exact=True\n  -> R:\\Thesis Project\\Segmentation and Evaluation\\kc_segmentation_kernel_v0_20260601\\data\\processed\\console_runs\\E7S_hv_p\\results\\feedback_report.md"
+        }
+      }
+    }
+  },
+  "notes": [
+    "arc: 1 of 22 judge responses were contract-invalid and are excluded from the score"
+  ],
+  "schema_version": "console_run_spec.v1"
+}

@@ -1,0 +1,132 @@
+{
+  "question": "does a frozen, expert-reviewed KC library beat generating KCs per dialogue?",
+  "comparator": "DialogueKT-style (LAK 2025) LLM-induced per-dialogue KCs",
+  "why_partition_metrics": "the induced system uses its own vocabulary; string-matching it against our gold ids would require handing it the library under test",
+  "model_held_constant": "induction uses Selene-70B, the same model KCEval judges with, so the contrast is library-vs-generated rather than model-vs-model",
+  "corpora": {
+    "dm1": {
+      "induced_kc_count": 35,
+      "gold_kc_count": 34,
+      "v35": {
+        "offset": 0,
+        "n": 60,
+        "ari": 0.7398164178616927,
+        "homogeneity": 0.9354599710401375,
+        "completeness": 0.9428111195729444,
+        "v_measure": 0.9391211599004563,
+        "predicted_groups": 34,
+        "gold_groups": 34
+      },
+      "B2_dense": {
+        "offset": 0,
+        "n": 60,
+        "ari": 0.35663887107119946,
+        "homogeneity": 0.9184813278327304,
+        "completeness": 0.8695132594446655,
+        "v_measure": 0.8933267458253208,
+        "predicted_groups": 38,
+        "gold_groups": 34
+      },
+      "induced": {
+        "offset": 0,
+        "n": 60,
+        "ari": 0.4904582810976459,
+        "homogeneity": 0.8381711114886865,
+        "completeness": 0.9218013497464989,
+        "v_measure": 0.8779992629504537,
+        "predicted_groups": 25,
+        "gold_groups": 34
+      }
+    },
+    "dm2": {
+      "induced_kc_count": 26,
+      "gold_kc_count": 40,
+      "v35": {
+        "offset": 0,
+        "n": 42,
+        "ari": 0.3983228511530398,
+        "homogeneity": 0.9820206401775161,
+        "completeness": 0.9909287726585564,
+        "v_measure": 0.9864545957087135,
+        "predicted_groups": 39,
+        "gold_groups": 40
+      },
+      "B2_dense": {
+        "offset": 0,
+        "n": 42,
+        "ari": 0.24737762237762237,
+        "homogeneity": 0.9606481818483088,
+        "completeness": 0.9907288274666494,
+        "v_measure": 0.9754566567786487,
+        "predicted_groups": 37,
+        "gold_groups": 40
+      },
+      "induced": {
+        "offset": 0,
+        "n": 42,
+        "ari": 0.14446796561109432,
+        "homogeneity": 0.8391996288865115,
+        "completeness": 1.0,
+        "v_measure": 0.9125704634842492,
+        "predicted_groups": 25,
+        "gold_groups": 40
+      }
+    }
+  },
+  "pooled": {
+    "v35": {
+      "n": 102,
+      "ari": 0.729207336092721,
+      "v_measure": 0.966325988265568,
+      "homogeneity": 0.9629639071328459,
+      "completeness": 0.9697116283145756,
+      "predicted_groups": 73,
+      "gold_groups": 74
+    },
+    "B2_dense": {
+      "n": 102,
+      "ari": 0.3541747777829103,
+      "v_measure": 0.9398551582732946,
+      "homogeneity": 0.9471566077901434,
+      "completeness": 0.9326654185683939,
+      "predicted_groups": 75,
+      "gold_groups": 74
+    },
+    "induced": {
+      "n": 102,
+      "ari": 0.43687034005013486,
+      "v_measure": 0.9111875451712512,
+      "homogeneity": 0.8649699679776356,
+      "completeness": 0.9626229744668982,
+      "predicted_groups": 50,
+      "gold_groups": 74
+    }
+  },
+  "v35_minus_induced_ari": {
+    "difference": 0.2923369960425862,
+    "jackknife_se": 0.14029596230663013,
+    "ci_95": [
+      0.017356909921591113,
+      0.5673170821635812
+    ],
+    "excludes_zero": true,
+    "n_exchanges": 102,
+    "interval_type": "conditional leave-one-out jackknife over exchanges; n_dialogue = 2, so this supports no claim about a population of dialogues"
+  },
+  "v35_minus_B2_dense_ari": {
+    "difference": 0.37503255830981075,
+    "jackknife_se": 0.128913599864159,
+    "ci_95": [
+      0.12236190257605911,
+      0.6277032140435623
+    ],
+    "excludes_zero": true,
+    "n_exchanges": 102,
+    "interval_type": "conditional leave-one-out jackknife over exchanges; n_dialogue = 2, so this supports no claim about a population of dialogues"
+  },
+  "tier1_reference": {
+    "v35_exact": 0.7549019607843137,
+    "best_naive_exact": 0.6078431372549019,
+    "note": "exact-match accuracy exists only in our label space and is NOT comparable to the induced system; carried here for context only"
+  }
+}

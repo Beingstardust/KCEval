@@ -1,0 +1,14 @@
+{
+  "evaluation_mode_counts": {
+    "branch_context_with_anchor": 3,
+    "broad_kc_set_low_confidence_anchor": 12,
+    "single_kc_primary": 22
+  },
+  "judge_prompt_count": 37,
+  "kc_grounding_condition": "B_baseline",
+  "packet_dir": "data\\processed\\evaluation_packets\\v35_tv_a_eval_20260829\\kc_segment_local",
+  "profiles_path": "data\\processed\\matching_profiles\\frozen_matching_profiles_20260810T212416Z_ablation1_reviewed_library_full159\\frozen_matching_profiles.jsonl",
+  "prompt_pipeline": "segment_judge_prompts_v1b",
+  "rubric_version": "segment_judge_rubric_v2_scale001_dependency_aware",
+  "source_packet_count": 37
+}

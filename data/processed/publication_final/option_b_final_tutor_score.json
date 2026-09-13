@@ -1,0 +1,379 @@
+{
+  "policy": "single_judge_selene_no_new_model_calls",
+  "model": "Selene-1-Llama-3.3-70B",
+  "basis": {
+    "development_beta": 0.0,
+    "unit_score": "equal-weight mean of all ten applicable unit dimensions",
+    "segment_postprocessing": "deterministic grounded-factuality trust cap",
+    "topic_postprocessing": "no criterion blend and no trust cap",
+    "macro_M": "adaptability alone",
+    "topic_rollup": "asbuilt consecutive-only topic rollup"
+  },
+  "rho": {
+    "value": 0.7,
+    "routing_version": "v2",
+    "segment_dimensions": [
+      "error_detection",
+      "error_reasoning",
+      "error_localisation",
+      "solution_control",
+      "actionability_moving_forward",
+      "local_coherence_relevance",
+      "clarity_cognitive_load"
+    ],
+    "topic_dimensions": [
+      "scaffolding_quality",
+      "student_level_calibration",
+      "proactive_clarification"
+    ]
+  },
+  "alpha": {
+    "reported_grid": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "diagnostic_endpoint": 1.0,
+    "stable_on_reported_grid": true,
+    "stable_with_micro_only_endpoint": false,
+    "orders": {
+      "0.5": [
+        "REF",
+        "DLG-DEG",
+        "FACT-CORR",
+        "PED-DEG",
+        "EXP-REG"
+      ],
+      "0.6": [
+        "REF",
+        "DLG-DEG",
+        "FACT-CORR",
+        "PED-DEG",
+        "EXP-REG"
+      ],
+      "0.7": [
+        "REF",
+        "DLG-DEG",
+        "FACT-CORR",
+        "PED-DEG",
+        "EXP-REG"
+      ],
+      "0.8": [
+        "REF",
+        "DLG-DEG",
+        "FACT-CORR",
+        "PED-DEG",
+        "EXP-REG"
+      ],
+      "0.9": [
+        "REF",
+        "DLG-DEG",
+        "FACT-CORR",
+        "PED-DEG",
+        "EXP-REG"
+      ],
+      "1.0": [
+        "REF",
+        "DLG-DEG",
+        "EXP-REG",
+        "PED-DEG",
+        "FACT-CORR"
+      ]
+    }
+  },
+  "condition_scores": [
+    {
+      "arm": "T1_strong",
+      "condition": "REF",
+      "tag": "tv_a",
+      "stamp": "20260829",
+      "n_segment_units": 37,
+      "n_topic_units": 25,
+      "n_segment_exchanges": 62,
+      "n_topic_exchanges": 62,
+      "factuality_accepted": 35,
+      "factuality_rejected": 0,
+      "factuality_total": 37,
+      "units_capped": 32,
+      "D_segment": 0.8771505376344086,
+      "D_topic": 0.9838709677419355,
+      "D_micro": 0.9091666666666667,
+      "M_adaptability": 1.0,
+      "T_alpha_0.5": 0.9545833333333333,
+      "T_alpha_0.6": 0.9455,
+      "T_alpha_0.7": 0.9364166666666667,
+      "T_alpha_0.8": 0.9273333333333333,
+      "T_alpha_0.9": 0.91825,
+      "T_alpha_1.0": 0.9091666666666667
+    },
+    {
+      "arm": "T2_answer_dumping",
+      "condition": "PED-DEG",
+      "tag": "tv_b",
+      "stamp": "20260829",
+      "n_segment_units": 36,
+      "n_topic_units": 17,
+      "n_segment_exchanges": 62,
+      "n_topic_exchanges": 62,
+      "factuality_accepted": 36,
+      "factuality_rejected": 0,
+      "factuality_total": 36,
+      "units_capped": 16,
+      "D_segment": 0.7545698924731182,
+      "D_topic": 0.8718637992831542,
+      "D_micro": 0.789758064516129,
+      "M_adaptability": 0.5,
+      "T_alpha_0.5": 0.6448790322580644,
+      "T_alpha_0.6": 0.6738548387096774,
+      "T_alpha_0.7": 0.7028306451612902,
+      "T_alpha_0.8": 0.7318064516129031,
+      "T_alpha_0.9": 0.760782258064516,
+      "T_alpha_1.0": 0.789758064516129
+    },
+    {
+      "arm": "T3_subtly_wrong",
+      "condition": "FACT-CORR",
+      "tag": "tv_c",
+      "stamp": "20260829",
+      "n_segment_units": 38,
+      "n_topic_units": 24,
+      "n_segment_exchanges": 62,
+      "n_topic_exchanges": 53,
+      "factuality_accepted": 37,
+      "factuality_rejected": 0,
+      "factuality_total": 38,
+      "units_capped": 35,
+      "D_segment": 0.693010752688172,
+      "D_topic": 0.9696016771488469,
+      "D_micro": 0.7759880300263745,
+      "M_adaptability": 1.0,
+      "T_alpha_0.5": 0.8879940150131873,
+      "T_alpha_0.6": 0.8655928180158248,
+      "T_alpha_0.7": 0.8431916210184621,
+      "T_alpha_0.8": 0.8207904240210996,
+      "T_alpha_0.9": 0.798389227023737,
+      "T_alpha_1.0": 0.7759880300263745
+    },
+    {
+      "arm": "T4_macro_degraded",
+      "condition": "DLG-DEG",
+      "tag": "tv_d",
+      "stamp": "20260909",
+      "n_segment_units": 36,
+      "n_topic_units": 25,
+      "n_segment_exchanges": 57,
+      "n_topic_exchanges": 62,
+      "factuality_accepted": 37,
+      "factuality_rejected": 0,
+      "factuality_total": 37,
+      "units_capped": 33,
+      "D_segment": 0.8318713450292398,
+      "D_topic": 0.9766129032258064,
+      "D_micro": 0.8752938124882097,
+      "M_adaptability": 1.0,
+      "T_alpha_0.5": 0.9376469062441048,
+      "T_alpha_0.6": 0.9251762874929258,
+      "T_alpha_0.7": 0.9127056687417467,
+      "T_alpha_0.8": 0.9002350499905678,
+      "T_alpha_0.9": 0.8877644312393888,
+      "T_alpha_1.0": 0.8752938124882097
+    },
+    {
+      "arm": "T5_expert_register",
+      "condition": "EXP-REG",
+      "tag": "tv_e",
+      "stamp": "20260909",
+      "n_segment_units": 41,
+      "n_topic_units": 26,
+      "n_segment_exchanges": 59,
+      "n_topic_exchanges": 62,
+      "factuality_accepted": 41,
+      "factuality_rejected": 1,
+      "factuality_total": 42,
+      "units_capped": 16,
+      "D_segment": 0.7994350282485875,
+      "D_topic": 0.8978494623655914,
+      "D_micro": 0.8289593584836886,
+      "M_adaptability": 0.0,
+      "T_alpha_0.5": 0.4144796792418443,
+      "T_alpha_0.6": 0.49737561509021316,
+      "T_alpha_0.7": 0.580271550938582,
+      "T_alpha_0.8": 0.6631674867869509,
+      "T_alpha_0.9": 0.7460634226353198,
+      "T_alpha_1.0": 0.8289593584836886
+    }
+  ],
+  "replication": {
+    "source": "data/processed/publication_final/beta_sensitivity.csv",
+    "beta": 0.2,
+    "rho": 0.7,
+    "D_micro_clean": 0.8658016,
+    "D_micro_corrupted": 0.7968817000000001,
+    "corrupted_minus_clean": -0.06891989999999981,
+    "T_status": "not_reported_no_parseable_dialogue_level_M"
+  },
+  "source_checks": [
+    {
+      "label": "REF segment",
+      "path": "data/processed/judge_responses/v35_tv_a_kc_segment_local_selene/judge_responses.jsonl",
+      "rows": 37,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "REF topic",
+      "path": "data/processed/judge_responses/v35_tv_a_topic_rollup_arc_selene/judge_responses.jsonl",
+      "rows": 25,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "REF factuality",
+      "path": "data/processed/judge_responses/v35_tv_a_factuality_selene_20260830/grounded_factuality_responses.jsonl",
+      "rows": 37,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "REF macro/adaptability",
+      "path": "data/processed/judge_responses/v35_tv_a_macro_20260829_selene/macro_judge_responses.jsonl",
+      "rows": 1,
+      "model_path_values": [
+        "/home/hpcuser/projects/selene_judge/models/Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "PED-DEG segment",
+      "path": "data/processed/judge_responses/v35_tv_b_kc_segment_local_selene/judge_responses.jsonl",
+      "rows": 36,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "PED-DEG topic",
+      "path": "data/processed/judge_responses/v35_tv_b_topic_rollup_arc_selene/judge_responses.jsonl",
+      "rows": 17,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "PED-DEG factuality",
+      "path": "data/processed/judge_responses/v35_tv_b_factuality_selene_20260830/grounded_factuality_responses.jsonl",
+      "rows": 36,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "PED-DEG macro/adaptability",
+      "path": "data/processed/judge_responses/v35_tv_b_macro_20260829_selene/macro_judge_responses.jsonl",
+      "rows": 1,
+      "model_path_values": [
+        "/home/hpcuser/projects/selene_judge/models/Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "FACT-CORR segment",
+      "path": "data/processed/judge_responses/v35_tv_c_kc_segment_local_selene/judge_responses.jsonl",
+      "rows": 38,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "FACT-CORR topic",
+      "path": "data/processed/judge_responses/v35_tv_c_topic_rollup_arc_selene/judge_responses.jsonl",
+      "rows": 25,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "FACT-CORR factuality",
+      "path": "data/processed/judge_responses/v35_tv_c_factuality_selene_20260830/grounded_factuality_responses.jsonl",
+      "rows": 38,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "FACT-CORR macro/adaptability",
+      "path": "data/processed/judge_responses/v35_tv_c_macro_20260829_selene/macro_judge_responses.jsonl",
+      "rows": 1,
+      "model_path_values": [
+        "/home/hpcuser/projects/selene_judge/models/Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "DLG-DEG segment",
+      "path": "data/processed/judge_responses/v35_tv_d_kc_segment_local_selene/judge_responses.jsonl",
+      "rows": 37,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "DLG-DEG topic",
+      "path": "data/processed/judge_responses/v35_tv_d_topic_rollup_arc_selene/judge_responses.jsonl",
+      "rows": 25,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "DLG-DEG factuality",
+      "path": "data/processed/judge_responses/v35_tv_d_factuality_selene_20260909/grounded_factuality_responses.jsonl",
+      "rows": 37,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "DLG-DEG macro/adaptability",
+      "path": "data/processed/judge_responses/v35_tv_d_macro_20260909_selene/macro_judge_responses.jsonl",
+      "rows": 1,
+      "model_path_values": [
+        "/home/hpcuser/projects/selene_judge/models/Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "EXP-REG segment",
+      "path": "data/processed/judge_responses/v35_tv_e_kc_segment_local_selene/judge_responses.jsonl",
+      "rows": 42,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "EXP-REG topic",
+      "path": "data/processed/judge_responses/v35_tv_e_topic_rollup_arc_selene/judge_responses.jsonl",
+      "rows": 26,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "EXP-REG factuality",
+      "path": "data/processed/judge_responses/v35_tv_e_factuality_selene_20260909/grounded_factuality_responses.jsonl",
+      "rows": 42,
+      "model_path_values": [
+        "Selene-1-Llama-3.3-70B"
+      ]
+    },
+    {
+      "label": "EXP-REG macro/adaptability",
+      "path": "data/processed/judge_responses/v35_tv_e_macro_20260909_selene/macro_judge_responses.jsonl",
+      "rows": 1,
+      "model_path_values": [
+        "/home/hpcuser/projects/selene_judge/models/Selene-1-Llama-3.3-70B"
+      ]
+    }
+  ]
+}

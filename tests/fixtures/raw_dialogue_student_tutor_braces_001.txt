@@ -1,0 +1,16 @@
+student {
+I still do not get Agglomerative (Bottom-Up) Clustering.
+Can you explain it with an analogy?
+}
+tutor {
+Think of it like organising items on a shelf.
+The shelf example is only a bridge; the target idea is still Agglomerative (Bottom-Up) Clustering.
+}
+
+student {
+Let us go back to Agglomerative (Bottom-Up) Clustering.
+}
+tutor {
+Good. Agglomerative (Bottom-Up) Clustering is the active concept for the next question.
+Keep that in mind.
+}

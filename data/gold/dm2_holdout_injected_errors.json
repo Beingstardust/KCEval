@@ -1,0 +1,191 @@
+{
+  "schema": "dm2_holdout_injected_errors_v1",
+  "preregistration": "45_KCEVAL_DM2_HOLDOUT_PREREGISTRATION.md",
+  "preregistration_sha": "b423e9cb86dec059a8ee0d022da8955d207e4cd3",
+  "source_dialogue": "dm2_gold_holdout_dialogue_20260811",
+  "arms": {
+    "clean": "hv_p",
+    "corrupt": "hv_q"
+  },
+  "exchange_count": 44,
+  "injected_error_count": 16,
+  "blinding_note": "Arm ids are opaque. See deviation D1 in doc 45 for author blinding status.",
+  "injected_errors": [
+    {
+      "exchange_id": "ex_0001",
+      "exchange_index": 1,
+      "category": "C1_definition_reversal",
+      "kc_id": "KC_CLF_UND_001",
+      "corruption_style": "replace",
+      "original_span": "The two phases are the learning phase, where a learning algorithm builds a model from labeled training data, and the querying phase (also called the classification or deduction phase), where that model is applied to unlabeled instances to predict their class.",
+      "corrupted_span": "The two phases are the learning phase, where a model is applied to unlabeled instances to predict their class, and the querying phase (also called the classification or deduction phase), where a learning algorithm builds a model from labeled training data.",
+      "what_is_wrong": "The definitions of the learning phase and the querying phase are exchanged.",
+      "correct_concept": "Learning phase builds the model from labeled data; querying phase applies it to unlabeled instances."
+    },
+    {
+      "exchange_id": "ex_0004",
+      "exchange_index": 4,
+      "category": "C7_false_endorsement_of_misconception",
+      "kc_id": "KC_CLF_UND_007",
+      "corruption_style": "replace",
+      "original_span": "The first and last are correct, but Level of Education needs a second look. It is written as words, but Low, Moderate, and High carry a natural rank, which makes it ordinal rather than plain categorical. Marital Status uses words too, but Single, Married, and Divorced have no such order, so that one stays nominal categorical. The distinction is about whether the values can be meaningfully ranked, not about whether they are text or numbers.",
+      "corrupted_span": "That is all correct. Level of Education is written as words like Low, Moderate, and High, so it is plain categorical exactly as you said, the same as Marital Status. The distinction is about whether the values are text or numbers, not about any ordering among them.",
+      "what_is_wrong": "The tutor endorses the student's misconception that Level of Education is plain categorical, and states the wrong criterion for the distinction.",
+      "correct_concept": "Low/Moderate/High carry a natural rank, so Level of Education is ordinal; the criterion is rankability, not text-vs-number."
+    },
+    {
+      "exchange_id": "ex_0005",
+      "exchange_index": 5,
+      "category": "C2_formula_or_parameter_corruption",
+      "kc_id": "KC_CLF_NB_001",
+      "corruption_style": "replace",
+      "original_span": "Bayes' theorem gives P(sick|+) = P(+|sick)P(sick) / P(+), where P(+) sums the positive-test probability over both sick and healthy people.",
+      "corrupted_span": "Bayes' theorem gives P(sick|+) = P(+|sick)P(+) / P(sick), where P(sick) sums the positive-test probability over both sick and healthy people.",
+      "what_is_wrong": "Bayes' theorem is stated with the prior and the evidence term exchanged.",
+      "correct_concept": "P(sick|+) = P(+|sick)P(sick) / P(+), with P(+) the marginal probability of a positive test."
+    },
+    {
+      "exchange_id": "ex_0007",
+      "exchange_index": 7,
+      "category": "C3_incorrect_numerical_constant",
+      "kc_id": "KC_CLF_NB_009",
+      "corruption_style": "replace",
+      "original_span": "f(x|μ,σ²) = (1/√(2πσ²)) · exp(−(x−μ)²/(2σ²))",
+      "corrupted_span": "f(x|μ,σ²) = (1/√(πσ²)) · exp(−(x−μ)²/(2σ²))",
+      "what_is_wrong": "The Gaussian normalising constant drops the factor of 2 in the square root.",
+      "correct_concept": "The normalising constant is 1/sqrt(2*pi*sigma^2)."
+    },
+    {
+      "exchange_id": "ex_0010",
+      "exchange_index": 10,
+      "category": "C4_process_stage_inversion",
+      "kc_id": "KC_CLF_NB_007",
+      "corruption_style": "replace",
+      "original_span": "Laplace smoothing adds one pseudo-count per possible value and adjusts the denominator accordingly: P(v|class) = (count(v,class) + 1) / (count(class) + k), where k is the number of possible values for that attribute.",
+      "corrupted_span": "Laplace smoothing is applied after the full product has been formed: you first multiply the raw conditional probabilities together, and only then add one pseudo-count to the resulting posterior and adjust its denominator, P(v|class) = (count(v,class) + 1) / (count(class) + k), where k is the number of possible values for that attribute.",
+      "what_is_wrong": "Smoothing is described as applied to the posterior after multiplication, inverting the stage at which it belongs.",
+      "correct_concept": "Smoothing is applied to each conditional probability before the product is formed."
+    },
+    {
+      "exchange_id": "ex_0012",
+      "exchange_index": 12,
+      "category": "C5_scope_or_boundary_error",
+      "kc_id": "KC_CLF_DT_008",
+      "corruption_style": "append",
+      "original_span": "Gain Ratio divides Information Gain by the Intrinsic Information (also called split information) of the attribute, which measures how broadly the attribute itself fragments the data regardless of class labels",
+      "corrupted_span": "Gain Ratio divides Information Gain by the Intrinsic Information (also called split information) of the attribute, which measures how broadly the attribute itself fragments the data regardless of class labels. It applies only to numeric attributes; for categorical attributes you fall back to plain Information Gain",
+      "what_is_wrong": "Invents a scope restriction: Gain Ratio is claimed to apply only to numeric attributes.",
+      "correct_concept": "Gain Ratio applies to attributes generally, and is motivated precisely by many-valued categorical attributes."
+    },
+    {
+      "exchange_id": "ex_0015",
+      "exchange_index": 15,
+      "category": "C6_sibling_concept_substitution",
+      "kc_id": "KC_CLF_PRUNE_003",
+      "corruption_style": "replace",
+      "original_span": "The optimistic estimate erro(T) is just the tree's raw training error rate — it ignores tree size entirely, so a tree that overfits by growing a leaf for every training instance can show zero training error while generalizing badly. The pessimistic estimate errp(T) = erro(T) + Ω·(k/Ntrain) adds a complexity penalty proportional to the number of leaves k, scaled by a hyperparameter Ω, so a large, overfit tree gets penalized even if its training error looks perfect.",
+      "corrupted_span": "The optimistic estimate erro(T) = errp(T) + Ω·(k/Ntrain) adds a complexity penalty proportional to the number of leaves k, scaled by a hyperparameter Ω, so a large, overfit tree gets penalized even if its training error looks perfect. The pessimistic estimate errp(T) is just the tree's raw training error rate — it ignores tree size entirely, so a tree that overfits by growing a leaf for every training instance can show zero training error while generalizing badly.",
+      "what_is_wrong": "The optimistic and pessimistic error estimates are exchanged, with the complexity penalty attributed to the optimistic one.",
+      "correct_concept": "The optimistic estimate is the raw training error; the pessimistic estimate adds the complexity penalty."
+    },
+    {
+      "exchange_id": "ex_0018",
+      "exchange_index": 18,
+      "category": "C7_false_endorsement_of_misconception",
+      "kc_id": "KC_EVAL_BASIC_003",
+      "corruption_style": "replace",
+      "original_span": "Accuracy and precision are right, but recall isn't computed the same way as precision. Precision divides TP by everything the model predicted positive (TP+FP = 2+2 = 4), which does give 0.5. Recall divides TP by everything that is actually positive (TP+FN = 2+1 = 3), so it's 2/3 ≈ 0.667, not 2/4. From there, F1 = 2·P·R/(P+R) = 2(0.5)(0.667)/(1.167) ≈ 0.571,",
+      "corrupted_span": "All three are right. Recall, like precision, divides TP by everything the model predicted positive (TP+FP = 2+2 = 4), so your 2/4 = 0.5 is correct. From there, F1 = 2·P·R/(P+R) = 2(0.5)(0.5)/(1.0) = 0.5,",
+      "what_is_wrong": "The tutor endorses the student's incorrect recall denominator and propagates it into F1.",
+      "correct_concept": "Recall divides TP by all actual positives (TP+FN = 3), giving 2/3; F1 is then about 0.571."
+    },
+    {
+      "exchange_id": "ex_0020",
+      "exchange_index": 20,
+      "category": "C8_incorrect_directional_relationship",
+      "kc_id": "KC_EVAL_BASIC_002",
+      "corruption_style": "replace",
+      "original_span": "Compute Z = (pA−pB)/√(2p̄(1−p̄)/N) for each dataset and compare its magnitude to 1.64. On Congressional Voting, |Z| ≈ 2.69, so DT's higher accuracy there is significant — DT wins. On Dermatology, |Z| ≈ 1.67, just over the threshold, so NB's edge there is (barely) significant — NB wins. On Employee Attrition, |Z| ≈ 0.27, nowhere near significant, so that one is a draw even though the raw accuracies differ slightly. Overall: one win each and one draw.",
+      "corrupted_span": "Compute Z = (pA−pB)/√(2p̄(1−p̄)/N) for each dataset and compare its magnitude to 1.64 — the smaller the magnitude, the stronger the evidence of a genuine difference. On Congressional Voting, |Z| ≈ 2.69, far above the threshold, so that difference is not significant — a draw. On Dermatology, |Z| ≈ 1.67, also above it, so that one is a draw too. On Employee Attrition, |Z| ≈ 0.27, comfortably below the threshold, so that is the one clear significant result — NB wins. Overall: one win and two draws.",
+      "what_is_wrong": "The direction of the significance test is inverted: small |Z| is claimed to indicate significance.",
+      "correct_concept": "Larger |Z| indicates significance; |Z| above 1.64 rejects the null at this level."
+    },
+    {
+      "exchange_id": "ex_0023",
+      "exchange_index": 23,
+      "category": "C9_incorrect_methodological_classification",
+      "kc_id": "KC_EVAL_ROC_003",
+      "corruption_style": "replace",
+      "original_span": "M2 comes out around 0.40, which is worse than a random 0.5 baseline; its scores are essentially pointing in the wrong direction, assigning higher scores to several actual negatives than to most actual positives. A model doing worse than chance is its own kind of informative result — it means the ranking, not just the threshold, is off.",
+      "corrupted_span": "M2 comes out around 0.40, which still counts as a fair-to-moderate classifier — any AUC above 0 indicates some genuine ranking ability, and only an AUC of exactly 0 would mean the scores point the wrong way. So M2 is weaker than M1 but still ranks better than chance.",
+      "what_is_wrong": "A below-chance AUC is misclassified as a fair-to-moderate classifier, and the chance baseline is stated as 0 rather than 0.5.",
+      "correct_concept": "AUC 0.5 is the chance baseline; 0.40 is worse than chance and indicates inverted ranking."
+    },
+    {
+      "exchange_id": "ex_0026",
+      "exchange_index": 26,
+      "category": "C1_definition_reversal",
+      "kc_id": "KC_EVAL_ROC_006",
+      "corruption_style": "replace",
+      "original_span": "given cFN=10 is much larger than cFP=2, models with higher TPR tend to win even at the expense of a somewhat higher FPR, since missed positives are punished five times as hard as false alarms here",
+      "corrupted_span": "given cFP=10 is much larger than cFN=2, models with lower FPR tend to win even at the expense of a somewhat lower TPR, since false alarms are punished five times as hard as missed positives here",
+      "what_is_wrong": "The false-negative and false-positive costs are exchanged, reversing which error the cost matrix punishes.",
+      "correct_concept": "cFN=10 and cFP=2, so missed positives are punished five times as hard as false alarms."
+    },
+    {
+      "exchange_id": "ex_0029",
+      "exchange_index": 29,
+      "category": "C2_formula_or_parameter_corruption",
+      "kc_id": "KC_CLU_KM_001",
+      "corruption_style": "replace",
+      "original_span": "Summing the squared distances from each point to the centroid it was assigned to gives SSE = 145.25 + 79.5 = 224.75 for that round.",
+      "corrupted_span": "Summing the absolute, rather than squared, distances from each point to the centroid it was assigned to gives SSE = 145.25 + 79.5 = 224.75 for that round.",
+      "what_is_wrong": "SSE is defined with absolute rather than squared distances.",
+      "correct_concept": "SSE sums squared distances from each point to its assigned centroid."
+    },
+    {
+      "exchange_id": "ex_0033",
+      "exchange_index": 33,
+      "category": "C3_incorrect_numerical_constant",
+      "kc_id": "KC_CLU_DBS_001",
+      "corruption_style": "replace",
+      "original_span": "A and B are close to each other (distance ≈0.71) but far from everything else",
+      "corrupted_span": "A and B are close to each other (distance ≈1.71) but far from everything else",
+      "what_is_wrong": "The A-B distance constant is wrong.",
+      "correct_concept": "The distance between A and B is approximately 0.71."
+    },
+    {
+      "exchange_id": "ex_0034",
+      "exchange_index": 34,
+      "category": "C4_process_stage_inversion",
+      "kc_id": "KC_CLU_HIER_002",
+      "corruption_style": "replace",
+      "original_span": "Agglomerative starts at the other extreme from Bisecting K-Means's philosophy: every point begins as its own singleton cluster, and you repeatedly merge the two closest clusters until everything collapses into one. Divisive starts from a single all-inclusive cluster and repeatedly splits it",
+      "corrupted_span": "Agglomerative starts from a single all-inclusive cluster and repeatedly splits it until every point stands alone. Divisive starts at the other extreme: every point begins as its own singleton cluster, and you repeatedly merge the two closest clusters until everything collapses into one",
+      "what_is_wrong": "The starting points and directions of agglomerative and divisive clustering are exchanged.",
+      "correct_concept": "Agglomerative is bottom-up from singletons; divisive is top-down from one cluster."
+    },
+    {
+      "exchange_id": "ex_0037",
+      "exchange_index": 37,
+      "category": "C5_scope_or_boundary_error",
+      "kc_id": "KC_CLU_EVAL_009",
+      "corruption_style": "replace",
+      "original_span": "That's the core weakness: purity never penalizes over-fragmentation, so it can't be compared fairly across clusterings with different numbers of clusters without some additional check on cluster count.",
+      "corrupted_span": "That said, purity does penalize over-fragmentation through its normalisation by the cluster count, so it can be compared fairly across clusterings with different numbers of clusters without any additional check.",
+      "what_is_wrong": "Claims purity is normalised by cluster count and therefore comparable across different k, contradicting the fragmentation weakness just demonstrated.",
+      "correct_concept": "Purity does not penalise fragmentation and is not comparable across clusterings with different cluster counts."
+    },
+    {
+      "exchange_id": "ex_0039",
+      "exchange_index": 39,
+      "category": "C6_sibling_concept_substitution",
+      "kc_id": "KC_CLU_EVAL_004",
+      "corruption_style": "replace",
+      "original_span": "That tight, matching distance is what gives Y1 strong cohesion. For separation, the normalized centroid-to-centroid distances come out to about 0.25 between Y1 and Y2, but about 0.716 between Y1 and Y3",
+      "corrupted_span": "That tight, matching distance is what gives Y1 strong separation. For cohesion, the normalized centroid-to-centroid distances come out to about 0.25 between Y1 and Y2, but about 0.716 between Y1 and Y3",
+      "what_is_wrong": "Cohesion and separation are exchanged: within-cluster tightness is called separation and between-centroid distance is called cohesion.",
+      "correct_concept": "Cohesion is within-cluster tightness; separation is between-cluster distance."
+    }
+  ]
+}

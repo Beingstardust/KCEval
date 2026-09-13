@@ -1,0 +1,13 @@
+{
+  "baseline_segment_count": 37,
+  "local_family_id": "kc_segment_local_dimensions_v1",
+  "local_packet_count": 37,
+  "packet_pipeline": "segment_evaluation_packets_mixed_granularity_v1",
+  "profiles_path": "data\\processed\\console_runs\\DEMO_tv_a_from_existing_artifacts\\library\\frozen_matching_profiles.jsonl",
+  "source_run_dir": "data\\processed\\segmentation_runs\\tv_d_20260909\\v35_20260909",
+  "source_segmentation_pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
+  "topic_family_id": "topic_rollup_arc_dimensions_v1",
+  "topic_packet_count": 25,
+  "topic_rollup_path": "data\\processed\\topic_rollup\\v35_tv_d_topic_rollup.json",
+  "topic_unit_count": 25
+}

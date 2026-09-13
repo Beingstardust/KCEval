@@ -1,0 +1,12 @@
+{
+  "errors": [],
+  "fragmentation_risk_count": 3,
+  "packet_count": 26,
+  "status": "PASS",
+  "topic_unit_count": 26,
+  "warnings": [
+    "fragmentation_risk:tv_e_20260909::topic_unit_0000",
+    "fragmentation_risk:tv_e_20260909::topic_unit_0005",
+    "fragmentation_risk:tv_e_20260909::topic_unit_0019"
+  ]
+}

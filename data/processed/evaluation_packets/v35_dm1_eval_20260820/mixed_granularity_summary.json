@@ -1,0 +1,13 @@
+{
+  "baseline_segment_count": 35,
+  "local_family_id": "kc_segment_local_dimensions_v1",
+  "local_packet_count": 35,
+  "packet_pipeline": "segment_evaluation_packets_mixed_granularity_v1",
+  "profiles_path": "data\\processed\\matching_profiles\\frozen_matching_profiles_20260810T212416Z_ablation1_reviewed_library_full159\\frozen_matching_profiles.jsonl",
+  "source_run_dir": "data\\processed\\segmentation_runs\\dm1_human_student_llm_tutor_teaching_rich_dialogue_textonly_20260618T174736Z\\v35_20260812",
+  "source_segmentation_pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
+  "topic_family_id": "topic_rollup_arc_dimensions_v1",
+  "topic_packet_count": 17,
+  "topic_rollup_path": "data\\processed\\topic_rollup\\v35_dm1_topic_rollup.json",
+  "topic_unit_count": 17
+}

@@ -1,0 +1,133 @@
+{
+  "schema": "tutor_variant_injected_error_ground_truth.v1",
+  "preregistration": "local_audits/evaluation_completion_20260824T093426Z/22_TUTOR_VARIANT_PREREGISTRATION.md",
+  "source_dialogue": "data\\input\\dialogues\\inbox\\dm1_human_student_llm_tutor_teaching_rich_dialogue.json",
+  "variants": {
+    "T1_strong": {
+      "opaque_dialogue_id": "tv_a_20260829",
+      "source": "tv_a_source.json",
+      "note": "dm1's real tutor text, unmodified, rebuilt under an opaque id"
+    },
+    "T2_answer_dumping": {
+      "opaque_dialogue_id": "tv_b_20260829",
+      "source": "tv_b_source.json"
+    },
+    "T3_subtly_wrong": {
+      "opaque_dialogue_id": "tv_c_20260829",
+      "source": "tv_c_source.json"
+    }
+  },
+  "blinding_note": "Dialogue ids are deliberately opaque. dialogue_id is embedded in segment_id and every exchange id, so a descriptive id appears verbatim inside the judge prompt. The first build used descriptive ids and leaked 'subtly_wrong' 13x and 'answer_dumping' 5x into each prompt; those runs are superseded and must not be reported.",
+  "exchange_count": 63,
+  "t3_injected_error_count": 15,
+  "t3_unchanged_from_t1_count": 48,
+  "t3_design": "minimal pair with T1: identical except at the injected exchanges",
+  "t2_design": "every tutor turn rewritten; correct content, pedagogy stripped; no factual errors",
+  "injected_errors": [
+    {
+      "exchange_index": 3,
+      "exchange_id": "ex_0003",
+      "injected_error": "The definitions of the learning phase and the classification phase are swapped.",
+      "original_tutor_text": "Write learning phase and classification phase. In the learning phase, the model is built from labeled training data. In the classification phase, the model predicts the label of a new instance. Testing uses this prediction phase to evaluate performance, but the conceptual two phases are learning and classification.",
+      "variant_tutor_text": "Write learning phase and classification phase. In the learning phase, the model predicts the label of a new instance. In the classification phase, the model is built from labeled training data. Testing uses the learning phase to evaluate performance, but the conceptual two phases are learning and classification."
+    },
+    {
+      "exchange_index": 6,
+      "exchange_id": "ex_0006",
+      "injected_error": "Ordinal and nominal are swapped: Marital Status is called ordinal and Level of Education nominal.",
+      "original_tutor_text": "The symbols are not the key issue. The meaning is. Low, Moderate, and High are words, but they carry order. Marital Status also uses words, but Single, Married, and Divorced do not form a ranked scale. That contrast is the reason one is ordinal and the other is nominal categorical.",
+      "variant_tutor_text": "The symbols are not the key issue. The meaning is. Single, Married, and Divorced carry a natural ranking, which is what makes Marital Status ordinal. Low, Moderate, and High are just labels without a ranked scale, so Level of Education is nominal categorical. That contrast is the reason one is ordinal and the other is nominal."
+    },
+    {
+      "exchange_index": 9,
+      "exchange_id": "ex_0009",
+      "injected_error": "Wrong denominator and wrong result: gives 0.9 instead of 0.5, contradicting the base-rate point.",
+      "original_tutor_text": "Let S mean sick and + mean positive. P(S | +) = P(+ | S)P(S) divided by [P(+ | S)P(S) + P(+ | healthy)P(healthy)]. Substitute: 0.99*0.01 / [(0.99*0.01) + (0.01*0.99)] = 0.0099/0.0198 = 0.5. So the probability is 50 percent.",
+      "variant_tutor_text": "Let S mean sick and + mean positive. P(S | +) = P(+ | S)P(S) divided by [P(+ | S)P(S) + P(+ | healthy)P(healthy)]. Substitute: 0.99*0.01 / [(0.99*0.01) + (0.01*0.99)] = 0.0099/0.0110 = 0.9. So the probability is 90 percent."
+    },
+    {
+      "exchange_index": 11,
+      "exchange_id": "ex_0011",
+      "injected_error": "Wrong reason for the name 'naive' plus an unsupported claim about its accuracy.",
+      "original_tutor_text": "No. It is called naive because it assumes conditional independence of attributes given the class. That means once you condition on DB=Y or DB=N, the model treats attributes such as Home Owner and Marital Status as independent evidence. The assumption is strong, but it makes the classifier simple.",
+      "variant_tutor_text": "It is called naive because the independence assumption makes it consistently less accurate than other classifiers, so it is treated as a naive baseline rather than a serious method. In practice you should expect it to lose to a decision tree on almost any table."
+    },
+    {
+      "exchange_index": 13,
+      "exchange_id": "ex_0013",
+      "injected_error": "Endorses the student's error: conditional probability denominator should be 3/3, not 3/10.",
+      "original_tutor_text": "Your numerator is right, but your denominator is wrong. Conditional probability means restrict the table to the condition first. There are 3 DB=Y rows, and all 3 have Home Owner=N. So P(Home Owner=N | DB=Y)=3/3, not 3/10.",
+      "variant_tutor_text": "Your reasoning is right. Conditional probability keeps the full table as the denominator, so you count the 3 rows with Home Owner=N and DB=Y over all 10 rows. P(Home Owner=N | DB=Y)=3/10, exactly as you had it."
+    },
+    {
+      "exchange_index": 16,
+      "exchange_id": "ex_0016",
+      "injected_error": "Endorses the numerator-only shortcut the real tutor explicitly warns against.",
+      "original_tutor_text": "Only if you also adjust the denominator. For a categorical value, Laplace smoothing uses (count + 1)/(class_count + number_of_possible_values). Adding one only to the numerator is a common wrong shortcut.",
+      "variant_tutor_text": "Yes, adding one to the count is the whole method. The Laplace estimate is simply (count + 1)/class_count, so you leave the denominator as it was. That is why it is such a convenient fix for zero probabilities."
+    },
+    {
+      "exchange_index": 21,
+      "exchange_id": "ex_0021",
+      "injected_error": "Inverts how split information behaves and reports a wrong Gain Ratio for ID.",
+      "original_tutor_text": "Gain Ratio reduces that bias by normalizing Information Gain with split information. If a split fragments data into many tiny branches, the split information is large, so the ratio becomes less attractive. This is why ID can have Information Gain 1 but a Gain Ratio around 0.231.",
+      "variant_tutor_text": "Gain Ratio reduces that bias by normalizing Information Gain with split information. If a split fragments data into many tiny branches, the split information is small, so the ratio becomes larger and the split looks more attractive. This is why ID keeps a high Gain Ratio of about 0.94."
+    },
+    {
+      "exchange_index": 22,
+      "exchange_id": "ex_0022",
+      "injected_error": "Entropy values inverted: pure node given as 1 and perfectly mixed node as 0.",
+      "original_tutor_text": "Entropy means class uncertainty. A pure node has entropy 0. A perfectly mixed binary node, such as 10 positives and 10 negatives, has entropy 1. Information Gain measures how much the split reduces that uncertainty, using weighted child entropies.",
+      "variant_tutor_text": "Entropy means class uncertainty. A pure node has entropy 1. A perfectly mixed binary node, such as 10 positives and 10 negatives, has entropy 0. Information Gain measures how much the split reduces that uncertainty, using weighted child entropies."
+    },
+    {
+      "exchange_index": 26,
+      "exchange_id": "ex_0026",
+      "injected_error": "k is defined as internal nodes; the exercise defines it as leaf nodes.",
+      "original_tutor_text": "k is the number of leaf nodes. The exercise explicitly defines complexity using leaf nodes, so the penalty is Omega * k / Ntrain. Do not use internal nodes or total nodes.",
+      "variant_tutor_text": "k is the number of internal nodes. The exercise defines complexity using the decision nodes themselves, so the penalty is Omega * k / Ntrain. Do not count the leaves."
+    },
+    {
+      "exchange_index": 32,
+      "exchange_id": "ex_0032",
+      "injected_error": "Precision and recall definitions and values are swapped.",
+      "original_tutor_text": "Precision asks: among predicted Y cases, how many were truly Y? Recall asks: among actual Y cases, how many did we catch? Here precision = 2/(2+2)=0.5 and recall = 2/(2+1)=0.667. Same TP, different denominator.",
+      "variant_tutor_text": "Precision asks: among actual Y cases, how many did we catch? Recall asks: among predicted Y cases, how many were truly Y? Here precision = 2/(2+1)=0.667 and recall = 2/(2+2)=0.5. Same TP, different denominator."
+    },
+    {
+      "exchange_index": 35,
+      "exchange_id": "ex_0035",
+      "injected_error": "Reverses the effect of sample size: claims larger N widens the interval.",
+      "original_tutor_text": "The margin of error is Z * sqrt(p(1-p)/N). N is inside the denominator under the square root. So larger N makes the margin smaller and the interval narrower. Smaller N makes the interval wider.",
+      "variant_tutor_text": "The margin of error is Z * sqrt(p(1-p)/N). N sits under the square root, so a larger N increases the margin and makes the interval wider. Smaller samples give you the narrower, more precise interval."
+    },
+    {
+      "exchange_index": 36,
+      "exchange_id": "ex_0036",
+      "injected_error": "Wrong Z for a two-sided 90 percent interval (1.28 instead of 1.64) with inverted tail reasoning.",
+      "original_tutor_text": "The interval is two-sided. A 90 percent interval leaves 5 percent in each tail, so the table entry is 0.95, which gives Z=1.64. Using 1.28 would confuse the one-sided 0.90 entry with the two-sided interval requirement.",
+      "variant_tutor_text": "The interval is two-sided. A 90 percent interval leaves 10 percent in each tail, so the table entry is 0.90, which gives Z=1.28. Using 1.64 would confuse the one-sided entry with the two-sided interval requirement."
+    },
+    {
+      "exchange_index": 43,
+      "exchange_id": "ex_0043",
+      "injected_error": "Claims clustering is supervised; it is unsupervised.",
+      "original_tutor_text": "No. Clustering assigns cluster memberships, but those are not predefined target labels learned from labeled examples. Classification is supervised; clustering is unsupervised. Clustering discovers groups based on similarity or distance.",
+      "variant_tutor_text": "Yes, in effect. Clustering assigns each point a cluster label, and once those labels exist they act as target labels learned from the data, so clustering is a supervised method that discovers its own labels rather than being given them."
+    },
+    {
+      "exchange_index": 46,
+      "exchange_id": "ex_0046",
+      "injected_error": "Claims a centroid must be an original data point; it is the mean and need not be.",
+      "original_tutor_text": "No. A centroid is the mean of assigned points, so it can lie between original points. For example, after one Exercise 6 assignment, a centroid can become (3.5, 6.2), even though no original point has exactly that coordinate.",
+      "variant_tutor_text": "Yes. A centroid is always one of the original data points, because it has to be an actual observation in the data set. For example, after one Exercise 6 assignment, the centroid will be whichever existing point sits nearest the middle of its cluster."
+    },
+    {
+      "exchange_index": 53,
+      "exchange_id": "ex_0053",
+      "injected_error": "Inverts the cosine similarity scale: smaller is claimed to mean more similar.",
+      "original_tutor_text": "Cosine similarity compares vector direction. It is x dot y divided by ||x|| times ||y||. It is a similarity, so larger means more similar. In general it ranges from -1 to 1; for nonnegative data it commonly ranges from 0 to 1.",
+      "variant_tutor_text": "Cosine similarity compares vector direction. It is x dot y divided by ||x|| times ||y||. Like the distance measures, smaller means more similar, so a cosine near 0 indicates the closest match. In general it ranges from -1 to 1."
+    }
+  ]
+}

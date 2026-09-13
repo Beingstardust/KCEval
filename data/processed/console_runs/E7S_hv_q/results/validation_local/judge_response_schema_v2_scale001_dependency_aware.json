@@ -1,0 +1,37 @@
+{
+  "contract_version": "segment_judge_response_contract_v2_scale001_dependency_aware",
+  "partial_dimension_ids": [
+    "error_detection",
+    "error_reasoning",
+    "error_localisation",
+    "solution_control",
+    "scaffolding_quality",
+    "actionability_moving_forward",
+    "local_coherence_relevance",
+    "clarity_cognitive_load",
+    "student_level_calibration",
+    "proactive_clarification"
+  ],
+  "required_top_level_fields": [
+    "segment_id",
+    "evaluation_mode",
+    "raw_dimension_scores",
+    "dimension_applicability",
+    "dependency_adjustments",
+    "dimension_scores",
+    "trust_flags",
+    "micro_score_raw",
+    "micro_score_dependency_adjusted",
+    "trust_adjusted_score",
+    "kc_grounding",
+    "flags",
+    "evidence_quotes",
+    "rationale_short"
+  ],
+  "rubric_version": "segment_judge_rubric_v2_scale001_dependency_aware",
+  "trust_flag_ids": [
+    "curriculum_hallucination_present",
+    "student_context_hallucination_present",
+    "domain_knowledge_hallucination_present"
+  ]
+}

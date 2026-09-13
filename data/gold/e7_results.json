@@ -1,0 +1,237 @@
+{
+  "method": "doc 44 paired exchange resampling + sign-flip permutation",
+  "interval_type": "conditional exchange-resampling interval (dm2 only)",
+  "n_dialogue": 1,
+  "population_generalisation": false,
+  "seed": 1234,
+  "n_bootstrap": 10000,
+  "n_permutations": 100000,
+  "aggregation": {
+    "alpha": 0.8,
+    "beta": 0.2,
+    "rho": 0.8
+  },
+  "reconstruction_exact": true,
+  "family_scores": {
+    "H1": {
+      "local": 0.8169191919191919,
+      "arc": 0.9798611111111111,
+      "R": 0.16294191919191914
+    },
+    "H2": {
+      "local": 0.7214646464646465,
+      "arc": 0.9728535353535354,
+      "R": 0.2513888888888889
+    }
+  },
+  "H7.1": {
+    "observed": -0.09545454545454544,
+    "ci": [
+      -0.1525252525252525,
+      -0.03989898989898989
+    ],
+    "p_one_sided": 0.0008099919000809992,
+    "p_two_sided": 0.0015499845001549985,
+    "p_one_sided_mc_ci": [
+      0.0006428961474845637,
+      0.000995456913544244
+    ],
+    "n_pairs": 44,
+    "direction": "less",
+    "supported": true
+  },
+  "H7.2": {
+    "segments": 42,
+    "tp": 13,
+    "fp": 5,
+    "fn": 3,
+    "tn": 21,
+    "base_rate": 0.38095238095238093,
+    "flagged_total": 18,
+    "precision": 0.7222222222222222,
+    "precision_ci": [
+      0.49126922453805477,
+      0.8750043085364452
+    ],
+    "recall": 0.8125,
+    "recall_ci": [
+      0.5699064013154177,
+      0.9340852122641324
+    ],
+    "f1": 0.7647058823529411,
+    "enrichment": 1.8958333333333335,
+    "per_error_recall": 0.8125,
+    "per_error_recall_ci": [
+      0.5699064013154177,
+      0.9340852122641324
+    ],
+    "errors_caught": 13,
+    "errors_total": 16,
+    "per_category_hit_rate": {
+      "C1_definition_reversal": {
+        "caught": 1,
+        "total": 2
+      },
+      "C2_formula_or_parameter_corruption": {
+        "caught": 2,
+        "total": 2
+      },
+      "C3_incorrect_numerical_constant": {
+        "caught": 0,
+        "total": 2
+      },
+      "C4_process_stage_inversion": {
+        "caught": 2,
+        "total": 2
+      },
+      "C5_scope_or_boundary_error": {
+        "caught": 2,
+        "total": 2
+      },
+      "C6_sibling_concept_substitution": {
+        "caught": 2,
+        "total": 2
+      },
+      "C7_false_endorsement_of_misconception": {
+        "caught": 2,
+        "total": 2
+      },
+      "C8_incorrect_directional_relationship": {
+        "caught": 1,
+        "total": 1
+      },
+      "C9_incorrect_methodological_classification": {
+        "caught": 1,
+        "total": 1
+      }
+    },
+    "injected_exchanges_not_in_any_segment": [],
+    "operationalisation": "segment-level, flag = derived_verdict == 'contradicted' (identical to dm1's analyze_factuality_localisation.py)",
+    "clean_arm_false_positive_floor": {
+      "segments": 42,
+      "tp": 5,
+      "fp": 2,
+      "fn": 11,
+      "tn": 24,
+      "base_rate": 0.38095238095238093,
+      "flagged_total": 7,
+      "precision": 0.7142857142857143,
+      "precision_ci": [
+        0.35892909014821267,
+        0.9177828342909844
+      ],
+      "recall": 0.3125,
+      "recall_ci": [
+        0.14164435051961052,
+        0.5559606813326594
+      ],
+      "f1": 0.43478260869565216,
+      "enrichment": 1.8750000000000002,
+      "per_error_recall": 0.3125,
+      "per_error_recall_ci": [
+        0.14164435051961052,
+        0.5559606813326594
+      ],
+      "errors_caught": 5,
+      "errors_total": 16,
+      "per_category_hit_rate": {
+        "C1_definition_reversal": {
+          "caught": 0,
+          "total": 2
+        },
+        "C2_formula_or_parameter_corruption": {
+          "caught": 0,
+          "total": 2
+        },
+        "C3_incorrect_numerical_constant": {
+          "caught": 0,
+          "total": 2
+        },
+        "C4_process_stage_inversion": {
+          "caught": 1,
+          "total": 2
+        },
+        "C5_scope_or_boundary_error": {
+          "caught": 1,
+          "total": 2
+        },
+        "C6_sibling_concept_substitution": {
+          "caught": 2,
+          "total": 2
+        },
+        "C7_false_endorsement_of_misconception": {
+          "caught": 0,
+          "total": 2
+        },
+        "C8_incorrect_directional_relationship": {
+          "caught": 1,
+          "total": 1
+        },
+        "C9_incorrect_methodological_classification": {
+          "caught": 0,
+          "total": 1
+        }
+      },
+      "injected_exchanges_not_in_any_segment": []
+    },
+    "flags_gained_by_corruption": 11,
+    "dm1_comparison": {
+      "segments": 38,
+      "base_rate": 0.39473684210526316,
+      "tp": 13,
+      "fp": 3,
+      "fn": 2,
+      "tn": 20,
+      "precision": 0.8125,
+      "recall": 0.8666666666666667,
+      "enrichment": 2.058333333333333
+    },
+    "decision_rule": "Wilson lower bound of recall > base rate",
+    "supported": true
+  },
+  "H7.3": {
+    "observed": 0.08527777777777779,
+    "ci": [
+      0.02805555555555556,
+      0.14458333333333334
+    ],
+    "p_one_sided": 0.0037099629003709963,
+    "p_two_sided": 0.007459925400745993,
+    "p_one_sided_mc_ci": [
+      0.0033422743056903573,
+      0.004095855951097699
+    ],
+    "n_pairs": 40,
+    "direction": "greater",
+    "supported": true,
+    "common_support_size": 40,
+    "restricted_family_scores": {
+      "H1": {
+        "local": 0.8186111111111112,
+        "arc": 0.9798611111111111,
+        "R": 0.1612499999999999
+      },
+      "H2": {
+        "local": 0.7236111111111112,
+        "arc": 0.9701388888888889,
+        "R": 0.24652777777777768
+      }
+    },
+    "arc_coverage": {
+      "H1": 40,
+      "H2": 44
+    },
+    "excluded_from_support": [
+      "ex_0010",
+      "ex_0011",
+      "ex_0012",
+      "ex_0013"
+    ],
+    "note": "computed on the common support with a common denominator; see the comment in this script for why per-arm family normalisation is invalid here"
+  },
+  "supported": [
+    "H7.1",
+    "H7.2",
+    "H7.3"
+  ]
+}

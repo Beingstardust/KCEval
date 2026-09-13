@@ -1,0 +1,10 @@
+{
+  "prompts": 1,
+  "json_extracted": 0,
+  "json_failed": 1,
+  "model_path": "/beegfs2/scratch/hpcuser/selene_judge_ant1_fallback/models/Selene-1-Llama-3.3-70B",
+  "model_revision_requested": null,
+  "model_revision_resolved": null,
+  "max_new_tokens": 4096,
+  "elapsed_seconds": 24.1
+}
