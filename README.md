@@ -55,7 +55,10 @@ Each prints its numbers directly to the terminal, and several assert their own r
 frozen artifact before printing anything else (see `REPRODUCE.md` for what each one asserts and
 against what). Run `pytest` from the repository root to run the unit tests for the pruned module
 set (mostly deterministic-aggregation, response-contract and packet-building logic; the tests do
-not need a GPU).
+not need a GPU). One test, `test_conversation_region_extractor_v1.py::test_auto_student_tutor_turn_scan_excludes_header_footer`,
+fails on a pre-existing bug in a text-extraction helper used only during original corpus
+construction (not by anything in `REPRODUCE.md`); it was confirmed to fail identically in the
+source project before this repository was built, so it was left as-is rather than silently fixed.
 
 ## Repository layout
 
