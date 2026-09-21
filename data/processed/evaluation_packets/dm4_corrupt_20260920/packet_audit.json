@@ -1,0 +1,23 @@
+{
+  "assignment_count": 60,
+  "errors": [],
+  "evaluation_mode_counts": {
+    "branch_context_with_anchor": 4,
+    "broad_kc_set_low_confidence_anchor": 9,
+    "single_kc_primary": 37
+  },
+  "exchange_count": 60,
+  "missing_kc_review_count": 0,
+  "packet_count": 50,
+  "primary_kc_id_source_counts": {
+    "dominant_kc_id": 50
+  },
+  "segment_count": 50,
+  "segment_scope_counts": {
+    "branch_context": 4,
+    "broad_kc_set": 9,
+    "single_kc": 37
+  },
+  "status": "PASS",
+  "warnings": []
+}

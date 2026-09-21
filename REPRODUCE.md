@@ -58,23 +58,109 @@ file plus `data/gold/dimension_informativeness.json` and prints
 
 ## Table 3 — Preregistered corruption replication (`tab:repl`)
 
-Segment drop −0.0955 [−0.153, −0.040] p=0.0008; localisation recall 0.812, precision 0.722;
-cross-scope widening +0.0853 [+0.028, +0.145] p=0.0037.
+Segment drop −0.1016 [−0.168, −0.041] p=0.0011; localisation recall 0.438 [0.231, 0.668], which
+does **not** meet the predefined criterion, at precision 1.000 [0.646, 1.000] and 2.62 times the
+base rate; cross-scope widening +0.0993 [+0.037, +0.169] p=0.0024.
+
+These are the numbers under the **definition-grounded** factuality pass, which compares tutor
+content against the verbatim expert-reviewed KC definitions. An earlier version of the framework
+compared it against the library's `evaluation_support` field instead. That field is not
+expert-reviewed, so it cannot serve as the framework's factual grounding, and the pass was
+replaced. Since the trust cap fires on the factuality verdict, the score-level results had to be
+recomputed rather than restated. The two-step command below is that recomputation.
 
 ```bash
-python scripts/analyze_scope_routing_ablation.py
+python scripts/recompute_e7_with_definition_factuality.py
+python scripts/analyze_e7_holdout.py \
+    --clean   data/processed/console_runs/E7S_hv_p_defgrounded \
+    --corrupt data/processed/console_runs/E7S_hv_q_defgrounded \
+    --out     data/gold/e7_results_definition_grounded.json
 ```
 
-Reads `data/gold/e7_results.json` (the frozen preregistered result) and the two replication console
-runs `data/processed/console_runs/E7S_hv_p` (clean) / `E7S_hv_q` (corrupted). Prints
-"all10 basis reproduces the preregistered H7.1 and H7.3 exactly (asserted)" — this is a hard
-assertion, not a description — before showing the routed-basis rows described below. Writes
-`data/processed/publication_final/scope_routing_ablation.json`.
+The first script reads the two replication console runs
+`data/processed/console_runs/E7S_hv_p` (clean) / `E7S_hv_q` (corrupted) together with the
+definition-grounded verdicts in `data/processed/definition_factuality_dm2_20260920/responses/`,
+re-applies the deterministic trust cap, and writes rescored copies to `E7S_hv_{p,q}_defgrounded`
+plus a summary at `data/gold/e7_definition_factuality_rescore.json`. It validates the
+reconstruction before reporting anything: recomputing each segment's `b_s` from the recorded
+`p_s`, `k_s` and the *old* verdicts must reproduce every published value to within 1e-9, and the
+script refuses to emit a rescore if that check fails. The second script is the unmodified
+preregistered analysis, so the bootstrap, the permutation test, the seed and the decision rules
+are all unchanged.
 
-## Table 4 — Final tutor score (`tab:final-tutor`)
+`data/gold/e7_results.json` is kept unchanged as the earlier frozen result, for comparison.
+
+Two things about the localisation row are recorded deliberately. The predefined criterion asked
+whether the lower bound of recall exceeds the base rate of error-bearing segments, and it does
+not, so the prediction is reported as unmet. Separately, that criterion does not measure what it
+was intended to measure, because the base rate is the chance-level value of precision rather than
+of recall. A detector that flags every segment therefore satisfies the rule while having
+chance-level precision. That observation withdraws the earlier mechanism's apparent success under
+the same rule, which is why it is stated rather than used to revise the result.
+
+The 7 flagged segments carry 8 surviving conflicts between them, one segment having been flagged
+for two separate statements, and all 8 quote a tutor sentence overlapping the text that was
+deliberately changed.
+
+## The factuality pass itself
+
+The mechanism behind the numbers above. Prompts are built from the frozen definitions, the first
+judgement must quote both sides of every conflict, code checks those quotes, a second judgement
+sees only the two spans, and the segment verdict is derived in code from what survives.
+
+```bash
+python scripts/build_definition_factuality_prompts.py dm2   # or dm1 / dm3 / dm4
+python scripts/run_definition_factuality.py \
+    --prompts data/processed/definition_factuality_dm2_20260920/prompts/corrupt/definition_factuality_prompts.jsonl \
+    --out     data/processed/definition_factuality_dm2_20260920/responses/corrupt/definition_factuality_responses.jsonl \
+    --variant v2
+```
+
+`--variant v1` reproduces the configuration used for the dm3 holdout; `v2` is the repaired
+mechanical check and is the adopted configuration. The difference is the third in-code check: `v1`
+rejected a correction whose character similarity to the quoted error was at least 0.90, which is
+unsatisfiable when correcting a reversal, a direction or a single constant, because such a
+correction differs by one or two words. `v2` rejects only an exact restatement.
+
+Running the judge needs a served model and a GPU (see the pipeline section below). The responses
+are already included, so the analysis steps reproduce without one.
+
+## Held-out validation of the factuality pass
+
+Not reported as a table in the paper; included because the paper's scope claim for the pass rests
+on it, and because the repository is cited for material that was set aside as well as material
+that was kept.
+
+```bash
+python scripts/analyze_definition_factuality_holdout.py \
+    --corpus dm4 \
+    --gold      data/gold/dm4_holdout_injected_errors.json \
+    --responses data/processed/definition_factuality_dm4_20260920/responses \
+    --packets   data/processed/evaluation_packets
+```
+
+Two dialogues were authored specifically to test the pass and scored once each, with predictions
+fixed beforehand. On the first (`dm3`, 16 injected errors) the pass flagged 0 of 40 clean-arm
+segments and recovered 8 of 16 errors at precision 1.000. On the second (`dm4`, 24 injected
+errors) it recovered 23 of 24 at precision 1.000 with 0 of 49 clean-arm segments flagged.
+
+**Recall is not comparable across these corpora and should not be read as a trend.** The detector
+code is identical throughout, so the spread reflects the material. `dm4` was authored under a
+stricter rule requiring the definition clause that settles each error to be quotable, which
+selects for errors an explicit definition sentence directly contradicts, and is an easier target
+than `dm2` or `dm3`. What does hold across all of them is the precision behaviour: no segment of
+any uncorrupted arm was flagged.
+
+`scripts/preflight_stage2_v2.py` is the safety check that gated the second holdout. It verifies
+that the revised second judgement still declines to flag a true statement that the earlier
+configuration also declined to flag, and aborts rather than scoring the corpus if it does not.
+
+## Supplementary — final tutor score grid
 
 The α ∈ {0.5 … 1.0} grid for REF / PED-DEG / FACT-CORR / DLG-DEG / EXP-REG, and the replication's
-micro-only score (0.8658 clean, 0.7969 corrupted).
+micro-only score (0.8658 clean, 0.7969 corrupted). The paper defines `T` but no longer reports this
+grid, since a single dialogue-level judgement per condition does not support a calibrated α. The
+script is kept because the artifact is still citable.
 
 ```bash
 python scripts/compute_option_b_final_tutor_score.py
@@ -84,6 +170,14 @@ Reads the five tutor-variant evaluation packets and Selene judge responses under
 `data/processed/evaluation_packets/v35_tv_{a,b,c,d,e}_eval_*` and
 `data/processed/judge_responses/v35_tv_{a,b,c,d,e}_*_selene*`. Writes
 `data/processed/publication_final/option_b_final_tutor_score.{csv,json}`.
+
+Note that the recorded runs carry ρ = 0.8, which is the value derived from the earlier 8/2
+segment-to-topic dimension split, while the runs record routing v2 and the paper describes a 7/3
+split giving ρ = 0.7. `combine_local_and_arc` in
+`src/seg_eval/aggregation/deterministic_aggregation.py` warns against reusing a stale ρ when the
+split changes. No number in the paper depends on it, because the segment-score drop and the
+cross-scope difference do not use ρ, but `D_micro` and `T` do, and this grid is therefore the one
+artifact affected.
 
 ## Section 5.4 — Cross-scope discrepancy, sensitivity and external control
 

@@ -1,0 +1,501 @@
+{
+  "preregistration": "docs/evaluation_completeness_v2/64_DM3_HOLDOUT_PREREGISTRATION.md",
+  "corpus": "dm3_holdout_20260920",
+  "primary_overlap_chars": 24,
+  "units": {
+    "clean": 40,
+    "corrupt": 40
+  },
+  "tallies": {
+    "clean": {
+      "contract_valid": 40,
+      "raised": 0,
+      "mech_rejected": 0,
+      "mech_reject_reasons": {},
+      "stage2_dropped": 0,
+      "survived": 0,
+      "survived_material": 0
+    },
+    "corrupt": {
+      "contract_valid": 40,
+      "raised": 15,
+      "mech_rejected": 4,
+      "mech_reject_reasons": {
+        "correct_version:restates_tutor_span": 3,
+        "definition_span:not_verbatim_in_any_definition": 1
+      },
+      "stage2_dropped": 3,
+      "survived": 8,
+      "survived_material": 8
+    }
+  },
+  "clean_arm": {
+    "segments": 40,
+    "segments_with_any_flag": 0,
+    "segments_with_material_flag": 0,
+    "flagged_segment_ids": [],
+    "P1_threshold": "<= 3/44",
+    "P1_met": true
+  },
+  "recall_sensitivity": {
+    "any_severity@16": {
+      "recall": "8/16",
+      "per_category": {
+        "C1": {
+          "caught": 1,
+          "total": 2
+        },
+        "C2": {
+          "caught": 0,
+          "total": 2
+        },
+        "C3": {
+          "caught": 0,
+          "total": 2
+        },
+        "C4": {
+          "caught": 1,
+          "total": 2
+        },
+        "C5": {
+          "caught": 1,
+          "total": 2
+        },
+        "C6": {
+          "caught": 2,
+          "total": 2
+        },
+        "C7": {
+          "caught": 2,
+          "total": 2
+        },
+        "C8": {
+          "caught": 0,
+          "total": 1
+        },
+        "C9": {
+          "caught": 1,
+          "total": 1
+        }
+      }
+    },
+    "any_severity@24": {
+      "recall": "8/16",
+      "per_category": {
+        "C1": {
+          "caught": 1,
+          "total": 2
+        },
+        "C2": {
+          "caught": 0,
+          "total": 2
+        },
+        "C3": {
+          "caught": 0,
+          "total": 2
+        },
+        "C4": {
+          "caught": 1,
+          "total": 2
+        },
+        "C5": {
+          "caught": 1,
+          "total": 2
+        },
+        "C6": {
+          "caught": 2,
+          "total": 2
+        },
+        "C7": {
+          "caught": 2,
+          "total": 2
+        },
+        "C8": {
+          "caught": 0,
+          "total": 1
+        },
+        "C9": {
+          "caught": 1,
+          "total": 1
+        }
+      }
+    },
+    "any_severity@32": {
+      "recall": "8/16",
+      "per_category": {
+        "C1": {
+          "caught": 1,
+          "total": 2
+        },
+        "C2": {
+          "caught": 0,
+          "total": 2
+        },
+        "C3": {
+          "caught": 0,
+          "total": 2
+        },
+        "C4": {
+          "caught": 1,
+          "total": 2
+        },
+        "C5": {
+          "caught": 1,
+          "total": 2
+        },
+        "C6": {
+          "caught": 2,
+          "total": 2
+        },
+        "C7": {
+          "caught": 2,
+          "total": 2
+        },
+        "C8": {
+          "caught": 0,
+          "total": 1
+        },
+        "C9": {
+          "caught": 1,
+          "total": 1
+        }
+      }
+    },
+    "material_only@16": {
+      "recall": "8/16",
+      "per_category": {
+        "C1": {
+          "caught": 1,
+          "total": 2
+        },
+        "C2": {
+          "caught": 0,
+          "total": 2
+        },
+        "C3": {
+          "caught": 0,
+          "total": 2
+        },
+        "C4": {
+          "caught": 1,
+          "total": 2
+        },
+        "C5": {
+          "caught": 1,
+          "total": 2
+        },
+        "C6": {
+          "caught": 2,
+          "total": 2
+        },
+        "C7": {
+          "caught": 2,
+          "total": 2
+        },
+        "C8": {
+          "caught": 0,
+          "total": 1
+        },
+        "C9": {
+          "caught": 1,
+          "total": 1
+        }
+      }
+    },
+    "material_only@24": {
+      "recall": "8/16",
+      "per_category": {
+        "C1": {
+          "caught": 1,
+          "total": 2
+        },
+        "C2": {
+          "caught": 0,
+          "total": 2
+        },
+        "C3": {
+          "caught": 0,
+          "total": 2
+        },
+        "C4": {
+          "caught": 1,
+          "total": 2
+        },
+        "C5": {
+          "caught": 1,
+          "total": 2
+        },
+        "C6": {
+          "caught": 2,
+          "total": 2
+        },
+        "C7": {
+          "caught": 2,
+          "total": 2
+        },
+        "C8": {
+          "caught": 0,
+          "total": 1
+        },
+        "C9": {
+          "caught": 1,
+          "total": 1
+        }
+      }
+    },
+    "material_only@32": {
+      "recall": "8/16",
+      "per_category": {
+        "C1": {
+          "caught": 1,
+          "total": 2
+        },
+        "C2": {
+          "caught": 0,
+          "total": 2
+        },
+        "C3": {
+          "caught": 0,
+          "total": 2
+        },
+        "C4": {
+          "caught": 1,
+          "total": 2
+        },
+        "C5": {
+          "caught": 1,
+          "total": 2
+        },
+        "C6": {
+          "caught": 2,
+          "total": 2
+        },
+        "C7": {
+          "caught": 2,
+          "total": 2
+        },
+        "C8": {
+          "caught": 0,
+          "total": 1
+        },
+        "C9": {
+          "caught": 1,
+          "total": 1
+        }
+      }
+    }
+  },
+  "primary": {
+    "recall": "8/16",
+    "per_category": {
+      "C1": {
+        "caught": 1,
+        "total": 2
+      },
+      "C2": {
+        "caught": 0,
+        "total": 2
+      },
+      "C3": {
+        "caught": 0,
+        "total": 2
+      },
+      "C4": {
+        "caught": 1,
+        "total": 2
+      },
+      "C5": {
+        "caught": 1,
+        "total": 2
+      },
+      "C6": {
+        "caught": 2,
+        "total": 2
+      },
+      "C7": {
+        "caught": 2,
+        "total": 2
+      },
+      "C8": {
+        "caught": 0,
+        "total": 1
+      },
+      "C9": {
+        "caught": 1,
+        "total": 1
+      }
+    },
+    "per_error": [
+      {
+        "exchange_id": "ex_0003",
+        "packet_exchange_id": "ex_0002",
+        "segment_id": "dm3_corrupt_20260920::seg_0002",
+        "category": "C1_definition_reversal",
+        "kc_id": "KC_CLF_UND_003",
+        "caught": false,
+        "best_overlap_chars": 0
+      },
+      {
+        "exchange_id": "ex_0006",
+        "packet_exchange_id": "ex_0005",
+        "segment_id": "dm3_corrupt_20260920::seg_0005",
+        "category": "C7_false_endorsement_of_misconception",
+        "kc_id": "KC_CLF_NB_004",
+        "caught": true,
+        "best_overlap_chars": 154
+      },
+      {
+        "exchange_id": "ex_0009",
+        "packet_exchange_id": "ex_0008",
+        "segment_id": "dm3_corrupt_20260920::seg_0008",
+        "category": "C2_formula_or_parameter_corruption",
+        "kc_id": "KC_CLF_NB_008",
+        "caught": false,
+        "best_overlap_chars": 0
+      },
+      {
+        "exchange_id": "ex_0012",
+        "packet_exchange_id": "ex_0011",
+        "segment_id": "dm3_corrupt_20260920::seg_0010",
+        "category": "C3_incorrect_numerical_constant",
+        "kc_id": "KC_CLF_DT_005",
+        "caught": false,
+        "best_overlap_chars": 0
+      },
+      {
+        "exchange_id": "ex_0015",
+        "packet_exchange_id": "ex_0014",
+        "segment_id": "dm3_corrupt_20260920::seg_0013",
+        "category": "C5_scope_or_boundary_error",
+        "kc_id": "KC_CLF_PRUNE_004",
+        "caught": false,
+        "best_overlap_chars": 0
+      },
+      {
+        "exchange_id": "ex_0017",
+        "packet_exchange_id": "ex_0016",
+        "segment_id": "dm3_corrupt_20260920::seg_0015",
+        "category": "C4_process_stage_inversion",
+        "kc_id": "KC_CLU_KM_001",
+        "caught": true,
+        "best_overlap_chars": 191
+      },
+      {
+        "exchange_id": "ex_0021",
+        "packet_exchange_id": "ex_0020",
+        "segment_id": "dm3_corrupt_20260920::seg_0019",
+        "category": "C6_sibling_concept_substitution",
+        "kc_id": "KC_EVAL_BASIC_005",
+        "caught": true,
+        "best_overlap_chars": 88
+      },
+      {
+        "exchange_id": "ex_0024",
+        "packet_exchange_id": "ex_0023",
+        "segment_id": "dm3_corrupt_20260920::seg_0022",
+        "category": "C8_incorrect_directional_relationship",
+        "kc_id": "KC_EVAL_COMP_008",
+        "caught": false,
+        "best_overlap_chars": 0
+      },
+      {
+        "exchange_id": "ex_0027",
+        "packet_exchange_id": "ex_0026",
+        "segment_id": "dm3_corrupt_20260920::seg_0024",
+        "category": "C9_incorrect_methodological_classification",
+        "kc_id": "KC_EVAL_ROC_003",
+        "caught": true,
+        "best_overlap_chars": 91
+      },
+      {
+        "exchange_id": "ex_0030",
+        "packet_exchange_id": "ex_0029",
+        "segment_id": "dm3_corrupt_20260920::seg_0027",
+        "category": "C2_formula_or_parameter_corruption",
+        "kc_id": "KC_CLU_KM_002",
+        "caught": false,
+        "best_overlap_chars": 0
+      },
+      {
+        "exchange_id": "ex_0033",
+        "packet_exchange_id": "ex_0032",
+        "segment_id": "dm3_corrupt_20260920::seg_0029",
+        "category": "C1_definition_reversal",
+        "kc_id": "KC_CLU_DBS_001",
+        "caught": true,
+        "best_overlap_chars": 135
+      },
+      {
+        "exchange_id": "ex_0035",
+        "packet_exchange_id": "ex_0034",
+        "segment_id": "dm3_corrupt_20260920::seg_0030",
+        "category": "C7_false_endorsement_of_misconception",
+        "kc_id": "KC_CLU_DBS_008",
+        "caught": true,
+        "best_overlap_chars": 172
+      },
+      {
+        "exchange_id": "ex_0037",
+        "packet_exchange_id": "ex_0036",
+        "segment_id": "dm3_corrupt_20260920::seg_0032",
+        "category": "C3_incorrect_numerical_constant",
+        "kc_id": "KC_CLU_SIM_005",
+        "caught": false,
+        "best_overlap_chars": 0
+      },
+      {
+        "exchange_id": "ex_0039",
+        "packet_exchange_id": "ex_0038",
+        "segment_id": "dm3_corrupt_20260920::seg_0034",
+        "category": "C4_process_stage_inversion",
+        "kc_id": "KC_CLU_HIER_002",
+        "caught": false,
+        "best_overlap_chars": 0
+      },
+      {
+        "exchange_id": "ex_0041",
+        "packet_exchange_id": "ex_0040",
+        "segment_id": "dm3_corrupt_20260920::seg_0036",
+        "category": "C5_scope_or_boundary_error",
+        "kc_id": "KC_CLU_EVAL_009",
+        "caught": true,
+        "best_overlap_chars": 126
+      },
+      {
+        "exchange_id": "ex_0043",
+        "packet_exchange_id": "ex_0042",
+        "segment_id": "dm3_corrupt_20260920::seg_0038",
+        "category": "C6_sibling_concept_substitution",
+        "kc_id": "KC_FSEL_FW_001",
+        "caught": true,
+        "best_overlap_chars": 215
+      }
+    ],
+    "P2_threshold": ">= 8/16",
+    "P2_met": true,
+    "definitional_recall": "5/8",
+    "arithmetic_recall": "0/4",
+    "P4_met": true
+  },
+  "precision": {
+    "matched_ledger_errors": 8,
+    "corrupt_arm_flags": 8,
+    "clean_arm_flags": 0,
+    "precision_both_arms": 1.0,
+    "precision_corrupt_arm_only": 1.0,
+    "P3_threshold": ">= 0.85",
+    "P3_met": true,
+    "note": "Every clean-arm flag counts against precision; the clean arm contains no injected error."
+  },
+  "indexing_attributable_misses": {
+    "misses": 0,
+    "note": "Ledger KC was in the top-3 for all 16 errors (doc 64 pre-scoring verification), so no miss on this corpus is attributable to indexing."
+  },
+  "segment_level_doc57_comparable": {
+    "positive_segments": 16,
+    "tp": 8,
+    "fn": 8,
+    "fp": 0,
+    "note": "Segment counts as caught when it carries any material flag, ignoring span overlap."
+  }
+}

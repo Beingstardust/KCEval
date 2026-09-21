@@ -47,9 +47,14 @@ pip install -e ".[workbooks]"      # openpyxl — only needed to read the .xlsx 
 python scripts/build_e5_agreement_table.py          # Table 2: human/judge agreement
 python scripts/analyze_v35_vs_b3_mcnemar.py          # Table 1: KC-indexing exact/acceptable agreement
 python scripts/analyze_kc_induction_comparison.py    # Table 1: partition agreement (ARI)
-python scripts/analyze_scope_routing_ablation.py     # Table 3: preregistered corruption replication
-python scripts/compute_option_b_final_tutor_score.py # Table 4: final tutor score grid
+python scripts/recompute_e7_with_definition_factuality.py  # Table 3: rescore under the definition-grounded pass
+python scripts/analyze_scope_routing_ablation.py     # Section 5.4: routed-versus-unrouted ablation
+python scripts/compute_option_b_final_tutor_score.py # supplementary: final tutor score grid
 ```
+
+Table 3 takes two steps, since the trust cap fires on the factuality verdict and the replication
+therefore has to be rescored rather than restated. `REPRODUCE.md` gives the second command and
+explains what the first one validates before it reports anything.
 
 Each prints its numbers directly to the terminal, and several assert their own reproduction of a
 frozen artifact before printing anything else (see `REPRODUCE.md` for what each one asserts and

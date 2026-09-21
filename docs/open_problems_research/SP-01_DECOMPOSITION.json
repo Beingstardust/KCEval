@@ -57,13 +57,13 @@
       "post_processing_share": 0.9020592667001508
     },
     "reference_REF": {
-      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\mohds\\\\Documents\\\\KCEval\\\\scripts\\\\analyze_grounded_factuality.py'"
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'scripts\\\\analyze_grounded_factuality.py'"
     },
     "pedagogical_degradation_PED_DEG": {
-      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\mohds\\\\Documents\\\\KCEval\\\\scripts\\\\analyze_grounded_factuality.py'"
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'scripts\\\\analyze_grounded_factuality.py'"
     },
     "factual_corruption_FACT_CORR": {
-      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\mohds\\\\Documents\\\\KCEval\\\\scripts\\\\analyze_grounded_factuality.py'"
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: 'scripts\\\\analyze_grounded_factuality.py'"
     }
   }
 }

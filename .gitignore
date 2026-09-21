@@ -6,3 +6,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 tmp_smoke_dir/
+
+# Rescored console runs written by scripts/recompute_e7_with_definition_factuality.py.
+# Derived from the tracked E7S_hv_p / E7S_hv_q runs plus the definition-grounded verdicts.
+data/processed/console_runs/*_defgrounded/

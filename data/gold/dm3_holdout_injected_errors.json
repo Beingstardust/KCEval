@@ -1,0 +1,190 @@
+{
+  "schema": "injected_errors_v1",
+  "preregistration": "docs/evaluation_completeness_v2/64_DM3_HOLDOUT_PREREGISTRATION.md",
+  "source_dialogue": "dm3_holdout_20260920",
+  "arms": {
+    "clean": "dm3_clean",
+    "corrupt": "dm3_corrupt"
+  },
+  "exchange_count": 44,
+  "injected_error_count": 16,
+  "blinding_note": "Authored from course exercise sheets; validated mechanically before scoring.",
+  "injected_errors": [
+    {
+      "exchange_id": "ex_0003",
+      "exchange_index": 3,
+      "category": "C1_definition_reversal",
+      "kc_id": "KC_CLF_UND_003",
+      "corruption_style": "replace",
+      "original_span": "The training set is used to fit the classifier, while the test set is held back and used only to estimate performance on unseen data.",
+      "corrupted_span": "The test set is used to fit the classifier, while the training set is held back and used only to estimate performance on unseen data.",
+      "what_is_wrong": "The corrupted statement reverses the roles of the training and test sets.",
+      "correct_concept": "Training data are used to fit the model, while the held-out test set is used to estimate performance on unseen data."
+    },
+    {
+      "exchange_id": "ex_0006",
+      "exchange_index": 6,
+      "category": "C7_false_endorsement_of_misconception",
+      "kc_id": "KC_CLF_NB_004",
+      "corruption_style": "replace",
+      "original_span": "No. The naive assumption is conditional independence of the attributes given the class. It does not require the attributes to be independent in the overall population.",
+      "corrupted_span": "Yes. The naive assumption is unconditional independence of the attributes in the overall population. It does not condition that independence on the class.",
+      "what_is_wrong": "The tutor endorses the student's misconception by replacing class-conditional independence with unconditional independence.",
+      "correct_concept": "Naive Bayes assumes that attributes are conditionally independent given the class."
+    },
+    {
+      "exchange_id": "ex_0009",
+      "exchange_index": 9,
+      "category": "C2_formula_or_parameter_corruption",
+      "kc_id": "KC_CLF_NB_008",
+      "corruption_style": "replace",
+      "original_span": "With Laplace smoothing for a categorical attribute, P(value|class) = (n_value,class + 1) / (n_class + v), where v is the number of possible values of that attribute.",
+      "corrupted_span": "With Laplace smoothing for a categorical attribute, P(value|class) = (n_value,class + 1) / (n_class + 1), where v is the number of possible values of that attribute.",
+      "what_is_wrong": "The denominator incorrectly adds 1 instead of adding the number v of possible attribute values.",
+      "correct_concept": "With add-one Laplace smoothing, the denominator is n_class + v for a categorical attribute with v possible values."
+    },
+    {
+      "exchange_id": "ex_0012",
+      "exchange_index": 12,
+      "category": "C3_incorrect_numerical_constant",
+      "kc_id": "KC_CLF_DT_005",
+      "corruption_style": "replace",
+      "original_span": "The root has 10 class-1 and 10 class-0 examples, so its entropy is exactly 1 bit.",
+      "corrupted_span": "The root has 10 class-1 and 10 class-0 examples, so its entropy is exactly 0.5 bit.",
+      "what_is_wrong": "A balanced binary node has entropy 1 bit, not 0.5 bit.",
+      "correct_concept": "For class proportions 0.5 and 0.5, entropy is -0.5 log2(0.5) - 0.5 log2(0.5) = 1 bit."
+    },
+    {
+      "exchange_id": "ex_0015",
+      "exchange_index": 15,
+      "category": "C5_scope_or_boundary_error",
+      "kc_id": "KC_CLF_PRUNE_004",
+      "corruption_style": "replace",
+      "original_span": "That no-worse-on-validation rule is specific to reduced error pruning as described in the exercise. It should not be treated as the acceptance rule for every possible decision-tree pruning method.",
+      "corrupted_span": "That no-worse-on-validation rule applies to every decision-tree pruning method. It can be treated as the universal acceptance rule regardless of which pruning method is being used.",
+      "what_is_wrong": "The corrupt statement incorrectly generalizes reduced error pruning's validation-set acceptance rule to all pruning methods.",
+      "correct_concept": "The no-worse-on-validation criterion is a defining rule of reduced error pruning, not a universal rule for every pruning method."
+    },
+    {
+      "exchange_id": "ex_0017",
+      "exchange_index": 17,
+      "category": "C4_process_stage_inversion",
+      "kc_id": "KC_CLU_KM_001",
+      "corruption_style": "replace",
+      "original_span": "After choosing K initial centroids, K-Means first assigns each data point to its closest centroid. It then recomputes each cluster centroid from the points assigned to that cluster.",
+      "corrupted_span": "After choosing K initial centroids, K-Means first recomputes each cluster centroid from the points currently assigned to that cluster. It then assigns each data point to its closest centroid.",
+      "what_is_wrong": "The corrupted statement reverses the assignment and centroid-recomputation stages of the K-Means algorithm.",
+      "correct_concept": "After initializing centroids, K-Means first assigns points to their closest centroids and then recomputes the centroids from those assignments."
+    },
+    {
+      "exchange_id": "ex_0021",
+      "exchange_index": 21,
+      "category": "C6_sibling_concept_substitution",
+      "kc_id": "KC_EVAL_BASIC_005",
+      "corruption_style": "replace",
+      "original_span": "Specificity is TN/(TN+FP), the fraction of actual negatives correctly rejected. Recall or sensitivity is TP/(TP+FN), the fraction of actual positives correctly detected.",
+      "corrupted_span": "Specificity is TP/(TP+FN), the fraction of actual positives correctly detected. Recall or sensitivity is TN/(TN+FP), the fraction of actual negatives correctly rejected.",
+      "what_is_wrong": "The corrupted tutor swaps the definitions of specificity and recall.",
+      "correct_concept": "Specificity is TN/(TN+FP), while recall or sensitivity is TP/(TP+FN)."
+    },
+    {
+      "exchange_id": "ex_0024",
+      "exchange_index": 24,
+      "category": "C8_incorrect_directional_relationship",
+      "kc_id": "KC_EVAL_COMP_008",
+      "corruption_style": "replace",
+      "original_span": "All else equal, increasing the test-sample size decreases the standard error and therefore narrows the confidence interval for accuracy.",
+      "corrupted_span": "All else equal, increasing the test-sample size increases the standard error and therefore widens the confidence interval for accuracy.",
+      "what_is_wrong": "The direction is reversed because standard error decreases rather than increases as test-sample size grows.",
+      "correct_concept": "With other quantities fixed, a larger test sample decreases standard error and produces a narrower confidence interval."
+    },
+    {
+      "exchange_id": "ex_0027",
+      "exchange_index": 27,
+      "category": "C9_incorrect_methodological_classification",
+      "kc_id": "KC_EVAL_ROC_003",
+      "corruption_style": "replace",
+      "original_span": "AUC is a classification-ranking metric derived from the ROC curve, not a clustering validation index.",
+      "corrupted_span": "AUC is an internal clustering validation index rather than a classification-ranking metric.",
+      "what_is_wrong": "The corrupt statement places ROC AUC in clustering validation instead of classification evaluation.",
+      "correct_concept": "ROC AUC is a classification-ranking performance measure based on the ROC curve."
+    },
+    {
+      "exchange_id": "ex_0030",
+      "exchange_index": 30,
+      "category": "C2_formula_or_parameter_corruption",
+      "kc_id": "KC_CLU_KM_002",
+      "corruption_style": "replace",
+      "original_span": "K-Means minimizes the within-cluster sum of squared Euclidean distances: SSE = sum over clusters c and points x in c of ||x - mu_c||^2.",
+      "corrupted_span": "K-Means minimizes the within-cluster sum of Euclidean distances: SSE = sum over clusters c and points x in c of ||x - mu_c||.",
+      "what_is_wrong": "The corrupted objective drops the square from the K-Means sum-of-squared-errors criterion.",
+      "correct_concept": "Standard K-Means minimizes the sum of squared Euclidean distances from points to their assigned centroids."
+    },
+    {
+      "exchange_id": "ex_0033",
+      "exchange_index": 33,
+      "category": "C1_definition_reversal",
+      "kc_id": "KC_CLU_DBS_001",
+      "corruption_style": "replace",
+      "original_span": "A DBSCAN core point has at least minPts points in its epsilon-neighborhood, counting the point itself under the convention used here.",
+      "corrupted_span": "A DBSCAN core point has fewer than minPts points in its epsilon-neighborhood, counting the point itself under the convention used here.",
+      "what_is_wrong": "The corrupted definition reverses the minimum-density condition for a core point.",
+      "correct_concept": "A DBSCAN core point has at least minPts points in its epsilon-neighborhood under the stated counting convention."
+    },
+    {
+      "exchange_id": "ex_0035",
+      "exchange_index": 35,
+      "category": "C7_false_endorsement_of_misconception",
+      "kc_id": "KC_CLU_DBS_008",
+      "corruption_style": "replace",
+      "original_span": "No. Being within epsilon of each other is not enough. With minPts=3, neither A nor B is a core point, and neither is density-reachable from a core point, so they do not form a DBSCAN cluster.",
+      "corrupted_span": "Yes. Being within epsilon of each other is enough. With minPts=3, A and B form a valid DBSCAN cluster because mutual proximity is sufficient, even though neither point is a core point or density-reachable from a core point.",
+      "what_is_wrong": "The tutor falsely endorses the claim that two nearby non-core points can form a DBSCAN cluster by themselves.",
+      "correct_concept": "DBSCAN clusters are formed through density reachability from core points, so A and B do not form a cluster when neither is core or reachable from one."
+    },
+    {
+      "exchange_id": "ex_0037",
+      "exchange_index": 37,
+      "category": "C3_incorrect_numerical_constant",
+      "kc_id": "KC_CLU_SIM_005",
+      "corruption_style": "replace",
+      "original_span": "For any nonzero vector compared with itself, cosine similarity is exactly 1, because the angle is 0 degrees and cos(0)=1.",
+      "corrupted_span": "For any nonzero vector compared with itself, cosine similarity is exactly 0, because the angle is 0 degrees and cos(0)=0.",
+      "what_is_wrong": "The corrupt statement gives the wrong cosine-similarity value for identical nonzero vectors.",
+      "correct_concept": "A nonzero vector has cosine similarity 1 with itself because the angle is zero and cos(0)=1."
+    },
+    {
+      "exchange_id": "ex_0039",
+      "exchange_index": 39,
+      "category": "C4_process_stage_inversion",
+      "kc_id": "KC_CLU_HIER_002",
+      "corruption_style": "replace",
+      "original_span": "After merging the closest pair, first form the new cluster and update its distances to the remaining clusters using the chosen linkage rule. Only then choose the closest pair for the next merge.",
+      "corrupted_span": "After merging the closest pair, first choose the next closest pair using the old pre-merge distances. Only after that next merge do you update distances to the newly formed clusters.",
+      "what_is_wrong": "The corrupt version selects the next merge before updating distances after the previous merge.",
+      "correct_concept": "Agglomerative clustering updates distances for the newly formed cluster before selecting the next closest pair."
+    },
+    {
+      "exchange_id": "ex_0041",
+      "exchange_index": 41,
+      "category": "C5_scope_or_boundary_error",
+      "kc_id": "KC_CLU_EVAL_009",
+      "corruption_style": "replace",
+      "original_span": "More generally, purity can be inflated by increasing the number of clusters and reaches 1 for singleton clusters, so purity alone is not safe for unrestricted comparisons across different K.",
+      "corrupted_span": "More generally, purity is unaffected by increasing the number of clusters and remains directly comparable even when clusters become very small, so purity alone is safe for unrestricted comparisons across different K.",
+      "what_is_wrong": "The corrupted claim applies purity comparisons across arbitrary K even though purity can increase simply by using more clusters.",
+      "correct_concept": "Purity is sensitive to the number of clusters and can reach 1 with singleton clusters, so comparisons across different K require caution."
+    },
+    {
+      "exchange_id": "ex_0043",
+      "exchange_index": 43,
+      "category": "C6_sibling_concept_substitution",
+      "kc_id": "KC_FSEL_FW_001",
+      "corruption_style": "replace",
+      "original_span": "A filter scores features or subsets using data-derived criteria without training the chosen predictive learner for each candidate, whereas a wrapper evaluates candidate subsets through the performance of a chosen learner.",
+      "corrupted_span": "A filter evaluates candidate subsets through the performance of a chosen predictive learner, whereas a wrapper scores features or subsets using data-derived criteria without training that learner for each candidate.",
+      "what_is_wrong": "The corrupt statement swaps the defining evaluation mechanisms of filters and wrappers.",
+      "correct_concept": "Filters use learner-independent criteria, while wrappers evaluate feature subsets using the chosen predictive learner."
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "corpus": "dm4",
+  "preregistration": "docs/evaluation_completeness_v2/66_REPAIRED_MECHANISM_PREREGISTRATION.md",
+  "injected_errors": 24,
+  "id_mapping": {
+    "ledger_to_packet": {
+      "ex_0002": "ex_0001",
+      "ex_0004": "ex_0003",
+      "ex_0007": "ex_0006",
+      "ex_0009": "ex_0008",
+      "ex_0012": "ex_0011",
+      "ex_0014": "ex_0013",
+      "ex_0017": "ex_0016",
+      "ex_0019": "ex_0018",
+      "ex_0022": "ex_0021",
+      "ex_0024": "ex_0023",
+      "ex_0027": "ex_0026",
+      "ex_0029": "ex_0028",
+      "ex_0032": "ex_0031",
+      "ex_0034": "ex_0033",
+      "ex_0037": "ex_0036",
+      "ex_0039": "ex_0038",
+      "ex_0042": "ex_0041",
+      "ex_0044": "ex_0043",
+      "ex_0047": "ex_0046",
+      "ex_0049": "ex_0048",
+      "ex_0052": "ex_0051",
+      "ex_0054": "ex_0053",
+      "ex_0057": "ex_0056",
+      "ex_0059": "ex_0058"
+    },
+    "uniform_offset": 1,
+    "note": "discovered by locating each corrupted span, not assumed"
+  },
+  "units": {
+    "clean": 49,
+    "corrupt": 50
+  },
+  "contract_valid": {
+    "clean": 49,
+    "corrupt": 50
+  },
+  "catchability_ceiling": {
+    "ledger_kc_in_reference": "23/24",
+    "errors_without_their_kc": [
+      "ex_0044"
+    ]
+  },
+  "segments_with_multiple_errors": {
+    "dm4_corrupt_20260920::seg_0037": [
+      "ex_0042",
+      "ex_0044"
+    ]
+  },
+  "stages": {
+    "clean": {
+      "raised": 0,
+      "mech_rejected": 0,
+      "stage2_dropped": 0,
+      "survived": 0,
+      "mech_reject_reasons": {},
+      "conflicts_localising_a_ledger_error": {
+        "raised": 0,
+        "mech_rejected": 0,
+        "stage2_dropped": 0,
+        "survived": 0
+      }
+    },
+    "corrupt": {
+      "raised": 25,
+      "mech_rejected": 0,
+      "stage2_dropped": 2,
+      "survived": 23,
+      "mech_reject_reasons": {},
+      "conflicts_localising_a_ledger_error": {
+        "raised": 25,
+        "mech_rejected": 0,
+        "stage2_dropped": 2,
+        "survived": 23
+      }
+    }
+  },
+  "dm3_comparable_subset": {
+    "definition": "injected tutor turn >= 83 chars (dm3's shortest)",
+    "n": 19,
+    "recall": "18/19",
+    "stage1_recall": "19/19",
+    "C1_C3_C8_recall": "4/4",
+    "excluded_short_turn_errors": [
+      "ex_0007",
+      "ex_0027",
+      "ex_0044",
+      "ex_0047",
+      "ex_0049"
+    ]
+  },
+  "results": {
+    "stage1_detector_recall": "24/24",
+    "final_recall": "23/24",
+    "lost_to_filters": 1,
+    "precision_both_arms": 1.0,
+    "clean_arm_segments_flagged": "0/49",
+    "corrupt_arm_error_free_segments_flagged": "0/27",
+    "per_category": {
+      "C1": {
+        "caught": 3,
+        "stage1": 3,
+        "total": 3
+      },
+      "C2": {
+        "caught": 3,
+        "stage1": 3,
+        "total": 3
+      },
+      "C3": {
+        "caught": 3,
+        "stage1": 3,
+        "total": 3
+      },
+      "C4": {
+        "caught": 3,
+        "stage1": 3,
+        "total": 3
+      },
+      "C5": {
+        "caught": 3,
+        "stage1": 3,
+        "total": 3
+      },
+      "C6": {
+        "caught": 2,
+        "stage1": 3,
+        "total": 3
+      },
+      "C7": {
+        "caught": 3,
+        "stage1": 3,
+        "total": 3
+      },
+      "C8": {
+        "caught": 2,
+        "stage1": 2,
+        "total": 2
+      },
+      "C9": {
+        "caught": 1,
+        "stage1": 1,
+        "total": 1
+      }
+    },
+    "per_error": [
+      {
+        "exchange_id": "ex_0002",
+        "packet_exchange_id": "ex_0001",
+        "segment_id": "dm4_corrupt_20260920::seg_0001",
+        "category": "C1_definition_reversal",
+        "kc_id": "KC_FSEL_STAT_003",
+        "caught": true,
+        "best_overlap_chars": 181,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 186,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0004",
+        "packet_exchange_id": "ex_0003",
+        "segment_id": "dm4_corrupt_20260920::seg_0003",
+        "category": "C2_formula_or_parameter_corruption",
+        "kc_id": "KC_EVAL_COMP_007",
+        "caught": true,
+        "best_overlap_chars": 94,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 180,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0007",
+        "packet_exchange_id": "ex_0006",
+        "segment_id": "dm4_corrupt_20260920::seg_0005",
+        "category": "C3_incorrect_numerical_constant",
+        "kc_id": "KC_EVAL_ROC_003",
+        "caught": true,
+        "best_overlap_chars": 67,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 68,
+        "dm3_comparable": false
+      },
+      {
+        "exchange_id": "ex_0009",
+        "packet_exchange_id": "ex_0008",
+        "segment_id": "dm4_corrupt_20260920::seg_0007",
+        "category": "C4_process_stage_inversion",
+        "kc_id": "KC_EVAL_SAMP_001",
+        "caught": true,
+        "best_overlap_chars": 130,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 207,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0012",
+        "packet_exchange_id": "ex_0011",
+        "segment_id": "dm4_corrupt_20260920::seg_0010",
+        "category": "C5_scope_or_boundary_error",
+        "kc_id": "KC_EVAL_ROC_003",
+        "caught": true,
+        "best_overlap_chars": 118,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 190,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0014",
+        "packet_exchange_id": "ex_0013",
+        "segment_id": "dm4_corrupt_20260920::seg_0011",
+        "category": "C6_sibling_concept_substitution",
+        "kc_id": "KC_EVAL_SAMP_005",
+        "caught": true,
+        "best_overlap_chars": 163,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 167,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0017",
+        "packet_exchange_id": "ex_0016",
+        "segment_id": "dm4_corrupt_20260920::seg_0014",
+        "category": "C7_false_endorsement_of_misconception",
+        "kc_id": "KC_EVAL_SAMP_002",
+        "caught": true,
+        "best_overlap_chars": 154,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 154,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0019",
+        "packet_exchange_id": "ex_0018",
+        "segment_id": "dm4_corrupt_20260920::seg_0016",
+        "category": "C8_incorrect_directional_relationship",
+        "kc_id": "KC_EVAL_ROC_005",
+        "caught": true,
+        "best_overlap_chars": 111,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 232,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0022",
+        "packet_exchange_id": "ex_0021",
+        "segment_id": "dm4_corrupt_20260920::seg_0019",
+        "category": "C1_definition_reversal",
+        "kc_id": "KC_CLU_EVAL_001",
+        "caught": true,
+        "best_overlap_chars": 114,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 114,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0024",
+        "packet_exchange_id": "ex_0023",
+        "segment_id": "dm4_corrupt_20260920::seg_0021",
+        "category": "C2_formula_or_parameter_corruption",
+        "kc_id": "KC_CLU_HIER_006",
+        "caught": true,
+        "best_overlap_chars": 113,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 113,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0027",
+        "packet_exchange_id": "ex_0026",
+        "segment_id": "dm4_corrupt_20260920::seg_0023",
+        "category": "C3_incorrect_numerical_constant",
+        "kc_id": "KC_CLU_EVAL_005",
+        "caught": true,
+        "best_overlap_chars": 51,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 51,
+        "dm3_comparable": false
+      },
+      {
+        "exchange_id": "ex_0029",
+        "packet_exchange_id": "ex_0028",
+        "segment_id": "dm4_corrupt_20260920::seg_0025",
+        "category": "C4_process_stage_inversion",
+        "kc_id": "KC_FSEL_GEN_001",
+        "caught": true,
+        "best_overlap_chars": 124,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 206,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0032",
+        "packet_exchange_id": "ex_0031",
+        "segment_id": "dm4_corrupt_20260920::seg_0028",
+        "category": "C5_scope_or_boundary_error",
+        "kc_id": "KC_FSEL_GEN_005",
+        "caught": true,
+        "best_overlap_chars": 178,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 178,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0034",
+        "packet_exchange_id": "ex_0033",
+        "segment_id": "dm4_corrupt_20260920::seg_0030",
+        "category": "C6_sibling_concept_substitution",
+        "kc_id": "KC_FSEL_FUND_002",
+        "caught": false,
+        "best_overlap_chars": 0,
+        "detected_by_stage1": true,
+        "lost_to_filters": true,
+        "tutor_turn_chars": 158,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0037",
+        "packet_exchange_id": "ex_0036",
+        "segment_id": "dm4_corrupt_20260920::seg_0033",
+        "category": "C7_false_endorsement_of_misconception",
+        "kc_id": "KC_FSEL_FUND_002",
+        "caught": true,
+        "best_overlap_chars": 168,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 168,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0039",
+        "packet_exchange_id": "ex_0038",
+        "segment_id": "dm4_corrupt_20260920::seg_0035",
+        "category": "C8_incorrect_directional_relationship",
+        "kc_id": "KC_FSEL_GOOD_001",
+        "caught": true,
+        "best_overlap_chars": 170,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 170,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0042",
+        "packet_exchange_id": "ex_0041",
+        "segment_id": "dm4_corrupt_20260920::seg_0037",
+        "category": "C9_incorrect_methodological_classification",
+        "kc_id": "KC_FSEL_FW_002",
+        "caught": true,
+        "best_overlap_chars": 172,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 172,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0044",
+        "packet_exchange_id": "ex_0043",
+        "segment_id": "dm4_corrupt_20260920::seg_0037",
+        "category": "C1_definition_reversal",
+        "kc_id": "KC_FSEL_FW_001",
+        "caught": true,
+        "best_overlap_chars": 66,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 66,
+        "dm3_comparable": false
+      },
+      {
+        "exchange_id": "ex_0047",
+        "packet_exchange_id": "ex_0046",
+        "segment_id": "dm4_corrupt_20260920::seg_0039",
+        "category": "C2_formula_or_parameter_corruption",
+        "kc_id": "KC_CLU_EVAL_013",
+        "caught": true,
+        "best_overlap_chars": 64,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 65,
+        "dm3_comparable": false
+      },
+      {
+        "exchange_id": "ex_0049",
+        "packet_exchange_id": "ex_0048",
+        "segment_id": "dm4_corrupt_20260920::seg_0041",
+        "category": "C3_incorrect_numerical_constant",
+        "kc_id": "KC_CLU_EVAL_008",
+        "caught": true,
+        "best_overlap_chars": 28,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 29,
+        "dm3_comparable": false
+      },
+      {
+        "exchange_id": "ex_0052",
+        "packet_exchange_id": "ex_0051",
+        "segment_id": "dm4_corrupt_20260920::seg_0044",
+        "category": "C4_process_stage_inversion",
+        "kc_id": "KC_EVAL_SAMP_003",
+        "caught": true,
+        "best_overlap_chars": 191,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 191,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0054",
+        "packet_exchange_id": "ex_0053",
+        "segment_id": "dm4_corrupt_20260920::seg_0046",
+        "category": "C5_scope_or_boundary_error",
+        "kc_id": "KC_FSEL_FW_003",
+        "caught": true,
+        "best_overlap_chars": 187,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 187,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0057",
+        "packet_exchange_id": "ex_0056",
+        "segment_id": "dm4_corrupt_20260920::seg_0048",
+        "category": "C6_sibling_concept_substitution",
+        "kc_id": "KC_FSEL_FW_002",
+        "caught": true,
+        "best_overlap_chars": 188,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 194,
+        "dm3_comparable": true
+      },
+      {
+        "exchange_id": "ex_0059",
+        "packet_exchange_id": "ex_0058",
+        "segment_id": "dm4_corrupt_20260920::seg_0049",
+        "category": "C7_false_endorsement_of_misconception",
+        "kc_id": "KC_FSEL_FW_004",
+        "caught": true,
+        "best_overlap_chars": 156,
+        "detected_by_stage1": true,
+        "lost_to_filters": false,
+        "tutor_turn_chars": 156,
+        "dm3_comparable": true
+      }
+    ],
+    "recall_sensitivity": {
+      "@16": "23/24",
+      "@24": "23/24",
+      "@32": "22/24"
+    }
+  },
+  "predictions": {
+    "P1_clean_flag_rate": {
+      "value": "0/49",
+      "threshold": "<= 3/60",
+      "met": true
+    },
+    "P2_recall": {
+      "value": "23/24",
+      "threshold": ">= 12/24",
+      "met": true
+    },
+    "P3_precision": {
+      "value": 1.0,
+      "threshold": ">= 0.85",
+      "met": true
+    },
+    "P4_C1_C3_C8_recall": {
+      "value": "8/8",
+      "threshold": ">= 0.50",
+      "met": true
+    },
+    "P4_C1_C3_C8_recall_retrieved_only": {
+      "value": "7/7",
+      "excluded": [
+        "ex_0044"
+      ]
+    },
+    "regression_floor": {
+      "threshold": "recall >= 10/24 or the repair is withdrawn",
+      "breached": false
+    }
+  }
+}

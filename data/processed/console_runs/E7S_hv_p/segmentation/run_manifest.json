@@ -1,5 +1,5 @@
 {
-  "dialogues_jsonl": "/beegfs2/scratch/hpcuser/seg_eval_console/runs/E7S_hv_p/normalized/normalized_dialogues.jsonl",
+  "dialogues_jsonl": "normalized/normalized_dialogues.jsonl",
   "parameters": {
     "cross_encoder_active": true,
     "dense_retrieval_active": true,
@@ -20,7 +20,7 @@
     "top_k": 25
   },
   "pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
-  "profiles_path": "/beegfs2/scratch/hpcuser/seg_eval_console/runs/E7S_hv_p/library/frozen_matching_profiles.jsonl",
+  "profiles_path": "library/frozen_matching_profiles.jsonl",
   "summary": {
     "abstained_low_confidence_count": 11,
     "action_pass1_closed_set": 31,

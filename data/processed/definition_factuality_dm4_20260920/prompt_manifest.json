@@ -1,0 +1,16 @@
+{
+  "corpus": "dm4",
+  "preregistration": "docs/evaluation_completeness_v2/62_DEFINITION_GROUNDED_FACTUALITY_PREREGISTRATION.md",
+  "reference": "data\\processed\\claim_level_factuality_20260920\\source_definitions\\current_deployed_with_console_freeze_overrides.jsonl",
+  "max_kcs": 3,
+  "arms": {
+    "clean": {
+      "units": 49,
+      "sha256": "03019488db09dad3f74ed0bc63b2d99c925203c2d39cfb55333626b63b7dce93"
+    },
+    "corrupt": {
+      "units": 50,
+      "sha256": "510df67ac332f271432575ce270abae07007be2ccd854f3eba4b34299c17ff9c"
+    }
+  }
+}

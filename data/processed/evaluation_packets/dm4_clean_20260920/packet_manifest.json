@@ -1,0 +1,77 @@
+{
+  "alias_contract": {
+    "primary_id_aliases": [
+      "primary_kc_id",
+      "dominant_kc_id",
+      "resolved_dominant_kc_id",
+      "resolved_kc_id",
+      "provisional_kc_id"
+    ],
+    "primary_name_aliases": [
+      "primary_kc_name",
+      "dominant_kc_name",
+      "resolved_dominant_kc_name",
+      "resolved_kc_name",
+      "provisional_kc_name"
+    ]
+  },
+  "audit": {
+    "assignment_count": 60,
+    "errors": [],
+    "evaluation_mode_counts": {
+      "branch_context_with_anchor": 5,
+      "broad_kc_set_low_confidence_anchor": 8,
+      "single_kc_primary": 36
+    },
+    "exchange_count": 60,
+    "missing_kc_review_count": 0,
+    "packet_count": 49,
+    "primary_kc_id_source_counts": {
+      "dominant_kc_id": 49
+    },
+    "segment_count": 49,
+    "segment_scope_counts": {
+      "branch_context": 5,
+      "broad_kc_set": 8,
+      "single_kc": 36
+    },
+    "status": "PASS",
+    "warnings": []
+  },
+  "outputs": {
+    "packet_audit": "packet_audit.json",
+    "packet_summary": "packet_summary.json",
+    "segment_evaluation_packets": "segment_evaluation_packets.jsonl"
+  },
+  "profiles_path": "data/processed/library/frozen_matching_profiles.jsonl",
+  "run_dir": "data/processed/segmentation_runs/dm4_clean_20260920",
+  "schema": "segment_evaluation_packet_manifest.v1b",
+  "semantic_contract": {
+    "branch_context_with_anchor": "Use primary_kc_id as context anchor and inspect evaluator_kc_set.",
+    "broad_kc_set_low_confidence_anchor": "Do not treat primary_kc_id as exact truth; judge against KC set.",
+    "single_kc_primary": "Judge primarily against primary_kc_id."
+  },
+  "summary": {
+    "assignment_count": 60,
+    "evaluation_mode_counts": {
+      "branch_context_with_anchor": 5,
+      "broad_kc_set_low_confidence_anchor": 8,
+      "single_kc_primary": 36
+    },
+    "exchange_count": 60,
+    "finished_utc": "2026-09-20T21:55:56.979518+00:00",
+    "missing_kc_review_count": 0,
+    "packet_count": 49,
+    "packet_pipeline": "segment_evaluation_packets_v1b_primary_alias_contract",
+    "profiles_path": "data/processed/library/frozen_matching_profiles.jsonl",
+    "segment_count": 49,
+    "segment_scope_counts": {
+      "branch_context": 5,
+      "broad_kc_set": 8,
+      "single_kc": 36
+    },
+    "source_run_dir": "data/processed/segmentation_runs/dm4_clean_20260920",
+    "source_segmentation_pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
+    "started_utc": "2026-09-20T21:55:56.939305+00:00"
+  }
+}

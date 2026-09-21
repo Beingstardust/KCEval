@@ -1,0 +1,33 @@
+{
+  "gate": [
+    {
+      "segment_id": "seg_0013",
+      "tutor_span": "A perfectly mixed binary node, such as 10 positives and 10 negatives, has entropy 1.",
+      "inconsistent": false,
+      "why": "The tutor statement provides a specific example of entropy calculation that is consistent with the general principle stated in the curriculum statement."
+    }
+  ],
+  "diagnostic": [
+    {
+      "segment_id": "seg_0008",
+      "tutor_span": "P(value|class) = (n_value,class + 1) / (n_class + 1), where v is the number of possible values of that attribute",
+      "now_inconsistent": false,
+      "why": "The tutor statement provides a more detailed explanation of the formula by specifying the relationship between the number of possible values and the class, which does not contradict the curriculum statement."
+    },
+    {
+      "segment_id": "seg_0013",
+      "tutor_span": "That no-worse-on-validation rule applies to every decision-tree pruning method.",
+      "now_inconsistent": false,
+      "why": "The tutor statement provides a specific application of the curriculum statement, which does not contradict it."
+    },
+    {
+      "segment_id": "seg_0027",
+      "tutor_span": "K-Means minimizes the within-cluster sum of Euclidean distances: SSE = sum over clusters c and points x in c of ||x - mu_c||",
+      "now_inconsistent": false,
+      "why": "The tutor statement provides a more detailed and formal definition of SSE that is compatible with the curriculum statement."
+    }
+  ],
+  "preregistration": "docs/evaluation_completeness_v2/66_REPAIRED_MECHANISM_PREREGISTRATION.md",
+  "gate_passed": true,
+  "diagnostic_flipped": "0/3"
+}

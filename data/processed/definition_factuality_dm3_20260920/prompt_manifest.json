@@ -1,0 +1,16 @@
+{
+  "corpus": "dm3",
+  "preregistration": "docs/evaluation_completeness_v2/64_DM3_HOLDOUT_PREREGISTRATION.md",
+  "reference": "data\\processed\\claim_level_factuality_20260920\\source_definitions\\current_deployed_with_console_freeze_overrides.jsonl",
+  "max_kcs": 3,
+  "arms": {
+    "clean": {
+      "units": 40,
+      "sha256": "7bedd821a482714e7598dbabc5986f62d25df96b4843d8561f9de50afb0ffa0e"
+    },
+    "corrupt": {
+      "units": 40,
+      "sha256": "103b7468360b088a2e69824192f42defaa8a92f71b80d5485a655b052ffaf872"
+    }
+  }
+}

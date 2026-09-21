@@ -1,0 +1,59 @@
+{
+  "note": "RQ3 score-level results under the definition-grounded checker",
+  "preregistration": "docs/evaluation_completeness_v2/67_DM4_REPAIRED_MECHANISM_RESULTS.md",
+  "clean": {
+    "run": "E7S_hv_p",
+    "beta": 0.2,
+    "segments_scored": 63,
+    "old": {
+      "d_segment": 0.8163690476190474,
+      "d_arc": 0.98125,
+      "R": 0.16488095238095257,
+      "segments_capped": 35
+    },
+    "new": {
+      "d_segment": 0.960849567099567,
+      "d_arc": 0.98125,
+      "segments_capped": 0,
+      "R": 0.02040043290043292
+    },
+    "new_verdict_counts": {
+      "grounded": 42
+    },
+    "reconstruction_exact": true
+  },
+  "corrupt": {
+    "run": "E7S_hv_q",
+    "beta": 0.2,
+    "segments_scored": 64,
+    "old": {
+      "d_segment": 0.7207792207792205,
+      "d_arc": 0.9829545454545454,
+      "R": 0.2621753246753249,
+      "segments_capped": 37
+    },
+    "new": {
+      "d_segment": 0.8592261904761905,
+      "d_arc": 0.9829545454545454,
+      "segments_capped": 7,
+      "R": 0.12372835497835488
+    },
+    "new_verdict_counts": {
+      "contradicted": 7,
+      "grounded": 35
+    },
+    "reconstruction_exact": true
+  },
+  "predictions": {
+    "old": {
+      "P1_segment_score_drop": -0.09558982683982686,
+      "P3_cross_scope_widening": 0.09729437229437232,
+      "segments_capped_corrupt_vs_clean": "37 vs 35"
+    },
+    "new": {
+      "P1_segment_score_drop": -0.1016233766233765,
+      "P3_cross_scope_widening": 0.10332792207792196,
+      "segments_capped_corrupt_vs_clean": "7 vs 0"
+    }
+  }
+}

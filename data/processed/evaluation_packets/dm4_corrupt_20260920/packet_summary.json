@@ -1,0 +1,23 @@
+{
+  "assignment_count": 60,
+  "evaluation_mode_counts": {
+    "branch_context_with_anchor": 4,
+    "broad_kc_set_low_confidence_anchor": 9,
+    "single_kc_primary": 37
+  },
+  "exchange_count": 60,
+  "finished_utc": "2026-09-20T22:02:28.267008+00:00",
+  "missing_kc_review_count": 0,
+  "packet_count": 50,
+  "packet_pipeline": "segment_evaluation_packets_v1b_primary_alias_contract",
+  "profiles_path": "data/processed/library/frozen_matching_profiles.jsonl",
+  "segment_count": 50,
+  "segment_scope_counts": {
+    "branch_context": 4,
+    "broad_kc_set": 9,
+    "single_kc": 37
+  },
+  "source_run_dir": "data/processed/segmentation_runs/dm4_corrupt_20260920",
+  "source_segmentation_pipeline": "contactless_two_pass_v35_fixed_scorer_context_override_guard",
+  "started_utc": "2026-09-20T22:02:28.226058+00:00"
+}
